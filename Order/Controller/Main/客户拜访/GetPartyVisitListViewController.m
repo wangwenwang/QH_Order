@@ -88,7 +88,7 @@
 
 #define kPageCount 20
 
-#define kCellHeight 132
+#define kCellHeight 110
 
 #define kCellName @"GetPartyVisitListTableViewCell"
 

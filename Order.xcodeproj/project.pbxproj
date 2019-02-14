@@ -506,6 +506,12 @@
 		3B86F38B21F6E4C50048A9AF /* CARTotalOrderDetailItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F38A21F6E4C50048A9AF /* CARTotalOrderDetailItemModel.m */; };
 		3B86F39821F717740048A9AF /* UINavigationBar+YHIndicatorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F39421F717740048A9AF /* UINavigationBar+YHIndicatorImage.m */; };
 		3B86F39921F717740048A9AF /* UINavigationController+YHBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F39721F717740048A9AF /* UINavigationController+YHBackTitle.m */; };
+		3BB4AA9E22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AA9C22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m */; };
+		3BB4AA9F22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AA9D22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib */; };
+		3BB4AAA3221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA1221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m */; };
+		3BB4AAA4221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA2221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib */; };
+		3BB4AAA82215989900BE16F9 /* ShowCheckInventoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA62215989900BE16F9 /* ShowCheckInventoryTableViewCell.m */; };
+		3BB4AAA92215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA72215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib */; };
 		3BDABE8E21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */; };
 		3BDABE8F21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */; };
 		3BDABE9321A4181100C0E72B /* GetVisitRecommendedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE9121A4181100C0E72B /* GetVisitRecommendedOrderViewController.m */; };
@@ -1384,6 +1390,15 @@
 		3B86F39521F717740048A9AF /* UINavigationController+YHBackTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YHBackTitle.h"; sourceTree = "<group>"; };
 		3B86F39621F717740048A9AF /* UINavigationBar+YHIndicatorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YHIndicatorImage.h"; sourceTree = "<group>"; };
 		3B86F39721F717740048A9AF /* UINavigationController+YHBackTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YHBackTitle.m"; sourceTree = "<group>"; };
+		3BB4AA9B22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryTableViewCell.h; sourceTree = "<group>"; };
+		3BB4AA9C22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryTableViewCell.m; sourceTree = "<group>"; };
+		3BB4AA9D22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryTableViewCell.xib; sourceTree = "<group>"; };
+		3BB4AAA0221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryOkTableViewCell.h; sourceTree = "<group>"; };
+		3BB4AAA1221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryOkTableViewCell.m; sourceTree = "<group>"; };
+		3BB4AAA2221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryOkTableViewCell.xib; sourceTree = "<group>"; };
+		3BB4AAA52215989900BE16F9 /* ShowCheckInventoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCheckInventoryTableViewCell.h; sourceTree = "<group>"; };
+		3BB4AAA62215989900BE16F9 /* ShowCheckInventoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCheckInventoryTableViewCell.m; sourceTree = "<group>"; };
+		3BB4AAA72215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCheckInventoryTableViewCell.xib; sourceTree = "<group>"; };
 		3BDABE8B21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryViewController.h; sourceTree = "<group>"; };
 		3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryViewController.m; sourceTree = "<group>"; };
 		3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryViewController.xib; sourceTree = "<group>"; };
@@ -3219,6 +3234,15 @@
 				3B113E9221FAED8600883869 /* CheckAgentOrderTableViewCell.h */,
 				3B113E9321FAED8600883869 /* CheckAgentOrderTableViewCell.m */,
 				3B113E9421FAED8600883869 /* CheckAgentOrderTableViewCell.xib */,
+				3BB4AA9B22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.h */,
+				3BB4AA9C22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m */,
+				3BB4AA9D22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib */,
+				3BB4AAA0221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.h */,
+				3BB4AAA1221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m */,
+				3BB4AAA2221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib */,
+				3BB4AAA52215989900BE16F9 /* ShowCheckInventoryTableViewCell.h */,
+				3BB4AAA62215989900BE16F9 /* ShowCheckInventoryTableViewCell.m */,
+				3BB4AAA72215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib */,
 			);
 			path = "客户拜访";
 			sourceTree = "<group>";
@@ -3495,6 +3519,7 @@
 				303566B71F70F2AD009E6EFB /* InputReturnViewController.xib in Resources */,
 				30BBF1371F17612400496518 /* Add_AddressViewController.xib in Resources */,
 				301D7DC71F5A3E0400D83410 /* AddressListTableViewCell.xib in Resources */,
+				3BB4AA9F22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib in Resources */,
 				3B0DD00521A3A20600F8DE8F /* GetVisitEnterShopViewController.xib in Resources */,
 				3035669B1F70CD2B009E6EFB /* GetToAddressListViewController.xib in Resources */,
 				30F7B8E21DBFAE80004CD128 /* SelectedGiftsTableViewCell.xib in Resources */,
@@ -3546,6 +3571,7 @@
 				303566CC1F70FF57009E6EFB /* GetInputListViewController.xib in Resources */,
 				304A34171F0E071B0055D50C /* AreaProvinceViewController.xib in Resources */,
 				30BB2DC91F459375002E51E7 /* AddStockTableViewCell.xib in Resources */,
+				3BB4AAA4221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib in Resources */,
 				3B3036B421E5D73E0041C9AE /* CARListViewController.xib in Resources */,
 				301D7DB31F5A3D2E00D83410 /* GetAppBusinessFeeListTableViewCell.xib in Resources */,
 				30F7B8D51DBF0B33004CD128 /* AddGiftProductsTableViewCell.xib in Resources */,
@@ -3588,6 +3614,7 @@
 				30E5A05E1D9BC16800D94F77 /* CheckOrderTableViewCell.xib in Resources */,
 				3B084FFA21B10635006ECBF1 /* PartyTableViewCell.xib in Resources */,
 				3035669F1F70CD2B009E6EFB /* StockOutViewController.xib in Resources */,
+				3BB4AAA92215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib in Resources */,
 				30061B291FD649CA00B4CA53 /* MonthlyPlanViewController.xib in Resources */,
 				301CFDC81FBAF22300C8CB39 /* StockNoListDetailViewController.xib in Resources */,
 				30CDC65D1D9907CD0035602F /* CoreSVP.bundle in Resources */,
@@ -3820,6 +3847,7 @@
 				301D7DE21F5A3E5800D83410 /* UITextView+Trim.m in Sources */,
 				3B0DC1431F72CCCE00D1E6AA /* OutputReturnViewController.m in Sources */,
 				3056B55E200887DF00B4704A /* GetWmsProductZongViewController.m in Sources */,
+				3BB4AA9E22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m in Sources */,
 				304A7AF31DBA62710039B0B2 /* ConfirmOrderTableViewCell.m in Sources */,
 				30B1AE661F74983300130A55 /* Store_GetOutProductListService.m in Sources */,
 				30B948EA1EEA4B5500E4C3EC /* IB_UIView.m in Sources */,
@@ -3869,6 +3897,7 @@
 				3B813AE921AF2A0E0096783C /* LMDropDownMenuTableViewCell.m in Sources */,
 				3B6E898A21E5F16C0007E833 /* CARTotalOrderTableViewCell.m in Sources */,
 				30F235C01FD7CC760056846C /* GetOrderPlanDetailService.m in Sources */,
+				3BB4AAA82215989900BE16F9 /* ShowCheckInventoryTableViewCell.m in Sources */,
 				30201F1B1F1083860055BA6A /* GetFeeListCollectionViewCell.m in Sources */,
 				30F235B11FD78D810056846C /* GetOrderPlanListService.m in Sources */,
 				302A057D1DB0B56700972490 /* PayTypeModel.m in Sources */,
@@ -4017,6 +4046,7 @@
 				30BB2DB01F459359002E51E7 /* CustomerListViewController.m in Sources */,
 				302A05801DB0C60100972490 /* ProductModel.m in Sources */,
 				304A7ACC1DB86F670039B0B2 /* SignatureAndPictureModel.m in Sources */,
+				3BB4AAA3221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m in Sources */,
 				30BB2DE81F4593AD002E51E7 /* AddStockModel.m in Sources */,
 				3B86F37F21F6C65D0048A9AF /* CARTotalOrderDetailViewController.m in Sources */,
 				30B439D41F1DF48E0092A015 /* AddPartyModel.m in Sources */,

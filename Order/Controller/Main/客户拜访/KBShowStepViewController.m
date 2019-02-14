@@ -23,13 +23,14 @@
 #import "GetVisitVividDisplayViewController.h"
 #import "GetPartyVisitListViewController.h"
 #import "GetPartyVisitListService.h"
+#import "ShowCheckInventoryTableViewCell.h"
 
 // 查看经销商入库单
 #import "CheckAgentOrderTableViewCell.h"
 #import "OrderDetailService.h"
 #import "OrderDetailViewController.h"
 
-@interface KBShowStepViewController ()<GetVisitEnterShopServiceDelegate, Store_GetOupputListServiceDelegate, GetPartyVisitListServiceDelegate>
+@interface KBShowStepViewController ()<GetVisitEnterShopServiceDelegate, Store_GetOupputListServiceDelegate, GetPartyVisitListServiceDelegate, OrderDetailServiceDelegate>
 
 // 全局变量
 @property (strong, nonatomic) AppDelegate *app;
@@ -59,6 +60,8 @@
 
 // 第三步，检查库存
 @property (weak, nonatomic) IBOutlet UILabel *CHECK_INVENTORY;
+@property (weak, nonatomic) IBOutlet UITableView *tableView_checkInventory;
+@property (weak, nonatomic) NSArray *checkInventorys;
 
 // 第四步，建议订单
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -93,11 +96,15 @@
 
 @end
 
-#define kCellHeight 103
+#define kCellHeight_ShowOrder 103
+
+#define kCellHeight_ShowCheckInventory 33
 
 #define kCellNameGetOupputList @"GetOupputListTableViewCell"
 
 #define kCellNameCheckAgentOrder @"CheckAgentOrderTableViewCell"
+
+#define kCellNameCheckInventory @"ShowCheckInventoryTableViewCell"
 
 @implementation KBShowStepViewController
 
@@ -123,6 +130,8 @@
     self.title = @"查看拜访";
     
     [self registerCell];
+    
+    [self dealData];
     
     [self initUI];
     
@@ -170,6 +179,24 @@
     [_tableView registerNib:[UINib nibWithNibName:kCellNameGetOupputList bundle:nil] forCellReuseIdentifier:kCellNameGetOupputList];
     [_tableView registerNib:[UINib nibWithNibName:kCellNameCheckAgentOrder bundle:nil] forCellReuseIdentifier:kCellNameCheckAgentOrder];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [_tableView_checkInventory registerNib:[UINib nibWithNibName:kCellNameCheckInventory bundle:nil] forCellReuseIdentifier:kCellNameCheckInventory];
+    _tableView_checkInventory.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+
+- (void)dealData {
+    
+    _checkInventorys = [_pvItemM.cHECKINVENTORY componentsSeparatedByString:@"^；"];
+}
+
+- (void)setCheckInventory {
+    if(_checkInventorys.count > 1) {
+        _step3ViewHeight.constant = 30 + kCellHeight_ShowCheckInventory * (_checkInventorys.count - 1) + 30;
+        [self updateViewConstraints];
+    }
+    [_tableView_checkInventory reloadData];
+    _CHECK_INVENTORY.text = [_checkInventorys lastObject];
 }
 
 
@@ -177,60 +204,93 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //『供货商』对『经销商』的入库单
-    if(_CheckOrderListM) {
+    if(tableView.tag == 1001) {
         
-        return _CheckOrderListM.checkOrderItemModel.count;
+        //『供货商』对『经销商』的入库单
+        if(_CheckOrderListM) {
+            
+            return _CheckOrderListM.checkOrderItemModel.count;
+        }
+        //『经销商』对『门店』的出库单
+        else {
+            
+            return _getOupputListM.getOupputModel.count;
+        }
     }
-    //『经销商』对『门店』的出库单
-    else {
+    else if(tableView.tag == 1002) {
         
-        return _getOupputListM.getOupputModel.count;
+        return _checkInventorys.count - 1;
+    }else {
+        
+        return 0;
     }
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //『供货商』对『经销商』的入库单
-    if(_CheckOrderListM) {
+    if(tableView.tag == 1001) {
         
-        return kCellHeight;
-    }
-    //『经销商』对『门店』的出库单
-    else {
+        //『供货商』对『经销商』的入库单
+        if(_CheckOrderListM) {
+            
+            return kCellHeight_ShowOrder;
+        }
+        //『经销商』对『门店』的出库单
+        else {
+            
+            GetOupputModel *getOupputM = _getOupputListM.getOupputModel[indexPath.row];
+            return getOupputM.cellHeight;
+        }
+    }else if(tableView.tag == 1002) {
         
-        GetOupputModel *getOupputM = _getOupputListM.getOupputModel[indexPath.row];
-        return getOupputM.cellHeight;
+        return kCellHeight_ShowCheckInventory;
+    }else {
+        
+        return 44;
     }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //『供货商』对『经销商』的入库单
-    if(_CheckOrderListM) {
+    if(tableView.tag == 1001) {
         
-        static NSString *cellID = kCellNameCheckAgentOrder;
-        CheckAgentOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+        //『供货商』对『经销商』的入库单
+        if(_CheckOrderListM) {
+            
+            static NSString *cellID = kCellNameCheckAgentOrder;
+            CheckAgentOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+            
+            CheckOrderItemModel *CheckOrderItemM = _CheckOrderListM.checkOrderItemModel[indexPath.row];
+            
+            cell.CheckOrderItemM = CheckOrderItemM;
+            
+            return cell;
+        }
+        //『经销商』对『门店』的出库单
+        else {
+            
+            static NSString *cellId = kCellNameGetOupputList;
+            GetOupputListTableViewCell *cell = (GetOupputListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+            
+            GetOupputModel *getOupputM = _getOupputListM.getOupputModel[indexPath.row];
+            
+            cell.getOupputM = getOupputM;
+            
+            return cell;
+        }
         
-        CheckOrderItemModel *CheckOrderItemM = _CheckOrderListM.checkOrderItemModel[indexPath.row];
+    }else if(tableView.tag == 1002) {
         
-        cell.CheckOrderItemM = CheckOrderItemM;
+        static NSString *cellId = kCellNameCheckInventory;
+        ShowCheckInventoryTableViewCell *cell = (ShowCheckInventoryTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
         
+        cell.productNameLabel.text = _checkInventorys[indexPath.row];
         return cell;
-    }
-    //『经销商』对『门店』的出库单
-    else {
+    }else {
         
-        static NSString *cellId = kCellNameGetOupputList;
-        GetOupputListTableViewCell *cell = (GetOupputListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-        
-        GetOupputModel *getOupputM = _getOupputListM.getOupputModel[indexPath.row];
-        
-        cell.getOupputM = getOupputM;
-        
-        return cell;
+        return [[UITableViewCell alloc] init];
     }
 }
 
@@ -239,25 +299,28 @@
     
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    //『供货商』对『经销商』的入库单
-    if(_CheckOrderListM) {
+    if(tableView.tag == 1001) {
         
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        CheckOrderItemModel *m = _CheckOrderListM.checkOrderItemModel[indexPath.row];
-        OrderDetailService *service = [[OrderDetailService alloc] init];
-        service.delegate = self;
-        [service getOrderDetailsData:m.iDX];
-    }
-    //『经销商』对『门店』的出库单
-    else {
-        
-        [_tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        GetOupputModel *m = _getOupputListM.getOupputModel[indexPath.row];
-        
-        GetOupputInfoViewController *vc = [[GetOupputInfoViewController alloc] init];
-        vc.oupputM = m;
-        [self.navigationController pushViewController:vc animated:YES];
+        //『供货商』对『经销商』的入库单
+        if(_CheckOrderListM) {
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            CheckOrderItemModel *m = _CheckOrderListM.checkOrderItemModel[indexPath.row];
+            OrderDetailService *service = [[OrderDetailService alloc] init];
+            service.delegate = self;
+            [service getOrderDetailsData:m.iDX];
+        }
+        //『经销商』对『门店』的出库单
+        else {
+            
+            [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+            
+            GetOupputModel *m = _getOupputListM.getOupputModel[indexPath.row];
+            
+            GetOupputInfoViewController *vc = [[GetOupputInfoViewController alloc] init];
+            vc.oupputM = m;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 
@@ -272,7 +335,7 @@
     _CONTACTS_TEL.text = _pvItemM.cONTACTSTEL;
     
     _ACTUAL_VISITING_ADDRESS.text = _pvItemM.aCTUALVISITINGADDRESS;
-    _CHECK_INVENTORY.text = _pvItemM.cHECKINVENTORY;
+    [self setCheckInventory];
     _RECOMMENDED_ORDER.text = _pvItemM.rECOMMENDEDORDER;
     _VIVID_DISPLAY_TEXT.text = _pvItemM.vIVIDDISPLAYTEXT;
     _LeaveTheStore.text = _pvItemM.vISITSTATES;
@@ -411,10 +474,10 @@
         CGFloat oneCellHeight = 0;
         if(PARTY_NAME_height > oneLine) {
             
-            oneCellHeight = kCellHeight + PARTY_NAME_height - oneLine;
+            oneCellHeight = kCellHeight_ShowOrder + PARTY_NAME_height - oneLine;
         } else {
             
-            oneCellHeight = kCellHeight;
+            oneCellHeight = kCellHeight_ShowOrder;
         }
         m.cellHeight = oneCellHeight;
         
@@ -446,7 +509,7 @@
     
     _CheckOrderListM = CheckOrderListM;
     
-    _step4ViewHeight.constant = 30 + kCellHeight + 30;
+    _step4ViewHeight.constant = 30 + kCellHeight_ShowOrder + 30;
     [self updateViewConstraints];
     
     [_tableView removeNoOrderPrompt];
@@ -473,7 +536,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         
         _ACTUAL_VISITING_ADDRESS.text = _pvItemM.aCTUALVISITINGADDRESS;
-        _CHECK_INVENTORY.text = _pvItemM.cHECKINVENTORY;
+        [self setCheckInventory];
         _RECOMMENDED_ORDER.text = _pvItemM.rECOMMENDEDORDER;
         _VIVID_DISPLAY_TEXT.text = _pvItemM.vIVIDDISPLAYTEXT;
         _LeaveTheStore.text = _pvItemM.vISITSTATES;

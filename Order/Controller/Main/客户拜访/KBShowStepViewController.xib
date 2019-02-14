@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,6 +31,7 @@
                 <outlet property="step6ViewHeight" destination="a23-Xp-3cM" id="ELg-Fy-bnm"/>
                 <outlet property="stepView1" destination="cLq-2W-95Q" id="9uf-EM-y64"/>
                 <outlet property="tableView" destination="4RP-oq-4a2" id="zoo-iP-Jqg"/>
+                <outlet property="tableView_checkInventory" destination="SCM-H0-mJV" id="PxO-8g-g7d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -244,15 +245,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJR-4D-ObC" userLabel="检查库存备注">
                                             <rect key="frame" x="0.0" y="70" width="375" height="30"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk5-K2-5SY">
-                                                    <rect key="frame" x="51" y="7" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.47292302520000001" green="0.47380878069999999" blue="0.48732529009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-zQ-WnO">
                                                     <rect key="frame" x="8" y="6.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.47292302520000001" green="0.47380878069999999" blue="0.48732529009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk5-K2-5SY">
+                                                    <rect key="frame" x="51" y="7" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.47292302520000001" green="0.47380878069999999" blue="0.48732529009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -266,16 +267,28 @@
                                                 <constraint firstAttribute="height" constant="30" id="qKf-iF-5T3"/>
                                             </constraints>
                                         </view>
+                                        <tableView clipsSubviews="YES" tag="1002" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SCM-H0-mJV">
+                                            <rect key="frame" x="0.0" y="30" width="375" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="9D2-Qv-Nbr"/>
+                                                <outlet property="delegate" destination="-1" id="L98-o0-ave"/>
+                                            </connections>
+                                        </tableView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="hNT-bn-9Jp" secondAttribute="trailing" id="2i4-yt-nPN"/>
                                         <constraint firstItem="hNT-bn-9Jp" firstAttribute="leading" secondItem="erf-oE-Lkb" secondAttribute="leading" id="2n0-JV-rIC"/>
                                         <constraint firstAttribute="bottom" secondItem="AJR-4D-ObC" secondAttribute="bottom" id="6VG-F4-Idk"/>
+                                        <constraint firstItem="SCM-H0-mJV" firstAttribute="leading" secondItem="erf-oE-Lkb" secondAttribute="leading" id="7dF-1A-dj0"/>
                                         <constraint firstItem="hNT-bn-9Jp" firstAttribute="top" secondItem="erf-oE-Lkb" secondAttribute="top" id="8xw-eg-8Qc"/>
                                         <constraint firstItem="AJR-4D-ObC" firstAttribute="leading" secondItem="erf-oE-Lkb" secondAttribute="leading" id="FRs-R2-fKW"/>
+                                        <constraint firstItem="SCM-H0-mJV" firstAttribute="top" secondItem="hNT-bn-9Jp" secondAttribute="bottom" id="Ff5-DS-bYS"/>
+                                        <constraint firstItem="AJR-4D-ObC" firstAttribute="top" secondItem="SCM-H0-mJV" secondAttribute="bottom" id="TP0-j4-RRt"/>
                                         <constraint firstAttribute="height" constant="100" id="Zpe-sz-Ydr"/>
                                         <constraint firstAttribute="trailing" secondItem="AJR-4D-ObC" secondAttribute="trailing" id="nAu-G1-hcA"/>
+                                        <constraint firstAttribute="trailing" secondItem="SCM-H0-mJV" secondAttribute="trailing" id="w2g-uN-OHV"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBn-rb-0wm" userLabel="建议订单">
@@ -298,7 +311,7 @@
                                                 <constraint firstItem="aAs-dI-1G4" firstAttribute="leading" secondItem="Ezp-ja-TS0" secondAttribute="leading" constant="10" id="tRg-6Z-1Dc"/>
                                             </constraints>
                                         </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4RP-oq-4a2">
+                                        <tableView clipsSubviews="YES" tag="1001" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4RP-oq-4a2">
                                             <rect key="frame" x="0.0" y="30" width="375" height="90"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>

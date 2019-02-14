@@ -89,7 +89,7 @@
     _CONTACTS_TEL.text = getPartyVisitItemM.cONTACTSTEL;
     _PARTY_NAME.text = getPartyVisitItemM.pARTYNAME;
     _PARTY_ADDRESS.text = getPartyVisitItemM.pARTYADDRESS;
-    _ADD_DATE.text = getPartyVisitItemM.aDDDATE;
+    _ADD_DATE.text = getPartyVisitItemM.vISITDATE;
     if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"未拜访"]) {
      
         [_VISIT_STATES setText:@"未拜访"];

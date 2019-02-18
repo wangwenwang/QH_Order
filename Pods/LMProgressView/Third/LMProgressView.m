@@ -100,7 +100,7 @@
 #pragma mark - SET方法
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
-    _progressLabel.text = [NSString stringWithFormat:@"%2.0f%%", progress * 100];
+    _progressLabel.text = [NSString stringWithFormat:@"达成率：%2.0f%%", progress * 100];
     
     UIBezierPath *path = [[UIBezierPath alloc] init];
     CGPoint beginP = CGPointMake(_x, _y);

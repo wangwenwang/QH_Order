@@ -15,13 +15,13 @@
 
 @interface KPIExamViewController ()<GetTargetByUserIdxServiceDelegate>
 
-// 总订单数
+// 总件数（箱也认为件，瓶要通过转换率转为件）
 @property (weak, nonatomic) IBOutlet UIView *orderSumQtyContainerView;
 
 // 总金额
 @property (weak, nonatomic) IBOutlet UIView *orderSumAmountContainerView;
 
-// 订单数量考核
+// 总件数考核 （箱也认为件，瓶要通过转换率转为件）
 @property (nonatomic, strong)LMProgressView *progressView_qty;
 
 // 总金额考核
@@ -77,8 +77,8 @@
 #pragma mark - 功能函数
 - (void)initUI {
     
-    _SalesVolume.text = @"0单";
-    _CompleteSalesVolume.text = @"0单";
+    _SalesVolume.text = @"0件";
+    _CompleteSalesVolume.text = @"0件";
     _AmountMoney.text = @"0元";
     _CompleteAmountMoney.text = @"0元";
 }
@@ -139,8 +139,8 @@
     
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    _SalesVolume.text = [NSString stringWithFormat:@"%@单", KPIExamM.salesVolume];
-    _CompleteSalesVolume.text = [NSString stringWithFormat:@"%@单", KPIExamM.completeSalesVolume];
+    _SalesVolume.text = [NSString stringWithFormat:@"%@件", KPIExamM.salesVolume];
+    _CompleteSalesVolume.text = [NSString stringWithFormat:@"%@件", KPIExamM.completeSalesVolume];
     _AmountMoney.text = [NSString stringWithFormat:@"%@元", KPIExamM.amountMoney];
     _CompleteAmountMoney.text = [NSString stringWithFormat:@"%@元", KPIExamM.completeAmountMoney];
     

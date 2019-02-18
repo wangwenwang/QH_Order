@@ -133,11 +133,15 @@
 - (void)requstProduct:(NSString *)brand andType:(NSString *)type {
     
     NSString *_type = type;
+    NSString *_brand = brand;
+    if([brand isEqualToString:@"全部"]) {
+        _brand = @"";
+    }
     if([type isEqualToString:@"全部"]) {
         _type = @"";
     }
     
-    [_selectGoodsService getProductsData:_pvItemM.iDX andOrderAddressIdx:_pvItemM.aDDRESSIDX andProductTypeIndex:0 andProductType:brand andOrderBrand:_type];
+    [_selectGoodsService getProductsData:_pvItemM.iDX andOrderAddressIdx:_pvItemM.aDDRESSIDX andProductTypeIndex:0 andProductType:_brand andOrderBrand:_type];
 }
 
 // 弹出选择品牌
@@ -367,15 +371,16 @@
     }
     
     // 清理品牌并去重
-//    NSArray *brandsTemp = [_brands copy];
-//    for (ProductTbModel *brand in brandsTemp) {
-//        if([brand.PRODUCT_TYPE isEqualToString:@"全部"] ||
+    NSArray *brandsTemp = [_brands copy];
+    for (ProductTbModel *brand in brandsTemp) {
+        if(
+//           [brand.PRODUCT_TYPE isEqualToString:@"全部"] ||
 //           [brand.PRODUCT_CLASS isEqualToString:@"全部"] ||
-//           [brand.PRODUCT_TYPE isEqualToString:@""] ||
-//           [brand.PRODUCT_CLASS isEqualToString:@""]) {
-//            [_brands removeObject:brand];
-//        }
-//    }
+           [brand.PRODUCT_TYPE isEqualToString:@""] ||
+           [brand.PRODUCT_CLASS isEqualToString:@""]) {
+            [_brands removeObject:brand];
+        }
+    }
     _brands = [_brands valueForKeyPath:@"@distinctUnionOfObjects.self"];
     
     // 设置默认品牌
@@ -387,7 +392,7 @@
 
     // 请求产品
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [_selectGoodsService getProductsData:_pvItemM.iDX andOrderAddressIdx:_pvItemM.aDDRESSIDX andProductTypeIndex:0 andProductType:_brandLabel.text andOrderBrand:@""];
+    [self requstProduct:_brandLabel.text andType:@""];
 }
 
 

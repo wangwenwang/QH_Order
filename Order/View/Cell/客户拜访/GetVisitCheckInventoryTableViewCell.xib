@@ -34,15 +34,32 @@
                                 <color key="textColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2H-58-EBv">
-                                <rect key="frame" x="233" y="7.5" width="75" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-77-rPZ" userLabel="数量框">
+                                <rect key="frame" x="233" y="0.0" width="75" height="46"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2H-58-EBv">
+                                        <rect key="frame" x="0.0" y="8" width="75" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设置" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8h-MU-5no">
+                                        <rect key="frame" x="29" y="14" width="43" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="49R-nZ-MZ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2H-58-EBv" secondAttribute="trailing" id="GBr-YV-xWu"/>
+                                    <constraint firstItem="h2H-58-EBv" firstAttribute="centerY" secondItem="D3I-77-rPZ" secondAttribute="centerY" id="MAJ-ao-ml1"/>
+                                    <constraint firstItem="h2H-58-EBv" firstAttribute="leading" secondItem="D3I-77-rPZ" secondAttribute="leading" id="OsR-1U-lgn"/>
+                                    <constraint firstItem="s8h-MU-5no" firstAttribute="centerY" secondItem="D3I-77-rPZ" secondAttribute="centerY" id="Usg-PO-2fp"/>
+                                    <constraint firstAttribute="trailing" secondItem="s8h-MU-5no" secondAttribute="trailing" constant="3" id="ZHV-f2-ghv"/>
+                                    <constraint firstAttribute="width" constant="75" id="lVW-BJ-qFu"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yjk-Qp-X4p" userLabel="我是帅气的分割线">
                                 <rect key="frame" x="10" y="46" width="310" height="0.5"/>
                                 <color key="backgroundColor" red="0.88296818730000004" green="0.88298887010000005" blue="0.88297766450000004" alpha="1" colorSpace="deviceRGB"/>
@@ -109,16 +126,17 @@
                             <constraint firstAttribute="trailing" secondItem="Yjk-Qp-X4p" secondAttribute="trailing" id="4Y6-t1-e6D"/>
                             <constraint firstItem="GD2-ru-tD3" firstAttribute="leading" secondItem="5Xr-9X-Hcq" secondAttribute="leading" id="KbR-ef-ZLW"/>
                             <constraint firstItem="Qzs-vD-2BY" firstAttribute="leading" secondItem="5Xr-9X-Hcq" secondAttribute="leading" id="MTj-A6-zY7"/>
+                            <constraint firstItem="D3I-77-rPZ" firstAttribute="top" secondItem="5Xr-9X-Hcq" secondAttribute="top" id="Ne0-Oa-Rlm"/>
+                            <constraint firstItem="D3I-77-rPZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e5p-uA-fpp" secondAttribute="trailing" constant="6" id="Nq4-Hu-u3c"/>
                             <constraint firstItem="GD2-ru-tD3" firstAttribute="top" secondItem="Yjk-Qp-X4p" secondAttribute="bottom" constant="2" id="PNw-dO-dRX"/>
                             <constraint firstItem="e5p-uA-fpp" firstAttribute="leading" secondItem="5Xr-9X-Hcq" secondAttribute="leading" constant="10" id="Pnf-S0-cjb"/>
-                            <constraint firstItem="h2H-58-EBv" firstAttribute="centerY" secondItem="e5p-uA-fpp" secondAttribute="centerY" id="SzP-Xu-VyO"/>
                             <constraint firstAttribute="trailing" secondItem="Qzs-vD-2BY" secondAttribute="trailing" id="WRp-Ud-lBo"/>
                             <constraint firstAttribute="bottom" secondItem="GD2-ru-tD3" secondAttribute="bottom" id="ZiD-XK-SbK"/>
                             <constraint firstItem="Yjk-Qp-X4p" firstAttribute="leading" secondItem="e5p-uA-fpp" secondAttribute="leading" id="eD9-Vl-et4"/>
-                            <constraint firstAttribute="trailing" secondItem="h2H-58-EBv" secondAttribute="trailing" constant="12" id="hpc-Cn-6gk"/>
                             <constraint firstItem="Qzs-vD-2BY" firstAttribute="top" secondItem="5Xr-9X-Hcq" secondAttribute="top" id="iAw-Jr-esk"/>
+                            <constraint firstItem="Yjk-Qp-X4p" firstAttribute="top" secondItem="D3I-77-rPZ" secondAttribute="bottom" id="jFR-2s-APB"/>
+                            <constraint firstAttribute="trailing" secondItem="D3I-77-rPZ" secondAttribute="trailing" constant="12" id="pTL-uS-9gm"/>
                             <constraint firstItem="e5p-uA-fpp" firstAttribute="top" secondItem="5Xr-9X-Hcq" secondAttribute="top" constant="13.5" id="plL-EZ-xz3"/>
-                            <constraint firstItem="h2H-58-EBv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e5p-uA-fpp" secondAttribute="trailing" constant="5" id="sM3-26-i30"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -131,8 +149,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <connections>
-                <outlet property="productNameLabel" destination="e5p-uA-fpp" id="pBK-IT-96W"/>
+                <outlet property="name" destination="e5p-uA-fpp" id="jLx-1B-wNp"/>
                 <outlet property="qty" destination="h2H-58-EBv" id="aZe-D8-SJS"/>
+                <outlet property="uom" destination="s8h-MU-5no" id="BL3-P2-4sJ"/>
             </connections>
             <point key="canvasLocation" x="34" y="81.5"/>
         </tableViewCell>

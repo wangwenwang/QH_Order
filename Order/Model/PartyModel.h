@@ -36,6 +36,8 @@
 /// Cell高度
 @property (assign, nonatomic) CGFloat cellHeight;
 
+
+
 /// 客户等级
 @property(copy, nonatomic)NSString *PARTY_LEVEL;
 /// 客户状态码
@@ -48,5 +50,18 @@
 @property(copy, nonatomic)NSString *WEEKLY_VISIT_FREQUENCY;
 /// 单店销量/天
 @property(copy, nonatomic)NSString *SINGLE_STORE_SALES;
+
+
+
+/// 联系人
+@property(copy, nonatomic)NSString *CONTACT_PERSON;
+/// 联系电话
+@property(copy, nonatomic)NSString *CONTACT_TEL;
+/// 详情地址
+@property(copy, nonatomic)NSString *ADDRESS_INFO;
+/// 地址IDX
+@property(copy, nonatomic)NSString *ADDRESS_IDX;
+/// 创建时间
+@property(copy, nonatomic)NSString *ADD_DATE;
 
 @end

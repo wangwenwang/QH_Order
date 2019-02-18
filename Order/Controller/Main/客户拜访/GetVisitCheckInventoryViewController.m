@@ -49,6 +49,15 @@
 // 已检查产品
 @property (strong, nonatomic)NSMutableArray *checkOkProducts;
 
+// 上部分高度
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+
+// 产品列表高度
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *productTableViewHeight;
+
+// 底部分高度
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
+
 @end
 
 
@@ -59,6 +68,8 @@
 #define kCellHeight_CheckInventoryOk 53
 
 #define kCellName_CheckInventoryOk @"GetVisitCheckInventoryOkTableViewCell"
+
+#define kSplitter @"^；"
 
 
 @implementation GetVisitCheckInventoryViewController
@@ -93,6 +104,13 @@
     [_selectGoodsService getProductTypesData];
 }
 
+- (void)updateViewConstraints {
+    
+    [super updateViewConstraints];
+    
+    _productTableViewHeight.constant = (ScreenHeight - kStatusHeight - kNavHeight - _topViewHeight.constant - _bottomViewHeight.constant) / 2;
+}
+
 
 - (void)didReceiveMemoryWarning {
     
@@ -114,7 +132,12 @@
 
 - (void)requstProduct:(NSString *)brand andType:(NSString *)type {
     
-    [_selectGoodsService getProductsData:_pvItemM.iDX andOrderAddressIdx:_pvItemM.aDDRESSIDX andProductTypeIndex:0 andProductType:brand andOrderBrand:type];
+    NSString *_type = type;
+    if([type isEqualToString:@"全部"]) {
+        _type = @"";
+    }
+    
+    [_selectGoodsService getProductsData:_pvItemM.iDX andOrderAddressIdx:_pvItemM.aDDRESSIDX andProductTypeIndex:0 andProductType:brand andOrderBrand:_type];
 }
 
 // 弹出选择品牌
@@ -201,15 +224,27 @@
     s.delegate = self;
     NSString *checkContext = @"";
     for (ProductModel *p in _checkOkProducts) {
-        if([checkContext isEqualToString:@""]) {
-            checkContext = [NSString stringWithFormat:@"%@（%lld）", p.PRODUCT_NAME, p.CHOICED_SIZE];
+        NSString *uom;
+        if([Tools hasBASE_RATE:p.BASE_RATE]) {
+            uom = p.PACK_UOM;
         }else {
-            checkContext = [NSString stringWithFormat:@"%@^；%@（%lld）", checkContext, p.PRODUCT_NAME, p.CHOICED_SIZE];
+            uom = p.PRODUCT_UOM;
+        }
+        if([checkContext isEqualToString:@""]) {
+            checkContext = [NSString stringWithFormat:@"%@（%lld%@）", p.PRODUCT_NAME, p.CHOICED_SIZE, uom];
+        }else {
+            checkContext = [NSString stringWithFormat:@"%@%@%@（%lld%@）", checkContext, kSplitter, p.PRODUCT_NAME, p.CHOICED_SIZE, uom];
         }
     }
-    checkContext = [NSString stringWithFormat:@"%@^；%@", checkContext, _strCheckInventory.text];
+    checkContext = [NSString stringWithFormat:@"%@%@%@", checkContext, kSplitter, _strCheckInventory.text];
     
     [s GetVisitCheckInventory:_pvItemM.vISITIDX andStrCheckInventory:checkContext];
+}
+
+// 点击屏幕，收回键盘
+- (IBAction)screenOnclick {
+    
+    [self.view endEditing:YES];
 }
 
 #pragma mark - UITableViewDelegate
@@ -247,7 +282,7 @@
     if(tableView.tag == 1001) {
         
         // 获取数据
-        ProductModel *m = _productsFilter[indexPath.row];
+        ProductModel *p = _productsFilter[indexPath.row];
         
         // 处理界面
         static NSString *cellId = kCellName_CheckInventory;
@@ -256,7 +291,7 @@
         cell.tag = indexPath.row;
         
         // 填充基本数据
-        cell.productNameLabel.text = m.PRODUCT_NAME;
+        cell.productM = p;
         
         return cell;
     }else if(tableView.tag == 1002) {
@@ -265,9 +300,16 @@
         static NSString *cellId = kCellName_CheckInventoryOk;
         GetVisitCheckInventoryOkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
         cell.delegate = self;
+        cell.tag = indexPath.row;
         
         ProductModel *p = _checkOkProducts[indexPath.row];
-        cell.productNameLabel.text = [NSString stringWithFormat:@"%@（%lld）", p.PRODUCT_NAME, p.CHOICED_SIZE];
+        NSString *uom;
+        if([Tools hasBASE_RATE:p.BASE_RATE]) {
+            uom = p.PACK_UOM;
+        }else {
+            uom = p.PRODUCT_UOM;
+        }
+        cell.productNameLabel.text = [NSString stringWithFormat:@"%@（%lld%@）", p.PRODUCT_NAME, p.CHOICED_SIZE, uom];
         return cell;
     }else {
         
@@ -325,15 +367,15 @@
     }
     
     // 清理品牌并去重
-    NSArray *brandsTemp = [_brands copy];
-    for (ProductTbModel *brand in brandsTemp) {
-        if([brand.PRODUCT_TYPE isEqualToString:@"全部"] ||
-           [brand.PRODUCT_CLASS isEqualToString:@"全部"] ||
-           [brand.PRODUCT_TYPE isEqualToString:@""] ||
-           [brand.PRODUCT_CLASS isEqualToString:@""]) {
-            [_brands removeObject:brand];
-        }
-    }
+//    NSArray *brandsTemp = [_brands copy];
+//    for (ProductTbModel *brand in brandsTemp) {
+//        if([brand.PRODUCT_TYPE isEqualToString:@"全部"] ||
+//           [brand.PRODUCT_CLASS isEqualToString:@"全部"] ||
+//           [brand.PRODUCT_TYPE isEqualToString:@""] ||
+//           [brand.PRODUCT_CLASS isEqualToString:@""]) {
+//            [_brands removeObject:brand];
+//        }
+//    }
     _brands = [_brands valueForKeyPath:@"@distinctUnionOfObjects.self"];
     
     // 设置默认品牌
@@ -380,6 +422,8 @@
 #pragma mark - GetVisitCheckInventoryTableViewCellDelegate
 
 - (void)okOfGetVisitCheckInventoryTableViewCell:(NSUInteger)row andQty:(NSUInteger)qty {
+    
+    [self.view endEditing:YES];
     
     ProductModel *p = _productsFilter[row];
     

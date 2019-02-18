@@ -28,12 +28,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>客户管理</string>
-		<key>imageName</key>
-		<string>ic_minefragment_address</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>版本号：     </string>
 		<key>imageName</key>
 		<string>ic_minefragment_updataversion</string>

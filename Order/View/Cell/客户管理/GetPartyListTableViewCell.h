@@ -12,7 +12,10 @@
 @protocol GetPartyListTableViewCellDelegate <NSObject>
 
 /// 删除地址
-- (void)deleteOnclick:(NSUInteger)row;
+//- (void)deleteOnclick:(NSUInteger)row;
+
+/// 编辑客户
+- (void)editOnclick:(NSUInteger)row;
 
 @end
 

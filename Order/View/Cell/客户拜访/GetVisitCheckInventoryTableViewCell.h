@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductModel.h"
 
 @protocol GetVisitCheckInventoryTableViewCellDelegate <NSObject>
 
@@ -19,7 +20,6 @@
 
 @property (weak, nonatomic) id<GetVisitCheckInventoryTableViewCellDelegate> delegate;
 
-/// 产品名称
-@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (strong, nonatomic) ProductModel *productM;
 
 @end

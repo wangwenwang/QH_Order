@@ -61,7 +61,7 @@
 // 第三步，检查库存
 @property (weak, nonatomic) IBOutlet UILabel *CHECK_INVENTORY;
 @property (weak, nonatomic) IBOutlet UITableView *tableView_checkInventory;
-@property (weak, nonatomic) NSArray *checkInventorys;
+@property (strong, nonatomic) NSArray *checkInventorys;
 
 // 第四步，建议订单
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -131,8 +131,6 @@
     
     [self registerCell];
     
-    [self dealData];
-    
     [self initUI];
     
     [_service GetPictureByVisitIdx:_pvItemM.vISITIDX andStrStep:@"Visit"];
@@ -185,12 +183,9 @@
 }
 
 
-- (void)dealData {
+- (void)setCheckInventory {
     
     _checkInventorys = [_pvItemM.cHECKINVENTORY componentsSeparatedByString:@"^；"];
-}
-
-- (void)setCheckInventory {
     if(_checkInventorys.count > 1) {
         _step3ViewHeight.constant = 30 + kCellHeight_ShowCheckInventory * (_checkInventorys.count - 1) + 30;
         [self updateViewConstraints];

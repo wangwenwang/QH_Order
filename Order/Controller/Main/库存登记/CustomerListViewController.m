@@ -42,6 +42,9 @@
 #import "GetPartyVisitListViewController.h"
 #import "AddPartyVisitViewController.h"
 
+// 订单查询
+#import "GetAppOutPutListViewController.h"
+
 @interface CustomerListViewController ()<MakeOrderServiceDelegate, UISearchResultsUpdating, UISearchControllerDelegate, LMBlurredViewDelegate, UITableViewDataSource, UITableViewDelegate, SelectGoodsServiceDelegate> {
     
     CustomerListSearchResultsViewController *searchResultsViewController;
@@ -283,6 +286,13 @@
 }
 
 
+- (void)popGetAppOutPutListVC {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kGetTmsOrderByAddressViewController_refreshList object:nil userInfo:@{@"ADDRESS_IDX":_currentAddress.IDX, @"PARTY_NAME":_currentParty.PARTY_NAME,  @"PARTY_CODE":_currentParty.PARTY_CODE}];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -417,6 +427,15 @@
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [_service getPartygetAddressInfo:m.IDX];
         }
+        // 订单查询
+        else if([_vcClass isEqualToString:NSStringFromClass([GetAppOutPutListViewController class])]) {
+            
+            PartyModel *m = _partysFilter[indexPath.row];
+            _currentParty = m;
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [_service getPartygetAddressInfo:m.IDX];
+        }
     }
     
     // 客户地址
@@ -449,6 +468,12 @@
         else if([_vcClass isEqualToString:NSStringFromClass([GetPartyVisitListViewController class])]) {
             
             [self popGetPartyVisitVC];
+        }
+        
+        // 订单查询
+        else if([_vcClass isEqualToString:NSStringFromClass([GetAppOutPutListViewController class])]) {
+            
+            [self popGetAppOutPutListVC];
         }
     }
 }
@@ -649,6 +674,12 @@
         else if([_vcClass isEqualToString:NSStringFromClass([GetPartyVisitListViewController class])]) {
             
             [self popGetPartyVisitVC];
+        }
+        
+        // 订单查询
+        else if([_vcClass isEqualToString:NSStringFromClass([GetAppOutPutListViewController class])]) {
+            
+            [self popGetAppOutPutListVC];
         }
     } else {
         

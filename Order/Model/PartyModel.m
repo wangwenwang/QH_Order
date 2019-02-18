@@ -30,6 +30,12 @@
         _WEEKLY_VISIT_FREQUENCY = @"";
         
         _SINGLE_STORE_SALES = @"";
+        _CONTACT_PERSON = @"";
+        _CONTACT_TEL = @"";
+        _ADDRESS_INFO = @"";
+        _ADDRESS_IDX = @"";
+        
+        _ADD_DATE = @"";
     }
     return self;
 }
@@ -53,6 +59,11 @@
         _LINE = dict[@"LINE"] ? dict[@"LINE"] : @"";
         _WEEKLY_VISIT_FREQUENCY = dict[@"WEEKLY_VISIT_FREQUENCY"] ? dict[@"WEEKLY_VISIT_FREQUENCY"] : @"";
         _SINGLE_STORE_SALES = dict[@"SINGLE_STORE_SALES"] ? dict[@"SINGLE_STORE_SALES"] : @"";
+        _CONTACT_PERSON = dict[@"CONTACT_PERSON"] ? dict[@"CONTACT_PERSON"] : @"";
+        _CONTACT_TEL = dict[@"CONTACT_TEL"] ? dict[@"CONTACT_TEL"] : @"";
+        _ADDRESS_INFO = dict[@"ADDRESS_INFO"] ? dict[@"ADDRESS_INFO"] : @"";
+        _ADDRESS_IDX = dict[@"ADDRESS_IDX"] ? dict[@"ADDRESS_IDX"] : @"";
+        _ADD_DATE = dict[@"ADD_DATE"] ? dict[@"ADD_DATE"] : @"";
         
     } @catch (NSException *exception) {
         

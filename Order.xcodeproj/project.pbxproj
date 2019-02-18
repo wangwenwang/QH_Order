@@ -164,14 +164,10 @@
 		304A7AF31DBA62710039B0B2 /* ConfirmOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304A7AF11DBA62710039B0B2 /* ConfirmOrderTableViewCell.m */; };
 		304A7AF41DBA62710039B0B2 /* ConfirmOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304A7AF21DBA62710039B0B2 /* ConfirmOrderTableViewCell.xib */; };
 		304FBAB91EF2635700FC3EFC /* OrderCancelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FBAB81EF2635700FC3EFC /* OrderCancelService.m */; };
-		3051DB611F1868840034629B /* AddPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB5F1F1868840034629B /* AddPartyViewController.m */; };
-		3051DB621F1868840034629B /* AddPartyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3051DB601F1868840034629B /* AddPartyViewController.xib */; };
 		3051DB6D1F1878570034629B /* AddPartyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB691F1878570034629B /* AddPartyService.m */; };
 		3051DB6E1F1878570034629B /* DeleteAppUserPartyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB6B1F1878570034629B /* DeleteAppUserPartyService.m */; };
 		3051DB711F18786F0034629B /* AddAddressService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB701F18786F0034629B /* AddAddressService.m */; };
 		3051DB771F1893C80034629B /* NormalAdressListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB761F1893C80034629B /* NormalAdressListService.m */; };
-		3051DB7B1F1895740034629B /* NormalAdressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB791F1895740034629B /* NormalAdressListViewController.m */; };
-		3051DB7C1F1895740034629B /* NormalAdressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3051DB7A1F1895740034629B /* NormalAdressListViewController.xib */; };
 		3051DB921F1898EF0034629B /* NormalAdressListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB911F1898EF0034629B /* NormalAdressListModel.m */; };
 		3051DB951F18999A0034629B /* NormalAdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3051DB941F18999A0034629B /* NormalAdressModel.m */; };
 		3054D1021FFC74E900E1D9B2 /* MainCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3054D1011FFC74E900E1D9B2 /* MainCollection.plist */; };
@@ -292,12 +288,6 @@
 		30BB2DFD1F468281002E51E7 /* StockProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2DFC1F468281002E51E7 /* StockProductModel.m */; };
 		30BB2E021F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2E001F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.m */; };
 		30BB2E031F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BB2E011F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.xib */; };
-		30BBF1361F17612400496518 /* Add_AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBF1311F17612400496518 /* Add_AddressViewController.m */; };
-		30BBF1371F17612400496518 /* Add_AddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBF1321F17612400496518 /* Add_AddressViewController.xib */; };
-		30BBF1381F17612400496518 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBF1341F17612400496518 /* AddressListViewController.m */; };
-		30BBF1391F17612400496518 /* AddressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBF1351F17612400496518 /* AddressListViewController.xib */; };
-		30BBF1421F17695B00496518 /* GetPartyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBF1401F17695B00496518 /* GetPartyListViewController.m */; };
-		30BBF1431F17695B00496518 /* GetPartyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BBF1411F17695B00496518 /* GetPartyListViewController.xib */; };
 		30BE65031EE6BE5B00BD6978 /* ProductManListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BE65011EE6BE5B00BD6978 /* ProductManListTableViewCell.m */; };
 		30BE65041EE6BE5B00BD6978 /* ProductManListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BE65021EE6BE5B00BD6978 /* ProductManListTableViewCell.xib */; };
 		30BFCDA71FD7F5CD00ED3469 /* OrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BFCDA41FD7F5CC00ED3469 /* OrderDetailTableViewCell.xib */; };
@@ -512,12 +502,34 @@
 		3BB4AAA4221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA2221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.xib */; };
 		3BB4AAA82215989900BE16F9 /* ShowCheckInventoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA62215989900BE16F9 /* ShowCheckInventoryTableViewCell.m */; };
 		3BB4AAA92215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA72215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib */; };
+		3BB4AABD221684A400BE16F9 /* GetPartyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAAD221684A400BE16F9 /* GetPartyListViewController.m */; };
+		3BB4AABE221684A400BE16F9 /* AddPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAAE221684A400BE16F9 /* AddPartyViewController.m */; };
+		3BB4AABF221684A400BE16F9 /* Add_AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB0221684A400BE16F9 /* Add_AddressViewController.m */; };
+		3BB4AAC0221684A400BE16F9 /* Add_AddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB1221684A400BE16F9 /* Add_AddressViewController.xib */; };
+		3BB4AAC1221684A400BE16F9 /* NormalAdressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB2221684A400BE16F9 /* NormalAdressListViewController.m */; };
+		3BB4AAC2221684A400BE16F9 /* NormalAdressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB4221684A400BE16F9 /* NormalAdressListViewController.xib */; };
+		3BB4AAC3221684A400BE16F9 /* AddressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB7221684A400BE16F9 /* AddressListViewController.xib */; };
+		3BB4AAC4221684A400BE16F9 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB8221684A400BE16F9 /* AddressListViewController.m */; };
+		3BB4AAC5221684A400BE16F9 /* GetPartyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAB9221684A400BE16F9 /* GetPartyListViewController.xib */; };
+		3BB4AAC6221684A400BE16F9 /* AddPartyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AABC221684A400BE16F9 /* AddPartyViewController.xib */; };
+		3BB4AAC92216881C00BE16F9 /* GetPartyListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAC82216881C00BE16F9 /* GetPartyListService.m */; };
+		3BB4AACD22169BBC00BE16F9 /* EditPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AACB22169BBC00BE16F9 /* EditPartyViewController.m */; };
+		3BB4AACE22169BBC00BE16F9 /* EditPartyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AACC22169BBC00BE16F9 /* EditPartyViewController.xib */; };
+		3BB4AAD22216BB0200BE16F9 /* GetAppOutPutListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAD02216BB0200BE16F9 /* GetAppOutPutListViewController.m */; };
+		3BB4AAD32216BB0200BE16F9 /* GetAppOutPutListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAD12216BB0200BE16F9 /* GetAppOutPutListViewController.xib */; };
+		3BB4AAD72216BD4C00BE16F9 /* GetAppOutPutListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAD62216BD4C00BE16F9 /* GetAppOutPutListService.m */; };
+		3BB4AADC2216D3B500BE16F9 /* CondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AADA2216D3B500BE16F9 /* CondTableViewCell.m */; };
+		3BB4AADD2216D3B500BE16F9 /* CondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AADB2216D3B500BE16F9 /* CondTableViewCell.xib */; };
+		3BB4AAE12216E79C00BE16F9 /* CondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAE02216E79C00BE16F9 /* CondModel.m */; };
+		3BB4AAE5221704C100BE16F9 /* GetTargetByUserIdxService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAE4221704C100BE16F9 /* GetTargetByUserIdxService.m */; };
+		3BB4AAEF221706C600BE16F9 /* KPIExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAEE221706C600BE16F9 /* KPIExamModel.m */; };
+		3BB4AAF42217173400BE16F9 /* KPIExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */; };
+		3BB4AAF52217173400BE16F9 /* KPIExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */; };
 		3BDABE8E21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */; };
 		3BDABE8F21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */; };
 		3BDABE9321A4181100C0E72B /* GetVisitRecommendedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE9121A4181100C0E72B /* GetVisitRecommendedOrderViewController.m */; };
 		3BDABE9421A4181100C0E72B /* GetVisitRecommendedOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDABE9221A4181100C0E72B /* GetVisitRecommendedOrderViewController.xib */; };
 		3BDC8837218B4D960013CD81 /* IDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC8836218B4D960013CD81 /* IDLabel.m */; };
-		3BE8F91E21B659800072090C /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8F91C21B659800072090C /* CustomNavigationController.m */; };
 		3BE8F91F21B65A7F0072090C /* YBCurrentLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8F90921B658C60072090C /* YBCurrentLocationCell.m */; };
 		3BE8F92021B65A7F0072090C /* YBNeighborLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8F90C21B658C60072090C /* YBNeighborLocationCell.m */; };
 		3BE8F92121B65A7F0072090C /* YBLocationPickerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8F91021B658C60072090C /* YBLocationPickerViewController.mm */; };
@@ -803,9 +815,6 @@
 		304A7AF21DBA62710039B0B2 /* ConfirmOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderTableViewCell.xib; sourceTree = "<group>"; };
 		304FBAB71EF2635700FC3EFC /* OrderCancelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCancelService.h; sourceTree = "<group>"; };
 		304FBAB81EF2635700FC3EFC /* OrderCancelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCancelService.m; sourceTree = "<group>"; };
-		3051DB5E1F1868840034629B /* AddPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyViewController.h; sourceTree = "<group>"; };
-		3051DB5F1F1868840034629B /* AddPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyViewController.m; sourceTree = "<group>"; };
-		3051DB601F1868840034629B /* AddPartyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPartyViewController.xib; sourceTree = "<group>"; };
 		3051DB681F1878570034629B /* AddPartyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyService.h; sourceTree = "<group>"; };
 		3051DB691F1878570034629B /* AddPartyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyService.m; sourceTree = "<group>"; };
 		3051DB6A1F1878570034629B /* DeleteAppUserPartyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteAppUserPartyService.h; sourceTree = "<group>"; };
@@ -814,9 +823,6 @@
 		3051DB701F18786F0034629B /* AddAddressService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressService.m; sourceTree = "<group>"; };
 		3051DB751F1893C80034629B /* NormalAdressListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalAdressListService.h; sourceTree = "<group>"; };
 		3051DB761F1893C80034629B /* NormalAdressListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalAdressListService.m; sourceTree = "<group>"; };
-		3051DB781F1895740034629B /* NormalAdressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalAdressListViewController.h; sourceTree = "<group>"; };
-		3051DB791F1895740034629B /* NormalAdressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalAdressListViewController.m; sourceTree = "<group>"; };
-		3051DB7A1F1895740034629B /* NormalAdressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalAdressListViewController.xib; sourceTree = "<group>"; };
 		3051DB901F1898EF0034629B /* NormalAdressListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalAdressListModel.h; sourceTree = "<group>"; };
 		3051DB911F1898EF0034629B /* NormalAdressListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalAdressListModel.m; sourceTree = "<group>"; };
 		3051DB931F18999A0034629B /* NormalAdressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalAdressModel.h; sourceTree = "<group>"; };
@@ -1021,15 +1027,6 @@
 		30BB2DFF1F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store_GetOutProductListTableViewCell.h; sourceTree = "<group>"; };
 		30BB2E001F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_GetOutProductListTableViewCell.m; sourceTree = "<group>"; };
 		30BB2E011F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Store_GetOutProductListTableViewCell.xib; sourceTree = "<group>"; };
-		30BBF1301F17612400496518 /* Add_AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Add_AddressViewController.h; sourceTree = "<group>"; };
-		30BBF1311F17612400496518 /* Add_AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Add_AddressViewController.m; sourceTree = "<group>"; };
-		30BBF1321F17612400496518 /* Add_AddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Add_AddressViewController.xib; sourceTree = "<group>"; };
-		30BBF1331F17612400496518 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
-		30BBF1341F17612400496518 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
-		30BBF1351F17612400496518 /* AddressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressListViewController.xib; sourceTree = "<group>"; };
-		30BBF13F1F17695B00496518 /* GetPartyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPartyListViewController.h; sourceTree = "<group>"; };
-		30BBF1401F17695B00496518 /* GetPartyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPartyListViewController.m; sourceTree = "<group>"; };
-		30BBF1411F17695B00496518 /* GetPartyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetPartyListViewController.xib; sourceTree = "<group>"; };
 		30BE65001EE6BE5B00BD6978 /* ProductManListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManListTableViewCell.h; sourceTree = "<group>"; };
 		30BE65011EE6BE5B00BD6978 /* ProductManListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManListTableViewCell.m; sourceTree = "<group>"; };
 		30BE65021EE6BE5B00BD6978 /* ProductManListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductManListTableViewCell.xib; sourceTree = "<group>"; };
@@ -1399,6 +1396,43 @@
 		3BB4AAA52215989900BE16F9 /* ShowCheckInventoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCheckInventoryTableViewCell.h; sourceTree = "<group>"; };
 		3BB4AAA62215989900BE16F9 /* ShowCheckInventoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCheckInventoryTableViewCell.m; sourceTree = "<group>"; };
 		3BB4AAA72215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCheckInventoryTableViewCell.xib; sourceTree = "<group>"; };
+		3BB4AAAD221684A400BE16F9 /* GetPartyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPartyListViewController.m; sourceTree = "<group>"; };
+		3BB4AAAE221684A400BE16F9 /* AddPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyViewController.m; sourceTree = "<group>"; };
+		3BB4AAB0221684A400BE16F9 /* Add_AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Add_AddressViewController.m; sourceTree = "<group>"; };
+		3BB4AAB1221684A400BE16F9 /* Add_AddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Add_AddressViewController.xib; sourceTree = "<group>"; };
+		3BB4AAB2221684A400BE16F9 /* NormalAdressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalAdressListViewController.m; sourceTree = "<group>"; };
+		3BB4AAB3221684A400BE16F9 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
+		3BB4AAB4221684A400BE16F9 /* NormalAdressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalAdressListViewController.xib; sourceTree = "<group>"; };
+		3BB4AAB5221684A400BE16F9 /* NormalAdressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalAdressListViewController.h; sourceTree = "<group>"; };
+		3BB4AAB6221684A400BE16F9 /* Add_AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Add_AddressViewController.h; sourceTree = "<group>"; };
+		3BB4AAB7221684A400BE16F9 /* AddressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressListViewController.xib; sourceTree = "<group>"; };
+		3BB4AAB8221684A400BE16F9 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
+		3BB4AAB9221684A400BE16F9 /* GetPartyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetPartyListViewController.xib; sourceTree = "<group>"; };
+		3BB4AABA221684A400BE16F9 /* GetPartyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPartyListViewController.h; sourceTree = "<group>"; };
+		3BB4AABB221684A400BE16F9 /* AddPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyViewController.h; sourceTree = "<group>"; };
+		3BB4AABC221684A400BE16F9 /* AddPartyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPartyViewController.xib; sourceTree = "<group>"; };
+		3BB4AAC72216881C00BE16F9 /* GetPartyListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyListService.h; sourceTree = "<group>"; };
+		3BB4AAC82216881C00BE16F9 /* GetPartyListService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyListService.m; sourceTree = "<group>"; };
+		3BB4AACA22169BBC00BE16F9 /* EditPartyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPartyViewController.h; sourceTree = "<group>"; };
+		3BB4AACB22169BBC00BE16F9 /* EditPartyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPartyViewController.m; sourceTree = "<group>"; };
+		3BB4AACC22169BBC00BE16F9 /* EditPartyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPartyViewController.xib; sourceTree = "<group>"; };
+		3BB4AACF2216BB0200BE16F9 /* GetAppOutPutListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAppOutPutListViewController.h; sourceTree = "<group>"; };
+		3BB4AAD02216BB0200BE16F9 /* GetAppOutPutListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAppOutPutListViewController.m; sourceTree = "<group>"; };
+		3BB4AAD12216BB0200BE16F9 /* GetAppOutPutListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetAppOutPutListViewController.xib; sourceTree = "<group>"; };
+		3BB4AAD52216BD4C00BE16F9 /* GetAppOutPutListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetAppOutPutListService.h; sourceTree = "<group>"; };
+		3BB4AAD62216BD4C00BE16F9 /* GetAppOutPutListService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetAppOutPutListService.m; sourceTree = "<group>"; };
+		3BB4AAD92216D3B500BE16F9 /* CondTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CondTableViewCell.h; sourceTree = "<group>"; };
+		3BB4AADA2216D3B500BE16F9 /* CondTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CondTableViewCell.m; sourceTree = "<group>"; };
+		3BB4AADB2216D3B500BE16F9 /* CondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CondTableViewCell.xib; sourceTree = "<group>"; };
+		3BB4AADF2216E79C00BE16F9 /* CondModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CondModel.h; sourceTree = "<group>"; };
+		3BB4AAE02216E79C00BE16F9 /* CondModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CondModel.m; sourceTree = "<group>"; };
+		3BB4AAE3221704C100BE16F9 /* GetTargetByUserIdxService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetTargetByUserIdxService.h; sourceTree = "<group>"; };
+		3BB4AAE4221704C100BE16F9 /* GetTargetByUserIdxService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetTargetByUserIdxService.m; sourceTree = "<group>"; };
+		3BB4AAED221706C600BE16F9 /* KPIExamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPIExamModel.h; sourceTree = "<group>"; };
+		3BB4AAEE221706C600BE16F9 /* KPIExamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPIExamModel.m; sourceTree = "<group>"; };
+		3BB4AAF12217173400BE16F9 /* KPIExamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPIExamViewController.h; sourceTree = "<group>"; };
+		3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPIExamViewController.m; sourceTree = "<group>"; };
+		3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KPIExamViewController.xib; sourceTree = "<group>"; };
 		3BDABE8B21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryViewController.h; sourceTree = "<group>"; };
 		3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryViewController.m; sourceTree = "<group>"; };
 		3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryViewController.xib; sourceTree = "<group>"; };
@@ -1423,8 +1457,6 @@
 		3BE8F91621B658C60072090C /* YBShowPanoranaVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBShowPanoranaVC.h; sourceTree = "<group>"; };
 		3BE8F91721B658C60072090C /* YBShowPanoranaVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBShowPanoranaVC.m; sourceTree = "<group>"; };
 		3BE8F91A21B658C60072090C /* BaiduPanoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduPanoSDK.framework; sourceTree = "<group>"; };
-		3BE8F91C21B659800072090C /* CustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
-		3BE8F91D21B659800072090C /* CustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
 		8632758C8A4785EDD0DF8722 /* Pods-Order.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Order.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Order/Pods-Order.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C50C09B8AE2AB012816CA7 /* libPods-Order.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Order.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1869,6 +1901,8 @@
 				3051DB691F1878570034629B /* AddPartyService.m */,
 				3051DB6A1F1878570034629B /* DeleteAppUserPartyService.h */,
 				3051DB6B1F1878570034629B /* DeleteAppUserPartyService.m */,
+				3BB4AAC72216881C00BE16F9 /* GetPartyListService.h */,
+				3BB4AAC82216881C00BE16F9 /* GetPartyListService.m */,
 				3051DB6C1F1878570034629B /* 地址管理 */,
 			);
 			path = "客户管理";
@@ -2155,6 +2189,9 @@
 				30201F131F1083760055BA6A /* 客户费用 */,
 				301D7DB41F5A3D8D00D83410 /* 费用帐单 */,
 				3B3F41192182A4F20068B3BB /* 客户拜访 */,
+				3BB4AAAA221682D700BE16F9 /* 订单查询 */,
+				3BB4AAAC221684A300BE16F9 /* 客户管理 */,
+				3BB4AAF0221716E900BE16F9 /* 业绩追踪 */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2200,6 +2237,8 @@
 				30201EC81F1081370055BA6A /* 帐单列表 */,
 				3051DB671F1878570034629B /* 客户管理 */,
 				3B5ABDE22187FB0B00A1230D /* 客户拜访 */,
+				3BB4AAD42216BD3C00BE16F9 /* 订单查询 */,
+				3BB4AAE22217047C00BE16F9 /* 业绩追踪 */,
 				304FBAB71EF2635700FC3EFC /* OrderCancelService.h */,
 				304FBAB81EF2635700FC3EFC /* OrderCancelService.m */,
 			);
@@ -2259,6 +2298,8 @@
 				30201EF61F1082220055BA6A /* 帐单费用 */,
 				3051DB8E1F1898EF0034629B /* 客户管理 */,
 				3B5ABE00218837DE00A1230D /* 客户拜访 */,
+				3BB4AADE2216E77900BE16F9 /* 订单查询 */,
+				3BB4AAE6221705CB00BE16F9 /* 业绩追踪 */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2319,7 +2360,6 @@
 		30A3C3041D9A0F2900BBE0DA /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				30BBF12E1F17612400496518 /* 客户管理 */,
 				30A3C30F1D9A102800BBE0DA /* MineViewController.h */,
 				30A3C3101D9A102800BBE0DA /* MineViewController.m */,
 				30A3C3111D9A102800BBE0DA /* MineViewController.xib */,
@@ -2420,6 +2460,7 @@
 				301D7DA91F5A3D2E00D83410 /* 费用帐单 */,
 				301D7DBF1F5A3E0400D83410 /* 客户管理 */,
 				3B5ABDDC2187EDA300A1230D /* 客户拜访 */,
+				3BB4AAD82216D38C00BE16F9 /* 订单查询 */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2605,38 +2646,6 @@
 				303566B91F70F898009E6EFB /* 销售出库 */,
 			);
 			path = "库存管理";
-			sourceTree = "<group>";
-		};
-		30BBF12E1F17612400496518 /* 客户管理 */ = {
-			isa = PBXGroup;
-			children = (
-				30BBF12F1F17612400496518 /* 地址管理 */,
-				30BBF13F1F17695B00496518 /* GetPartyListViewController.h */,
-				30BBF1401F17695B00496518 /* GetPartyListViewController.m */,
-				30BBF1411F17695B00496518 /* GetPartyListViewController.xib */,
-				3051DB5E1F1868840034629B /* AddPartyViewController.h */,
-				3051DB5F1F1868840034629B /* AddPartyViewController.m */,
-				3051DB601F1868840034629B /* AddPartyViewController.xib */,
-				3BE8F91D21B659800072090C /* CustomNavigationController.h */,
-				3BE8F91C21B659800072090C /* CustomNavigationController.m */,
-			);
-			path = "客户管理";
-			sourceTree = "<group>";
-		};
-		30BBF12F1F17612400496518 /* 地址管理 */ = {
-			isa = PBXGroup;
-			children = (
-				30BBF1301F17612400496518 /* Add_AddressViewController.h */,
-				30BBF1311F17612400496518 /* Add_AddressViewController.m */,
-				30BBF1321F17612400496518 /* Add_AddressViewController.xib */,
-				30BBF1331F17612400496518 /* AddressListViewController.h */,
-				30BBF1341F17612400496518 /* AddressListViewController.m */,
-				30BBF1351F17612400496518 /* AddressListViewController.xib */,
-				3051DB781F1895740034629B /* NormalAdressListViewController.h */,
-				3051DB791F1895740034629B /* NormalAdressListViewController.m */,
-				3051DB7A1F1895740034629B /* NormalAdressListViewController.xib */,
-			);
-			path = "地址管理";
 			sourceTree = "<group>";
 		};
 		30C476251F4D2EFA00A5FB93 /* TPKeyboardAvoiding */ = {
@@ -3346,6 +3355,105 @@
 			path = yh_navgation;
 			sourceTree = "<group>";
 		};
+		3BB4AAAA221682D700BE16F9 /* 订单查询 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AACF2216BB0200BE16F9 /* GetAppOutPutListViewController.h */,
+				3BB4AAD02216BB0200BE16F9 /* GetAppOutPutListViewController.m */,
+				3BB4AAD12216BB0200BE16F9 /* GetAppOutPutListViewController.xib */,
+			);
+			path = "订单查询";
+			sourceTree = "<group>";
+		};
+		3BB4AAAC221684A300BE16F9 /* 客户管理 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAAF221684A400BE16F9 /* 地址管理 */,
+				3BB4AABA221684A400BE16F9 /* GetPartyListViewController.h */,
+				3BB4AAAD221684A400BE16F9 /* GetPartyListViewController.m */,
+				3BB4AAB9221684A400BE16F9 /* GetPartyListViewController.xib */,
+				3BB4AACA22169BBC00BE16F9 /* EditPartyViewController.h */,
+				3BB4AACB22169BBC00BE16F9 /* EditPartyViewController.m */,
+				3BB4AACC22169BBC00BE16F9 /* EditPartyViewController.xib */,
+				3BB4AABB221684A400BE16F9 /* AddPartyViewController.h */,
+				3BB4AAAE221684A400BE16F9 /* AddPartyViewController.m */,
+				3BB4AABC221684A400BE16F9 /* AddPartyViewController.xib */,
+			);
+			path = "客户管理";
+			sourceTree = "<group>";
+		};
+		3BB4AAAF221684A400BE16F9 /* 地址管理 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAB0221684A400BE16F9 /* Add_AddressViewController.m */,
+				3BB4AAB1221684A400BE16F9 /* Add_AddressViewController.xib */,
+				3BB4AAB2221684A400BE16F9 /* NormalAdressListViewController.m */,
+				3BB4AAB3221684A400BE16F9 /* AddressListViewController.h */,
+				3BB4AAB4221684A400BE16F9 /* NormalAdressListViewController.xib */,
+				3BB4AAB5221684A400BE16F9 /* NormalAdressListViewController.h */,
+				3BB4AAB6221684A400BE16F9 /* Add_AddressViewController.h */,
+				3BB4AAB7221684A400BE16F9 /* AddressListViewController.xib */,
+				3BB4AAB8221684A400BE16F9 /* AddressListViewController.m */,
+			);
+			path = "地址管理";
+			sourceTree = "<group>";
+		};
+		3BB4AAD42216BD3C00BE16F9 /* 订单查询 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAD52216BD4C00BE16F9 /* GetAppOutPutListService.h */,
+				3BB4AAD62216BD4C00BE16F9 /* GetAppOutPutListService.m */,
+			);
+			path = "订单查询";
+			sourceTree = "<group>";
+		};
+		3BB4AAD82216D38C00BE16F9 /* 订单查询 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAD92216D3B500BE16F9 /* CondTableViewCell.h */,
+				3BB4AADA2216D3B500BE16F9 /* CondTableViewCell.m */,
+				3BB4AADB2216D3B500BE16F9 /* CondTableViewCell.xib */,
+			);
+			path = "订单查询";
+			sourceTree = "<group>";
+		};
+		3BB4AADE2216E77900BE16F9 /* 订单查询 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AADF2216E79C00BE16F9 /* CondModel.h */,
+				3BB4AAE02216E79C00BE16F9 /* CondModel.m */,
+			);
+			path = "订单查询";
+			sourceTree = "<group>";
+		};
+		3BB4AAE22217047C00BE16F9 /* 业绩追踪 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAE3221704C100BE16F9 /* GetTargetByUserIdxService.h */,
+				3BB4AAE4221704C100BE16F9 /* GetTargetByUserIdxService.m */,
+			);
+			path = "业绩追踪";
+			sourceTree = "<group>";
+		};
+		3BB4AAE6221705CB00BE16F9 /* 业绩追踪 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAED221706C600BE16F9 /* KPIExamModel.h */,
+				3BB4AAEE221706C600BE16F9 /* KPIExamModel.m */,
+			);
+			path = "业绩追踪";
+			sourceTree = "<group>";
+		};
+		3BB4AAF0221716E900BE16F9 /* 业绩追踪 */ = {
+			isa = PBXGroup;
+			children = (
+				3BB4AAF12217173400BE16F9 /* KPIExamViewController.h */,
+				3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */,
+				3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */,
+			);
+			path = "业绩追踪";
+			sourceTree = "<group>";
+		};
 		3BE8F90521B658C60072090C /* WeChatSendLocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -3492,6 +3600,7 @@
 				3BE8F92621B65AE90072090C /* YBCurrentLocationCell.xib in Resources */,
 				3BE8F92721B65AE90072090C /* YBNeighborLocationCell.xib in Resources */,
 				3BE8F92821B65AE90072090C /* YBShowLocationVC.xib in Resources */,
+				3BB4AAC3221684A400BE16F9 /* AddressListViewController.xib in Resources */,
 				3B084FF221B07A04006ECBF1 /* ACMediaFrame.bundle in Resources */,
 				3B813AED21AF2C490096783C /* LMDropDownMenuTableViewCell.xib in Resources */,
 				3B5ABE0B21897A0300A1230D /* GetPartyVisitListSearchResultsViewController.xib in Resources */,
@@ -3517,16 +3626,15 @@
 				30BB2E031F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.xib in Resources */,
 				3B113E9621FAED8600883869 /* CheckAgentOrderTableViewCell.xib in Resources */,
 				303566B71F70F2AD009E6EFB /* InputReturnViewController.xib in Resources */,
-				30BBF1371F17612400496518 /* Add_AddressViewController.xib in Resources */,
 				301D7DC71F5A3E0400D83410 /* AddressListTableViewCell.xib in Resources */,
 				3BB4AA9F22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib in Resources */,
 				3B0DD00521A3A20600F8DE8F /* GetVisitEnterShopViewController.xib in Resources */,
 				3035669B1F70CD2B009E6EFB /* GetToAddressListViewController.xib in Resources */,
 				30F7B8E21DBFAE80004CD128 /* SelectedGiftsTableViewCell.xib in Resources */,
+				3BB4AAC6221684A400BE16F9 /* AddPartyViewController.xib in Resources */,
 				3035670B1F7103B0009E6EFB /* GetOupputInfoTableViewCell.xib in Resources */,
 				30BE65041EE6BE5B00BD6978 /* ProductManListTableViewCell.xib in Resources */,
 				30BFCDAC1FD7F5EF00ED3469 /* MonthlyPlanInfoTableViewCell.xib in Resources */,
-				3051DB621F1868840034629B /* AddPartyViewController.xib in Resources */,
 				30061B331FD64F3100B4CA53 /* SelectGoodsViewController.xib in Resources */,
 				3B5ABDF7218802AA00A1230D /* GetPartyVisitListTableViewCell.xib in Resources */,
 				3B86F38021F6C65D0048A9AF /* CARTotalOrderDetailViewController.xib in Resources */,
@@ -3536,11 +3644,12 @@
 				3B6E898B21E5F16C0007E833 /* CARTotalOrderTableViewCell.xib in Resources */,
 				30E9C0AB1DA8E22500A09182 /* HotProductTableViewCell.xib in Resources */,
 				30BB2DAB1F459359002E51E7 /* AddStockViewController.xib in Resources */,
-				30BBF1431F17695B00496518 /* GetPartyListViewController.xib in Resources */,
 				30EF59C11DAE2520003F5729 /* MakeOrderTableViewCell.xib in Resources */,
 				304A7AC61DB867A90039B0B2 /* CheckOrderPathViewController.xib in Resources */,
+				3BB4AAD32216BB0200BE16F9 /* GetAppOutPutListViewController.xib in Resources */,
 				30BB2DAF1F459359002E51E7 /* CustomerListSearchResultsViewController.xib in Resources */,
 				30CDC6421D9907CD0035602F /* PhotoItemView.xib in Resources */,
+				3BB4AAC2221684A400BE16F9 /* NormalAdressListViewController.xib in Resources */,
 				30F7B8DD1DBFAD36004CD128 /* SelectedGiftsViewController.xib in Resources */,
 				30BB2DB31F459359002E51E7 /* GetAppStockListViewController.xib in Resources */,
 				3B0DC1421F72CCCE00D1E6AA /* OutputReturnConfirmViewController.xib in Resources */,
@@ -3548,7 +3657,6 @@
 				30BB2DB11F459359002E51E7 /* CustomerListViewController.xib in Resources */,
 				304A7AF41DBA62710039B0B2 /* ConfirmOrderTableViewCell.xib in Resources */,
 				30EF59BC1DAE0F01003F5729 /* OrderProgressNodeTableViewCell.xib in Resources */,
-				3051DB7C1F1895740034629B /* NormalAdressListViewController.xib in Resources */,
 				301D7DBE1F5A3D8D00D83410 /* GetAppBusinessFeeListViewController.xib in Resources */,
 				30EF59B71DAE06C5003F5729 /* OrderProgressNodeViewController.xib in Resources */,
 				30BB2DCF1F459375002E51E7 /* GetStockListTableViewCell.xib in Resources */,
@@ -3568,6 +3676,7 @@
 				301D7DB11F5A3D2E00D83410 /* GetAppBillFeeListTableViewCell.xib in Resources */,
 				3B86F38521F6C7AB0048A9AF /* CARTotalOrderDetailTableViewCell.xib in Resources */,
 				3B5ABDEA2187FFFE00A1230D /* GetPartyVisitListViewController.xib in Resources */,
+				3BB4AAC5221684A400BE16F9 /* GetPartyListViewController.xib in Resources */,
 				303566CC1F70FF57009E6EFB /* GetInputListViewController.xib in Resources */,
 				304A34171F0E071B0055D50C /* AreaProvinceViewController.xib in Resources */,
 				30BB2DC91F459375002E51E7 /* AddStockTableViewCell.xib in Resources */,
@@ -3602,17 +3711,19 @@
 				304A341E1F0E10ED0055D50C /* ChinaArea.plist in Resources */,
 				30BB2DC71F459375002E51E7 /* AddStockCellTableViewCell.xib in Resources */,
 				30A967D71FDA2C060049B956 /* ico_make.png in Resources */,
+				3BB4AAC0221684A400BE16F9 /* Add_AddressViewController.xib in Resources */,
 				30BB2DB51F459359002E51E7 /* GetStockListViewController.xib in Resources */,
 				3B3036AF21E5D6FF0041C9AE /* CARTotalOrderViewController.xib in Resources */,
 				303567121F711BEB009E6EFB /* GetInputInfoViewController.xib in Resources */,
 				3056B55F200887DF00B4704A /* GetWmsProductZongViewController.xib in Resources */,
-				30BBF1391F17612400496518 /* AddressListViewController.xib in Resources */,
 				30F7B8E71DC036FB004CD128 /* ConfirmOrderGiftsTableViewCell.xib in Resources */,
 				301AD3BC1F6A2D1500CD13D0 /* StockNoListTableViewCell.xib in Resources */,
 				30CDC65A1D9907CD0035602F /* CoreSDWebImage.bundle in Resources */,
 				30E9C0A61DA8E15A00A09182 /* HotProductViewController.xib in Resources */,
 				30E5A05E1D9BC16800D94F77 /* CheckOrderTableViewCell.xib in Resources */,
+				3BB4AACE22169BBC00BE16F9 /* EditPartyViewController.xib in Resources */,
 				3B084FFA21B10635006ECBF1 /* PartyTableViewCell.xib in Resources */,
+				3BB4AAF52217173400BE16F9 /* KPIExamViewController.xib in Resources */,
 				3035669F1F70CD2B009E6EFB /* StockOutViewController.xib in Resources */,
 				3BB4AAA92215989900BE16F9 /* ShowCheckInventoryTableViewCell.xib in Resources */,
 				30061B291FD649CA00B4CA53 /* MonthlyPlanViewController.xib in Resources */,
@@ -3628,6 +3739,7 @@
 				30F7B8E91DC36CA7004CD128 /* Default-568@2x.png in Resources */,
 				30930B831FD66BED00D320F9 /* AddMonthlyPlanViewController.xib in Resources */,
 				3BDABE9421A4181100C0E72B /* GetVisitRecommendedOrderViewController.xib in Resources */,
+				3BB4AADD2216D3B500BE16F9 /* CondTableViewCell.xib in Resources */,
 				3035670D1F7103B0009E6EFB /* GetOupputListTableViewCell.xib in Resources */,
 				30A3C2EE1D991E1000BBE0DA /* LoginViewController.xib in Resources */,
 				30942A7D1F5006A4000095F3 /* ConfirmOrderViewController.xib in Resources */,
@@ -3738,6 +3850,7 @@
 				3088D30A1F4BDE16006031D9 /* GetOupputInfoModel.m in Sources */,
 				302675E91F725E550098DEF1 /* Stock_SaveInputService.m in Sources */,
 				301D7DEB1F5A3F5400D83410 /* RouteAnnotation.m in Sources */,
+				3BB4AAE12216E79C00BE16F9 /* CondModel.m in Sources */,
 				30B1AE6D1F74986D00130A55 /* Store_GetOupputListService.m in Sources */,
 				30B1AE771F74989900130A55 /* Stock_InPutWorkflowService.m in Sources */,
 				30F235CC1FD7D3820056846C /* MonthlyPlanItemModel.m in Sources */,
@@ -3748,6 +3861,7 @@
 				30A3C31C1D9A501300BBE0DA /* MainCollectionViewCell.m in Sources */,
 				30CDC63D1D9907CD0035602F /* PBPGView.m in Sources */,
 				30F235C91FD7D3640056846C /* MonthlyPlanInfoModel.m in Sources */,
+				3BB4AAEF221706C600BE16F9 /* KPIExamModel.m in Sources */,
 				301AD3BB1F6A2D1500CD13D0 /* StockNoListTableViewCell.m in Sources */,
 				30BB2DDA1F459391002E51E7 /* CancelStockService.m in Sources */,
 				30CDC6541D9907CD0035602F /* UIImage+FixOrientation.m in Sources */,
@@ -3756,7 +3870,6 @@
 				3047D4551DAB964200B48525 /* OrderTmsModel.m in Sources */,
 				30EF59B61DAE06C5003F5729 /* OrderProgressNodeViewController.m in Sources */,
 				304A7AD91DB8BAE20039B0B2 /* ChartViewController.m in Sources */,
-				3051DB611F1868840034629B /* AddPartyViewController.m in Sources */,
 				304A7AEA1DB925990039B0B2 /* MyPNPieChart.m in Sources */,
 				3056B5622008880C00B4704A /* GetWmsProductZongService.m in Sources */,
 				30BB2DE91F4593AD002E51E7 /* AppStockListModel.m in Sources */,
@@ -3766,6 +3879,7 @@
 				302600921EE69F8B001F6C38 /* UIView+Uitls.m in Sources */,
 				301AFA801F4ADC4500E4FDFF /* GetToAddressListModel.m in Sources */,
 				30BFCDA81FD7F5CD00ED3469 /* OrderDetailTableViewCell.m in Sources */,
+				3BB4AAD72216BD4C00BE16F9 /* GetAppOutPutListService.m in Sources */,
 				30F7B8E61DC036FB004CD128 /* ConfirmOrderGiftsTableViewCell.m in Sources */,
 				301CFDD01FBAF9FF00C8CB39 /* StockNoWaterListModel.m in Sources */,
 				30CDC6591D9907CD0035602F /* UIImage+ReMake.m in Sources */,
@@ -3802,6 +3916,7 @@
 				3088D30D1F4BDE96006031D9 /* GetOupputItemModel.m in Sources */,
 				302F6D431F73A57E00A84F39 /* Stock_GetOutProductTypeService.m in Sources */,
 				30E5A04D1D9B769000D94F77 /* CheckOrderService.m in Sources */,
+				3BB4AADC2216D3B500BE16F9 /* CondTableViewCell.m in Sources */,
 				30CDC6461D9907CD0035602F /* CoreArchive.m in Sources */,
 				304A7ADD1DB8BCFE0039B0B2 /* ChartService.m in Sources */,
 				3B2087842191FAD2000C36A9 /* GetPartyVisitUpdateService.m in Sources */,
@@ -3826,8 +3941,8 @@
 				30E9C0AE1DA8E58A00A09182 /* HotProductService.m in Sources */,
 				30CDC63E1D9907CD0035602F /* PBSaveBtn.m in Sources */,
 				30CDC6531D9907CD0035602F /* UIImage+Extend.m in Sources */,
+				3BB4AAC1221684A400BE16F9 /* NormalAdressListViewController.m in Sources */,
 				30E9C0AA1DA8E22500A09182 /* HotProductTableViewCell.m in Sources */,
-				30BBF1421F17695B00496518 /* GetPartyListViewController.m in Sources */,
 				30CDC6561D9907CD0035602F /* UITableViewCell+Extend.m in Sources */,
 				30E5A06E1D9D138900D94F77 /* ChangePasswordService.m in Sources */,
 				30F235B51FD7BD040056846C /* MonthlyPlanListModel.m in Sources */,
@@ -3867,6 +3982,7 @@
 				30BB2E021F4697CD002E51E7 /* Store_GetOutProductListTableViewCell.m in Sources */,
 				30201ECD1F1081370055BA6A /* GetAppBillFeeListService.m in Sources */,
 				308783891D98CD45002EED76 /* AppDelegate.m in Sources */,
+				3BB4AAC4221684A400BE16F9 /* AddressListViewController.m in Sources */,
 				30B439D11F1D91F60092A015 /* DeleteAddressService.m in Sources */,
 				30BB2DFD1F468281002E51E7 /* StockProductModel.m in Sources */,
 				30B1AE761F74989900130A55 /* Stock_GetInputListService.m in Sources */,
@@ -3875,9 +3991,9 @@
 				30EF59C41DAE2BA5003F5729 /* MakeOrderService.m in Sources */,
 				30F235BC1FD7CC230056846C /* MonthlyPlanInfoViewController.m in Sources */,
 				3026007F1EE5726F001F6C38 /* UIViewController+LLAdd.m in Sources */,
-				30BBF1361F17612400496518 /* Add_AddressViewController.m in Sources */,
 				30C476301F4D2EFA00A5FB93 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3056B5722008AACE00B4704A /* CheckStockDetailListModel.m in Sources */,
+				3BB4AAF42217173400BE16F9 /* KPIExamViewController.m in Sources */,
 				303566CB1F70FF57009E6EFB /* GetInputListViewController.m in Sources */,
 				30BB2DEB1F4593AD002E51E7 /* StockListModel.m in Sources */,
 				304A7AE31DB91F1A0039B0B2 /* ProductChartModel.m in Sources */,
@@ -3891,7 +4007,6 @@
 				30F7B8D41DBF0B33004CD128 /* AddGiftProductsTableViewCell.m in Sources */,
 				301CFDD81FBB02A100C8CB39 /* StockNoListModel.m in Sources */,
 				30078D2E1DBB2AA200429813 /* OrderGiftModel.m in Sources */,
-				3BE8F91E21B659800072090C /* CustomNavigationController.m in Sources */,
 				3B5ABDFB218807BE00A1230D /* AddPartyVisitViewController.m in Sources */,
 				30CDC6401D9907CD0035602F /* PhotoImageView.m in Sources */,
 				3B813AE921AF2A0E0096783C /* LMDropDownMenuTableViewCell.m in Sources */,
@@ -3932,7 +4047,6 @@
 				302A05831DB0C9E700972490 /* ProductPolicyModel.m in Sources */,
 				3B113E8E21FADD1D00883869 /* CheckOrderItemModel.m in Sources */,
 				30EF59CE1DAF5C6D003F5729 /* CustomerAddressTableViewCell.m in Sources */,
-				3051DB7B1F1895740034629B /* NormalAdressListViewController.m in Sources */,
 				30930BAC1FD6AC8C00D320F9 /* AddMonthlyPlanTableViewCell.m in Sources */,
 				30A967D91FDA2C060049B956 /* LMTitleView.m in Sources */,
 				3088D3071F4BDC49006031D9 /* GetOupputModel.m in Sources */,
@@ -3949,18 +4063,22 @@
 				30BE65031EE6BE5B00BD6978 /* ProductManListTableViewCell.m in Sources */,
 				303566D61F70FF6A009E6EFB /* GetOupputInfoViewController.m in Sources */,
 				30E5A0561D9B9E6C00D94F77 /* StateTackModel.m in Sources */,
+				3BB4AABF221684A400BE16F9 /* Add_AddressViewController.m in Sources */,
 				30CDC65E1D9907CD0035602F /* CoreSVP.m in Sources */,
 				301AD39C1F698E0100CD13D0 /* Store_GetPartyStockListService.m in Sources */,
 				304A7ACF1DB8B04B0039B0B2 /* CheckPathService.m in Sources */,
+				3BB4AABE221684A400BE16F9 /* AddPartyViewController.m in Sources */,
 				302675D61F7219F70098DEF1 /* Stock_GetInputToPartySearchsService.m in Sources */,
 				30E5A0531D9B98D900D94F77 /* OrderDetailModel.m in Sources */,
 				304A7AD21DB8B0A10039B0B2 /* LocationModel.m in Sources */,
 				30F7B8D81DBF37FC004CD128 /* AddGiftsService.m in Sources */,
+				3BB4AABD221684A400BE16F9 /* GetPartyListViewController.m in Sources */,
 				30201F051F1082220055BA6A /* AppBillFeeModel.m in Sources */,
 				3B6C3F7D21E7556E00C28334 /* VisitRoutePlanViewController.m in Sources */,
 				30061B321FD64F3100B4CA53 /* SelectGoodsViewController.m in Sources */,
 				3051DB771F1893C80034629B /* NormalAdressListService.m in Sources */,
 				30CDC6621D9907CD0035602F /* LFRoundProgressView.m in Sources */,
+				3BB4AAD22216BB0200BE16F9 /* GetAppOutPutListViewController.m in Sources */,
 				30BB2DD91F459391002E51E7 /* AddStockService.m in Sources */,
 				302675DA1F72469B0098DEF1 /* InputToAddressModel.m in Sources */,
 				30EF59BB1DAE0F01003F5729 /* OrderProgressNodeTableViewCell.m in Sources */,
@@ -3969,6 +4087,7 @@
 				3B78D6B521E5FC160074ADD0 /* CARTotalOrderListModel.m in Sources */,
 				30CDC6571D9907CD0035602F /* UIView+Extend.m in Sources */,
 				30CDC65C1D9907CD0035602F /* UIImageView+SD.m in Sources */,
+				3BB4AACD22169BBC00BE16F9 /* EditPartyViewController.m in Sources */,
 				3B5ABE062188391D00A1230D /* GetPartyVisitItemModel.m in Sources */,
 				30CDC67B1D990B430035602F /* Tools.m in Sources */,
 				303566D81F70FF6A009E6EFB /* GetOupputListViewController.m in Sources */,
@@ -3981,6 +4100,7 @@
 				30078D2B1DBB1AE400429813 /* PromotionOrderModel.m in Sources */,
 				3B4E18F32189B4EE00297B88 /* GetPartyVisitCBXModel.m in Sources */,
 				301CFDC71FBAF22300C8CB39 /* StockNoListDetailViewController.m in Sources */,
+				3BB4AAE5221704C100BE16F9 /* GetTargetByUserIdxService.m in Sources */,
 				30CDC64E1D9907CD0035602F /* UIColor+Extend.m in Sources */,
 				30EF59CA1DAF3457003F5729 /* AddressModel.m in Sources */,
 				30CDC6451D9907CD0035602F /* NSString+File.m in Sources */,
@@ -4002,12 +4122,12 @@
 				30E5A0591D9BB88300D94F77 /* BusinessModel.m in Sources */,
 				30F235B81FD7BD590056846C /* MonthlyPlanModel.m in Sources */,
 				302600911EE69F8B001F6C38 /* SCBaseViewController.m in Sources */,
+				3BB4AAC92216881C00BE16F9 /* GetPartyListService.m in Sources */,
 				30930B8D1FD6858700D320F9 /* MonthlyPlanTableViewCell.m in Sources */,
 				30BB2DDC1F459391002E51E7 /* GetStockListService.m in Sources */,
 				30BB2DDB1F459391002E51E7 /* GetAppStockListService.m in Sources */,
 				30BB2DB41F459359002E51E7 /* GetStockListViewController.m in Sources */,
 				30598E471F1CB363000530D6 /* UpdateAddressService.m in Sources */,
-				30BBF1381F17612400496518 /* AddressListViewController.m in Sources */,
 				30A3C3001D9A0E0F00BBE0DA /* MainViewController.m in Sources */,
 				30C041742008B2FE00057AB2 /* GetWmsProductSumTableViewCell.m in Sources */,
 				301AD3A31F6A1EBD00CD13D0 /* StockNoListViewController.m in Sources */,

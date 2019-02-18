@@ -22,9 +22,21 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>物流订单</string>
+		<string>业绩追踪</string>
 		<key>imageName</key>
 		<string>ic_wmsOrder</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>订单查询</string>
+		<key>imageName</key>
+		<string>LM_order_track</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>客户管理</string>
+		<key>imageName</key>
+		<string>LM_customer_man</string>
 	</dict>
 </array>
 </plist>

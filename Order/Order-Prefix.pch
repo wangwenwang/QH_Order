@@ -356,7 +356,7 @@
 
 /*-------------------- 客户拜访功能 --------------------*/
 
-/// 获取经销商客户列表
+/// 获取供货商客户列表
 #define API_GetFirstPartyList @"http://oms.kaidongyuan.com:8088/api/GetFirstPartyList"
 
 /// 获取客户拜访列表
@@ -419,6 +419,14 @@
 /// 根据业务代码，获取客户编号
 #define API_ObtainPartyCode @"http://oms.kaidongyuan.com:8088/api/ObtainPartyCode"
 
+/// 获取全部客户列表
+#define API_GetPartyListByUserIdx @"http://oms.kaidongyuan.com:8088/api/GetPartyListByUserIdx"
+
+/// 获取出库单信息（GetOupputList升级版，增加了参数）
+#define API_GetAppOutPutList @"http://oms.kaidongyuan.com:8088/api/GetAppOutPutList"
+
+/// 获取目标金额目标销量
+#define API_GetTargetByUserIdx @"http://oms.kaidongyuan.com:8088/api/GetTargetByUserIdx"
 
 
 

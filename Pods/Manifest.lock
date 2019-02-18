@@ -17,6 +17,7 @@ PODS:
     - AFNetworking/NSURLSession
   - BaiduMapKit (3.3.4)
   - DACircularProgress (2.3.1)
+  - LMProgressView (1.0.3)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.12)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - ACAlertController
   - AFNetworking (~> 3.0)
   - BaiduMapKit
+  - LMProgressView
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -56,6 +58,7 @@ SPEC REPOS:
     - AFNetworking
     - BaiduMapKit
     - DACircularProgress
+    - LMProgressView
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -73,6 +76,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BaiduMapKit: 6f2d76a04b72e9af938afb5ca0f97d4417bbf9c0
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  LMProgressView: f6fb98f7ad2a0ef00156f892eef6c99b7046b66c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -85,6 +89,6 @@ SPEC CHECKSUMS:
   WMPageController: 088ab96e271f12878eff084b3851620b701826c6
   YCXMenu: 6003bcd20d8ac72e3eb3c442c97ed21948c6dc1f
 
-PODFILE CHECKSUM: 27e30ebb113b688a158691377f1c32e53d212a72
+PODFILE CHECKSUM: 0ddd252c8f71821b106400e322fe853352b764f0
 
 COCOAPODS: 1.5.3

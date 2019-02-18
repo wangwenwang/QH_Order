@@ -23,6 +23,9 @@
 #import "GetTmsOrderByAddressViewController.h"
 #import "GetWmsProductZongViewController.h"
 #import "GetPartyVisitListViewController.h"
+#import "GetPartyListViewController.h"
+#import "GetAppOutPutListViewController.h"
+#import "KPIExamViewController.h"
 
 @interface MainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ChartServiceDelegate>
 
@@ -284,6 +287,20 @@
     } else if([title isEqualToString:@"客户拜访"]) {
         
         GetPartyVisitListViewController *vc = [[GetPartyVisitListViewController alloc] init];
+        vc.title = title;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([title isEqualToString:@"订单查询"]) {
+        
+        GetAppOutPutListViewController *vc = [[GetAppOutPutListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([title isEqualToString:@"客户管理"]) {
+        
+        GetPartyListViewController *vc = [[GetPartyListViewController alloc] init];
+        vc.title = title;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([title isEqualToString:@"业绩追踪"]) {
+        
+        KPIExamViewController *vc = [[KPIExamViewController alloc] init];
         vc.title = title;
         [self.navigationController pushViewController:vc animated:YES];
     }

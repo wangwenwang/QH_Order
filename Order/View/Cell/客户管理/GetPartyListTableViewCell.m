@@ -10,15 +10,17 @@
 
 @interface GetPartyListTableViewCell ()
 
-
-/// 客户代码
-@property (weak, nonatomic) IBOutlet UILabel *PARTY_CODE;
-
-/// 客户城市
-@property (weak, nonatomic) IBOutlet UILabel *PARTY_CITY;
-
-/// 客户名称
+// 客户名称
 @property (weak, nonatomic) IBOutlet UILabel *PARTY_NAME;
+
+// 联系人
+@property (weak, nonatomic) IBOutlet UILabel *CONTACT_PERSON;
+
+// 联系电话
+@property (weak, nonatomic) IBOutlet UILabel *CONTACT_TEL;
+
+// 详细地址
+@property (weak, nonatomic) IBOutlet UILabel *ADDRESS_INFO;
 
 @end
 
@@ -39,19 +41,18 @@
     
     _partyM = partyM;
     
-    _PARTY_CODE.text = _partyM.PARTY_CODE;
-    
-    _PARTY_CITY.text = _partyM.PARTY_CITY;
-    
     _PARTY_NAME.text = _partyM.PARTY_NAME;
+    _CONTACT_PERSON.text = _partyM.CONTACT_PERSON;
+    _CONTACT_TEL.text = _partyM.CONTACT_TEL;
+    _ADDRESS_INFO.text = _partyM.ADDRESS_INFO;
 }
 
 
-- (IBAction)deleteOnclick {
+- (IBAction)editOnclick {
     
-    if([_delegate respondsToSelector:@selector(deleteOnclick:)]) {
+    if([_delegate respondsToSelector:@selector(editOnclick:)]) {
         
-        [_delegate deleteOnclick:self.tag];
+        [_delegate editOnclick:self.tag];
     }
 }
 

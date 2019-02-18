@@ -17,4 +17,6 @@ pod 'ACAlertController'
 
 pod 'YCXMenu', '~> 0.0.11'
 
+pod 'LMProgressView'
+
 end

@@ -810,4 +810,12 @@ typedef void (^Animation)(void);
     }
 }
 
++ (BOOL)isNum:(nullable NSString *)checkedNumString {
+    checkedNumString = [checkedNumString stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if(checkedNumString.length > 0) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

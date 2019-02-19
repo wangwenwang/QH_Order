@@ -351,18 +351,18 @@
     //    [self createDatePicker:defaultDate andMaxDate:maxDate andMinDate:minDate];
 }
 
-
-- (IBAction)LINE_onclick:(UITapGestureRecognizer *)sender {
-    
-    [self.view endEditing:YES];
-    [LM_alert showLMAlertViewWithTitle:@"选择线路" message:@"" cancleButtonTitle:@"取消" okButtonTitle:nil otherButtonTitleArray:_lines clickHandle:^(NSInteger index) {
-        
-        if(index >= 1) {
-            
-            _LINE.text = _lines[index - 1];
-        }
-    }];
-}
+//
+//- (IBAction)LINE_onclick:(UITapGestureRecognizer *)sender {
+//
+//    [self.view endEditing:YES];
+//    [LM_alert showLMAlertViewWithTitle:@"选择线路" message:@"" cancleButtonTitle:@"取消" okButtonTitle:nil otherButtonTitleArray:_lines clickHandle:^(NSInteger index) {
+//
+//        if(index >= 1) {
+//
+//            _LINE.text = _lines[index - 1];
+//        }
+//    }];
+//}
 
 
 #pragma mark - 功能函数

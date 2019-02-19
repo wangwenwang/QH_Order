@@ -195,31 +195,22 @@
 - (void)rightBtnOnclick {
     
     NSArray *items = @[
-                       [YCXMenuItem menuItem:@"客户名称"
+                       [YCXMenuItem menuItem:@"开始时间"
                                        image:nil
                                          tag:100
                                     userInfo:nil],
-                       [YCXMenuItem menuItem:@"开始时间"
-                                       image:nil
-                                         tag:101
-                                    userInfo:nil],
                        [YCXMenuItem menuItem:@"结束时间"
                                        image:nil
-                                         tag:102
+                                         tag:101
                                     userInfo:nil]
                        ];
     [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width - 50, 0, 50, 0) menuItems:items selected:^(NSInteger index, YCXMenuItem *item) {
         
         if(item.tag == 100) {
             
-            CustomerListViewController *vc = [[CustomerListViewController alloc] init];
-            vc.vcClass = NSStringFromClass([self class]);
-            [self.navigationController pushViewController:vc animated:YES];
-        }else if(item.tag == 101) {
-            
             _CurrTimeType = kCond_START_TIME;
             [_LM showDatePicker];
-        }else if(item.tag == 102) {
+        }else if(item.tag == 101) {
             
             _CurrTimeType = kCond_END_TIME;
             [_LM showDatePicker];
@@ -241,7 +232,7 @@
     
     [view addSubview:searchBar];
     _tableView.tableHeaderView = view;
-    [searchBar setPlaceholder:@"订单号"];
+    [searchBar setPlaceholder:@"订单号/客户名称"];
     searchBar.delegate = self;
 }
 
@@ -440,6 +431,7 @@
     if([[searchText trim] isEqualToString:@""]) {
         
          _cond_OrderNo = searchBar.text;
+         _cond_PartyName = searchBar.text;
         [self requstData];
         [self.view endEditing:YES];
     }
@@ -448,7 +440,15 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     
-    _cond_OrderNo = searchBar.text;
+    bool bx = [Tools isNum:searchBar.text];
+    // 搜索结果是纯数字，搜索订单号。否则搜索客户名称
+    if(bx) {
+        
+        _cond_OrderNo = searchBar.text;
+    }else {
+        
+        _cond_PartyName = searchBar.text;
+    }
     [self requstData];
     [self.view endEditing:YES];
 }

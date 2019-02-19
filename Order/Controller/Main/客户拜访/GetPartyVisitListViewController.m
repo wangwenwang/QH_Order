@@ -332,7 +332,13 @@
 }
 
 // 请求第一页数据
-- (void)requestFirstPageList:(NSString *)line andStatus:(NSString *)status andStrFartherPartyID:(NSString *)strFartherPartyID{
+- (void)requestFirstPageList:(NSString *)line andStatus:(NSString *)status andStrFartherPartyID:(NSString *)strFartherPartyID {
+    
+    if(strFartherPartyID == nil) {
+        
+        [Tools showAlert:self.view andTitle:@"找不到供货商，请联系管理员"];
+        return;
+    }
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     _page = 1;

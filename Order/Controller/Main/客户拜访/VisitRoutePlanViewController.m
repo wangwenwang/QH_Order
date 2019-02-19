@@ -22,6 +22,15 @@
 #import <Masonry.h>
 #import <MBProgressHUD.h>
 
+#import "KBShowStepViewController.h"
+#import "PartyModel.h"
+#import "AddressModel.h"
+#import "AddPartyVisitViewController.h"
+#import "GetVisitEnterShopViewController.h"
+#import "GetVisitCheckInventoryViewController.h"
+#import "GetVisitRecommendedOrderViewController.h"
+#import "GetVisitVividDisplayViewController.h"
+
 @interface VisitRoutePlanViewController ()<BMKMapViewDelegate, BMKRouteSearchDelegate, BMKLocationManagerDelegate, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate, UIGestureRecognizerDelegate> {
     
     /// 百度地图定位服务
@@ -59,7 +68,16 @@
 // 是否有拜访完成
 @property (assign, nonatomic) BOOL isHasVisitComplete;
 
+// 我的位置按钮
+@property (strong, nonatomic) UIButton *myLocBtn;
+
+// 操作中的客户
+@property (strong, nonatomic) GetPartyVisitItemModel *operatingParty;
+
 @end
+
+
+#define kMyLoc_bottom 110
 
 @implementation VisitRoutePlanViewController
 
@@ -89,6 +107,7 @@
         BMKGeoCodeSearchOption *geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
         // 广东省深圳市龙华区民治街道8号仓
         // 广东省深圳市龙华区民治街道民乐科技园
+        // 广东省深圳市龙华区民治街道横岭工业区
         geoCodeSearchOption.address = m.pARTYADDRESS; //m.pARTYADDRESS;
         BOOL flag = [search geoCode: geoCodeSearchOption];
         if (flag) {
@@ -124,14 +143,140 @@
 
 #pragma mark - 手势
 
-- (void)handleTap {
+- (void)navOnclick {
     
     [self navigationOnclick:navLat andLng:navLng andAddress:navAddress];
+}
+
+- (void)checkVisitOnclick {
+    
+    if(_operatingParty == nil) {
+        
+        [Tools showAlert:self.view andTitle:@"未找到客户"];
+    }else {
+        
+        KBShowStepViewController *vc = [[KBShowStepViewController alloc] init];
+        vc.pvItemM = _operatingParty;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)visitOnclick {
+    
+    if(_operatingParty == nil) {
+        
+        [Tools showAlert:self.view andTitle:@"未找到客户"];
+    }else {
+        GetPartyVisitItemModel *m = _operatingParty;
+        
+        PartyModel *partyM = [[PartyModel alloc] init];
+        partyM.PARTY_CODE = m.pARTYNO;
+        partyM.PARTY_NAME = m.pARTYNAME;
+        partyM.PARTY_LEVEL = m.pARTYLEVEL;
+        partyM.PARTY_STATES = m.pARTYSTATES;
+        partyM.CHANNEL = m.cHANNEL;
+        partyM.LINE = m.lINE;
+        partyM.WEEKLY_VISIT_FREQUENCY = m.wEEKLYVISITFREQUENCY;
+        
+        AddressModel *addressM = [[AddressModel alloc] init];
+        addressM.CONTACT_PERSON = m.cONTACTS;
+        addressM.CONTACT_TEL = m.cONTACTSTEL;
+        addressM.ADDRESS_INFO = m.pARTYADDRESS;
+        
+        GetPartyVisitItemModel *_pvItemM = _operatingParty;
+        
+        if([_pvItemM.vISITSTATES isEqualToString:@""]||[_pvItemM.vISITSTATES isEqualToString:@""]) {
+            
+            AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
+            vc.partyM = partyM;
+            vc.addressM = addressM;
+            vc.pvItemM = m;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"新建"] || [_pvItemM.vISITSTATES isEqualToString:@"确认客户信息"]){
+            GetVisitEnterShopViewController *vc = [[GetVisitEnterShopViewController alloc] init];
+            vc.pvItemM = _pvItemM;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"进店"]){
+            
+            GetVisitCheckInventoryViewController *vc = [[GetVisitCheckInventoryViewController alloc] init];
+            vc.pvItemM = _pvItemM;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"检查库存"]){
+            
+            GetVisitRecommendedOrderViewController *vc = [[GetVisitRecommendedOrderViewController alloc] init];
+            vc.pvItemM = _pvItemM;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"建议订单"]){
+            
+            GetVisitVividDisplayViewController *vc = [[GetVisitVividDisplayViewController alloc] init];
+            vc.pvItemM = _pvItemM;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"生动化陈列"]){
+            
+            KBShowStepViewController *vc = [[KBShowStepViewController alloc] init];
+            vc.pvItemM = _pvItemM;
+            vc.isShowConfirmBtn = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if([_pvItemM.vISITSTATES isEqualToString:@"离店"]){
+            
+        }
+    }
+}
+
+
+#pragma mark - 事件
+
+- (void)myLocOnclick {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            _mapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
+            
+        });
+        usleep(1200000);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            
+            _mapView.zoomLevel = 20;
+        });
+    });
+}
+
+
+#pragma mark - GET方法
+
+// 我的位置按钮
+- (UIButton *)myLocBtn {
+    
+    if(_myLocBtn == nil) {
+        
+        _myLocBtn = [[UIButton alloc] init];
+        [_myLocBtn setImage:[UIImage imageNamed:@"myLoc"] forState:UIControlStateNormal];
+        [_myLocBtn addTarget:self action:@selector(myLocOnclick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_myLocBtn];
+        [_myLocBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.bottom.mas_equalTo(-kMyLoc_bottom);
+            make.width.mas_equalTo(40);
+            make.height.mas_equalTo(40);
+        }];
+    }
+    return _myLocBtn;
 }
 
 #pragma mark - 功能函数
 
 - (void)addShopAnnotation {
+    
+    RouteAnnotation *item = [[RouteAnnotation alloc] init];
+    item = [[RouteAnnotation alloc] init];
+    item.coordinate = CLLocationCoordinate2DMake(_startLatLng.lat, _startLatLng.lng);
+    item.title = @"起点/当前位置";
+    item.type = 0;
+    [_mapView addAnnotation:item];
     
     for (LatLng *latlng in _latlngArray) {
         
@@ -610,6 +755,9 @@
         
         _shopInfoContainerView.alpha = 0;
         _distanceContainerView.alpha = 1;
+        [_myLocBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-kMyLoc_bottom);
+        }];
         _mapView.mapScaleBarPosition = CGPointMake(13, _mapView.frame.size.height - 95); //比例尺的位置
     }];
 }
@@ -635,109 +783,7 @@
     NSLog(@"纬度: %f", view.annotation.coordinate.latitude);
     NSLog(@"地址: %@", view.annotation.subtitle);
     
-    NSString *partyName = @""; // 客户名称
-    NSString *visitStatus = nil; // 拜访状态
-    for (GetPartyVisitItemModel *m in _visitList) {
-        if([m.pARTYADDRESS isEqualToString:view.annotation.subtitle]) {
-            partyName = m.pARTYNAME;
-            visitStatus = m.vISITSTATES;
-            break;
-        }
-    }
-    
-    if(visitStatus == nil) {
-        return;
-    }
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        _distanceContainerView.alpha = 0;
-        _shopInfoContainerView.alpha = 1;
-        _mapView.mapScaleBarPosition = CGPointMake(13, _mapView.frame.size.height - 215); //比例尺的位置
-    }];
-    
-    [_shopInfoContainerView removeFromSuperview];
-    _shopInfoContainerView = nil;
-    if(!_shopInfoContainerView) {
-        
-        _shopInfoContainerView = [[UIView alloc] init];
-        [self.view addSubview:_shopInfoContainerView];
-    }
-    _shopInfoContainerView.backgroundColor = [UIColor whiteColor];
-    _shopInfoContainerView.layer.cornerRadius = 3.0f;
-    [_shopInfoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(12);
-        make.right.mas_equalTo(-12);
-        make.bottom.mas_equalTo(0);
-        make.height.mas_equalTo(180);
-    }];
-    
-    // 客户名称
-    UILabel *partyNameLabel = [[UILabel alloc] init];
-    [_shopInfoContainerView addSubview:partyNameLabel];
-    partyNameLabel.text = [NSString stringWithFormat:@"门店名称：%@", partyName];
-    partyNameLabel.font = [UIFont systemFontOfSize:15];
-    [partyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-        make.top.mas_equalTo(12);
-    }];
-    
-    // 客户地址
-    UILabel *partyAddressLabel = [[UILabel alloc] init];
-    [_shopInfoContainerView addSubview:partyAddressLabel];
-    partyAddressLabel.text = [NSString stringWithFormat:@"门店地址：%@", view.annotation.subtitle];
-    partyAddressLabel.font = [UIFont systemFontOfSize:15];
-    [partyAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-        make.top.equalTo(partyNameLabel.mas_bottom).mas_equalTo(6);
-    }];
-    
-    // 拜访状态
-    UILabel *visitStatusLabel = [[UILabel alloc] init];
-    [_shopInfoContainerView addSubview:visitStatusLabel];
-    visitStatusLabel.text = [NSString stringWithFormat:@"拜访状态：%@", [Tools getVISIT_STATES:visitStatus]];
-    visitStatusLabel.font = [UIFont systemFontOfSize:15];
-    [visitStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-        make.top.equalTo(partyAddressLabel.mas_bottom).mas_equalTo(6);
-    }];
-    
-    // 查看路线按钮
-    UIView *btnView = [[UIView alloc] init];
-    [_shopInfoContainerView addSubview:btnView];
-    btnView.layer.cornerRadius = 2.0f;
-    btnView.layer.borderWidth = 1.0f;
-    btnView.layer.borderColor = RGB(240, 158, 56).CGColor;
-    [btnView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-        make.bottom.mas_equalTo(-30);
-        make.height.mas_equalTo(40);
-    }];
-    // 单击的手势
-    UITapGestureRecognizer *tapRecognize = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap)];
-    tapRecognize.numberOfTapsRequired = 1;
-    tapRecognize.delegate = self;
-    [tapRecognize setEnabled :YES];
-    [tapRecognize delaysTouchesBegan];
-    [tapRecognize cancelsTouchesInView];
-    [btnView addGestureRecognizer:tapRecognize];
-    navLat =  view.annotation.coordinate.latitude;
-    navLng = view.annotation.coordinate.longitude;
-    navAddress = view.annotation.subtitle;
-    
-    UILabel *btnViewText = [[UILabel alloc] init];
-    [btnView addSubview:btnViewText];
-    btnViewText.font = [UIFont systemFontOfSize:15];
-    btnViewText.text = @"导航";
-    btnViewText.textColor = RGB(240, 158, 56);
-    [btnViewText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(0);
-        make.centerY.mas_equalTo(0);
-    }];
+    [self showPartyInfo:view.annotation.subtitle andLng:view.annotation.coordinate];
 }
 
 #pragma mark - BMKLocationServiceDelegate 前台显示
@@ -782,7 +828,7 @@
         for (GetPartyVisitItemModel *m in _visitList) {
             // 百度地图正向编码会把中文符号变成英文符号，例如：
             // "广东省深圳市龙华区民治街道天虹商场（民治店）"  会转换成  "广东省深圳市龙华区民治街道天虹商场(民治店)"
-            if([[Tools ToDBC:m.pARTYADDRESS] isEqualToString:result.address]) {
+            if([[Tools ToDBC:m.pARTYADDRESS] caseInsensitiveCompare:result.address] == NSOrderedSame) {
                 latlng.title = m.pARTYNAME;
                 if([m.vISITSTATES isEqualToString:@"离店"]) {
                     latlng.visitStatus = 7;
@@ -839,6 +885,7 @@
         _mapView.mapScaleBarPosition = CGPointMake(13, _mapView.frame.size.height - 95); //比例尺的位置
         //将mapView添加到当前视图中
         [self.view addSubview:_mapView];
+        [self.view addSubview:self.myLocBtn];
         
         //初始化BMKRouteSearch实例
         drivingRouteSearch_all = [[BMKRouteSearch alloc]init];
@@ -958,6 +1005,272 @@
             }
         });
     }
+}
+
+
+#pragma mark - 点击标注后的弹框
+
+- (void)showPartyInfo:(NSString *)subtitle andLng:(CLLocationCoordinate2D)cllocation {
+    
+    NSString *partyName = @""; // 客户名称
+    NSString *visitStatus = nil; // 拜访状态
+    GetPartyVisitItemModel *pvItemM = nil;
+    for (GetPartyVisitItemModel *m in _visitList) {
+        if([m.pARTYADDRESS caseInsensitiveCompare:subtitle] == NSOrderedSame) {
+            partyName = m.pARTYNAME;
+            visitStatus = m.vISITSTATES;
+            pvItemM = m;
+            break;
+        }
+    }
+    
+    if(visitStatus == nil) {
+        return;
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        _distanceContainerView.alpha = 0;
+        _shopInfoContainerView.alpha = 1;
+        _mapView.mapScaleBarPosition = CGPointMake(13, _mapView.frame.size.height - 215); //比例尺的位置
+        [_myLocBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-kMyLoc_bottom - 120);
+        }];
+    }];
+    
+    [_shopInfoContainerView removeFromSuperview];
+    _shopInfoContainerView = nil;
+    if(!_shopInfoContainerView) {
+        
+        _shopInfoContainerView = [[UIView alloc] init];
+        [self.view addSubview:_shopInfoContainerView];
+    }
+    _shopInfoContainerView.backgroundColor = [UIColor whiteColor];
+    _shopInfoContainerView.layer.cornerRadius = 3.0f;
+    [_shopInfoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.right.mas_equalTo(-12);
+        make.bottom.mas_equalTo(0);
+        make.height.mas_equalTo(180);
+    }];
+    
+    // 客户名称
+    UILabel *partyNameLabel = [[UILabel alloc] init];
+    [_shopInfoContainerView addSubview:partyNameLabel];
+    partyNameLabel.text = [NSString stringWithFormat:@"门店名称：%@", partyName];
+    partyNameLabel.font = [UIFont systemFontOfSize:15];
+    [partyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.top.mas_equalTo(12);
+    }];
+    
+    // 客户地址
+    UILabel *partyAddressLabel = [[UILabel alloc] init];
+    [_shopInfoContainerView addSubview:partyAddressLabel];
+    partyAddressLabel.text = [NSString stringWithFormat:@"门店地址：%@", subtitle];
+    partyAddressLabel.font = [UIFont systemFontOfSize:15];
+    [partyAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.top.equalTo(partyNameLabel.mas_bottom).mas_equalTo(6);
+    }];
+    
+    // 拜访状态
+    UILabel *visitStatusLabel = [[UILabel alloc] init];
+    [_shopInfoContainerView addSubview:visitStatusLabel];
+    visitStatusLabel.text = [NSString stringWithFormat:@"拜访状态：%@", [Tools getVISIT_STATES:visitStatus]];
+    visitStatusLabel.font = [UIFont systemFontOfSize:15];
+    [visitStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.top.equalTo(partyAddressLabel.mas_bottom).mas_equalTo(6);
+    }];
+    
+    
+    // 导航按钮
+    UIView *navBtnSupView = [[UIView alloc] init];
+    // 查看拜访按钮
+    UIView *checkVisitBtnSupView = [[UIView alloc] init];
+    // 拜访按钮
+    UIView *visitBtnSupView = [[UIView alloc] init];
+    
+    // 根据不同的拜访状态，显示不同的按钮
+    if([[Tools getVISIT_STATES:visitStatus] isEqualToString:@"未拜访"]) {
+        
+        [_shopInfoContainerView addSubview:navBtnSupView];
+        [_shopInfoContainerView addSubview:visitBtnSupView];
+        
+        navBtnSupView.layer.cornerRadius = 2.0f;
+        navBtnSupView.layer.borderWidth = 1.0f;
+        navBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [navBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(visitBtnSupView.mas_left).mas_offset(-10);
+            make.width.mas_equalTo(visitBtnSupView.mas_width);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        visitBtnSupView.layer.cornerRadius = 2.0f;
+        visitBtnSupView.layer.borderWidth = 1.0f;
+        visitBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [visitBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(navBtnSupView.mas_right);
+            make.right.mas_equalTo(-10);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        UILabel *btnViewText = [[UILabel alloc] init];
+        [navBtnSupView addSubview:btnViewText];
+        btnViewText.font = [UIFont systemFontOfSize:15];
+        btnViewText.text = @"导航";
+        btnViewText.textColor = RGB(240, 158, 56);
+        [btnViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+        
+        UILabel *visitBtnSupViewText = [[UILabel alloc] init];
+        [visitBtnSupView addSubview:visitBtnSupViewText];
+        visitBtnSupViewText.font = [UIFont systemFontOfSize:15];
+        visitBtnSupViewText.text = @"拜访";
+        visitBtnSupViewText.textColor = RGB(240, 158, 56);
+        [visitBtnSupViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+    }else if([[Tools getVISIT_STATES:visitStatus] isEqualToString:@"拜访中"]) {
+        
+        [_shopInfoContainerView addSubview:navBtnSupView];
+        [_shopInfoContainerView addSubview:visitBtnSupView];
+        [_shopInfoContainerView addSubview:checkVisitBtnSupView];
+        
+        navBtnSupView.layer.cornerRadius = 2.0f;
+        navBtnSupView.layer.borderWidth = 1.0f;
+        navBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [navBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(visitBtnSupView.mas_left).mas_offset(-10);
+            make.width.mas_equalTo(visitBtnSupView.mas_width);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        visitBtnSupView.layer.cornerRadius = 2.0f;
+        visitBtnSupView.layer.borderWidth = 1.0f;
+        visitBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [visitBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(navBtnSupView.mas_right);
+            make.right.mas_equalTo(checkVisitBtnSupView.mas_left).mas_offset(-10);
+            make.width.mas_equalTo(checkVisitBtnSupView.mas_width);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        checkVisitBtnSupView.layer.cornerRadius = 2.0f;
+        checkVisitBtnSupView.layer.borderWidth = 1.0f;
+        checkVisitBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [checkVisitBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(checkVisitBtnSupView.mas_right);
+            make.right.mas_equalTo(-10);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        UILabel *btnViewText = [[UILabel alloc] init];
+        [navBtnSupView addSubview:btnViewText];
+        btnViewText.font = [UIFont systemFontOfSize:15];
+        btnViewText.text = @"导航";
+        btnViewText.textColor = RGB(240, 158, 56);
+        [btnViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+        
+        UILabel *visitBtnSupViewText = [[UILabel alloc] init];
+        [visitBtnSupView addSubview:visitBtnSupViewText];
+        visitBtnSupViewText.font = [UIFont systemFontOfSize:15];
+        visitBtnSupViewText.text = @"继续拜访";
+        visitBtnSupViewText.textColor = RGB(240, 158, 56);
+        [visitBtnSupViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+        
+        UILabel *checkVisitViewText = [[UILabel alloc] init];
+        [checkVisitBtnSupView addSubview:checkVisitViewText];
+        checkVisitViewText.font = [UIFont systemFontOfSize:15];
+        checkVisitViewText.text = @"查看拜访";
+        checkVisitViewText.textColor = RGB(240, 158, 56);
+        [checkVisitViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+    }else if([[Tools getVISIT_STATES:visitStatus] isEqualToString:@"已拜访"]) {
+        
+        [_shopInfoContainerView addSubview:navBtnSupView];
+        [_shopInfoContainerView addSubview:checkVisitBtnSupView];
+        
+        navBtnSupView.layer.cornerRadius = 2.0f;
+        navBtnSupView.layer.borderWidth = 1.0f;
+        navBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [navBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(checkVisitBtnSupView.mas_left).mas_offset(-10);
+            make.width.mas_equalTo(checkVisitBtnSupView.mas_width);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        checkVisitBtnSupView.layer.cornerRadius = 2.0f;
+        checkVisitBtnSupView.layer.borderWidth = 1.0f;
+        checkVisitBtnSupView.layer.borderColor = RGB(240, 158, 56).CGColor;
+        [checkVisitBtnSupView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(navBtnSupView.mas_right);
+            make.right.mas_equalTo(-10);
+            make.bottom.mas_equalTo(-30);
+            make.height.mas_equalTo(40);
+        }];
+        
+        UILabel *btnViewText = [[UILabel alloc] init];
+        [navBtnSupView addSubview:btnViewText];
+        btnViewText.font = [UIFont systemFontOfSize:15];
+        btnViewText.text = @"导航";
+        btnViewText.textColor = RGB(240, 158, 56);
+        [btnViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+        
+        UILabel *checkVisitViewText = [[UILabel alloc] init];
+        [checkVisitBtnSupView addSubview:checkVisitViewText];
+        checkVisitViewText.font = [UIFont systemFontOfSize:15];
+        checkVisitViewText.text = @"查看拜访";
+        checkVisitViewText.textColor = RGB(240, 158, 56);
+        [checkVisitViewText mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.centerY.mas_equalTo(0);
+        }];
+    }
+    // 单击的手势
+    UITapGestureRecognizer *tapRecognize_nav = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(navOnclick)];
+    tapRecognize_nav.numberOfTapsRequired = 1;
+    [navBtnSupView addGestureRecognizer:tapRecognize_nav];
+    
+    UITapGestureRecognizer *tapRecognize_check = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkVisitOnclick)];
+    tapRecognize_check.numberOfTapsRequired = 1;
+    [checkVisitBtnSupView addGestureRecognizer:tapRecognize_check];
+    
+    UITapGestureRecognizer *tapRecognize_visit = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(visitOnclick)];
+    tapRecognize_visit.numberOfTapsRequired = 1;
+    [visitBtnSupView addGestureRecognizer:tapRecognize_visit];
+    
+    _operatingParty = pvItemM;
+    navLat = cllocation.latitude;
+    navLng = cllocation.longitude;
+    navAddress = subtitle;
 }
 
 @end

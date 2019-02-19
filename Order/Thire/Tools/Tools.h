@@ -20,19 +20,19 @@
  * @param jsonString JSON格式的字符串
  * @return 返回字典
  */
-+ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
++ (nullable NSDictionary *)dictionaryWithJsonString:(nullable NSString *)jsonString;
 
 //请求API
 //方式：POST
 //类型：application/x-www-form-urlencoded
-+ (NSString *)postAPI:(NSString *)urlStr andString:(NSString *)postStr;
++ (nullable NSString *)postAPI:(nullable NSString *)urlStr andString:(nullable NSString *)postStr;
 
 /*!
  * @brief 把字典转换成JSON字符串
  * @param dict 字典
  * @return 返回JSON字符串
  */
-+ (NSString *)JsonStringWithDictonary:(NSDictionary *)dict;
++ (nullable NSString *)JsonStringWithDictonary:(nullable NSDictionary *)dict;
 
 /**
  提示，单行
@@ -40,7 +40,7 @@
  @param view  父窗口
  @param title 标题
  */
-+ (void)showAlert:(NSObject *)view andTitle:(NSString *)title;
++ (void)showAlert:(nullable NSObject *)view andTitle:(nullable NSString *)title;
 
 /**
  提示，多行
@@ -48,7 +48,7 @@
  @param view  父窗口
  @param title 标题
  */
-+ (void)showAlertMulLineText:(UIView *)view andTitle:(NSString *)title;
++ (void)showAlertMulLineText:(nullable UIView *)view andTitle:(nullable NSString *)title;
 
 /**
  提示带时间参数
@@ -67,50 +67,50 @@
  *
  * return 手机当前时间 "yyy-MM-dd HH:mm:ss"
  */
-+ (NSString *)getCurrentDate;
++ (nullable NSString *)getCurrentDate;
 
 /**
  *	@brief	浏览头像
  *
  *	@param 	oldImageView 	头像所在的imageView
  */
-+(void)showImage:(UIImageView*)avatarImageView;
++(void)showImage:(nullable UIImageView *)avatarImageView;
 
 /// 筛选出最小的数
 + (NSInteger)getMinNumber:(NSInteger)a andB:(NSInteger)b;
 
 /// 淡入效果的转场动画
-+ (void)setRootViewControllerWithCrossDissolve:(UIWindow *)window andViewController:(UIViewController *)vc;
++ (void)setRootViewControllerWithCrossDissolve:(nullable UIWindow *)window andViewController:(nullable UIViewController *)vc;
 
 /// 从右翻转的转场动画
-+ (void)setRootViewControllerWithFlipFromRight:(UIWindow *)window andViewController:(UIViewController *)vc;
++ (void)setRootViewControllerWithFlipFromRight:(nullable UIWindow *)window andViewController:(nullable UIViewController *)vc;
 
 /// 设置导航栏的Title颜色
-+ (void)setNavigationControllerTitleColor:(UINavigationController *)nav;
++ (void)setNavigationControllerTitleColor:(nullable UINavigationController *)nav;
 
 /// 订单状态中英文转换(获取订单状态)
-+ (NSString *)getOrderStatus:(NSString *)s;
++ (nullable NSString *)getOrderStatus:(nullable NSString *)s;
 
 /// 角色中英文转换
-+ (NSString *)getRoleName:(NSString *)s;
++ (nullable NSString *)getRoleName:(nullable NSString *)s;
 
 /// 获取订单流程
-+ (NSString *)getOrderState:(NSString *)s;
++ (nullable NSString *)getOrderState:(nullable NSString *)s;
 
 /// 获取付款方式
-+ (NSString *)getPaymentType:(NSString *)s;
++ (nullable NSString *)getPaymentType:(nullable NSString *)s;
 
 /// 产品模型转字典
-+ (NSDictionary *)setProdictModel:(ProductModel *)m;
++ (nullable NSDictionary *)setProdictModel:(nullable ProductModel *)m;
 
 /// 产品政策转字典
-+ (NSDictionary *)setProductPolicyModel:(ProductPolicyModel *)m;
++ (nullable NSDictionary *)setProductPolicyModel:(nullable ProductPolicyModel *)m;
 
 /// 产品促销转字典
-+ (NSDictionary *)setPromotionOrderModel:(PromotionOrderModel *)m;
++ (nullable NSDictionary *)setPromotionOrderModel:(nullable PromotionOrderModel *)m;
 
 /// 促销详情转字典
-+ (NSDictionary *)setPromotionDetailModel:(PromotionDetailModel *)m;
++ (nullable NSDictionary *)setPromotionDetailModel:(nullable PromotionDetailModel *)m;
 
 /**
  * 根据支付类型英文字段获取显示的支付类型的中文字段
@@ -118,19 +118,19 @@
  * @param key 英文字段
  * @return 字符类型中文字段
  */
-+ (NSString *)getPayTypeText:(NSString *)key;
++ (nullable NSString *)getPayTypeText:(nullable NSString *)key;
 
 //将 Product 实体类转换成 PromotionDetail 实体类
-+ (NSMutableArray *)ChangeProductToPromotionDetailUtil:(NSMutableArray *)pmds;
++ (nullable NSMutableArray *)ChangeProductToPromotionDetailUtil:(nullable NSMutableArray *)pmds;
 
 /// 保留2位小数
 + (double)getDouble:(double)d;
 
 /// 时间格式转换 yyyy-MM-dd 转 yyyy-MM-dd HH:mm:ss
-+ (NSString *)DateTransFrom:(NSString *)time;
++ (nullable NSString *)DateTransFrom:(nullable NSString *)time;
 
 /// 添加走马灯
-+ (void)msgChange:(CGFloat)overflowWidth andLabel:(UILabel *)_goodsNameLabel andBeginAnimations:(NSString *)animationName;
++ (void)msgChange:(CGFloat)overflowWidth andLabel:(nullable UILabel *)_goodsNameLabel andBeginAnimations:(nullable NSString *)animationName;
 
 
 /**
@@ -191,7 +191,6 @@
  @return 2017-06-09
  */
 + (nullable NSString *)getDate_yyyy_mm_dd_hh_mm_ss:(nullable NSString *)yyyy_mm_dd_hh_mm_ss;
-
 
 
 /**
@@ -314,8 +313,8 @@
 /// 其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
 + (nullable NSString *)ToDBC:(nullable NSString *)input;
 
-+ (nullable UIImage *)createImageWithColor:(nullable UIColor *)color;
 
++ (nullable UIImage *)createImageWithColor:(nullable UIColor *)color;
 
 
 /**
@@ -326,4 +325,12 @@
  */
 + (BOOL)hasBASE_RATE:(int)BASE_RATE;
 
+
+/**
+ 判断字符串是否纯数字
+
+ @param checkedNumString 待检查字符串
+ @return 是否纯数字
+ */
++ (BOOL)isNum:(nullable NSString *)checkedNumString;
 @end

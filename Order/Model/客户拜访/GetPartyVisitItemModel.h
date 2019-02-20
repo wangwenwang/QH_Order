@@ -24,7 +24,9 @@
 @property (nonatomic, strong) NSString * fARTHERPARTYID;
 @property (nonatomic, strong) NSString * gRADE;
 @property (nonatomic, strong) NSString * iDX;
+@property (nonatomic, strong) NSString * lATITUDE;
 @property (nonatomic, strong) NSString * lINE;
+@property (nonatomic, strong) NSString * lONGITUDE;
 @property (nonatomic, strong) NSString * nECESSARYSKU;
 @property (nonatomic, strong) NSString * pARTYADDRESS;
 @property (nonatomic, strong) NSString * pARTYLEVEL;

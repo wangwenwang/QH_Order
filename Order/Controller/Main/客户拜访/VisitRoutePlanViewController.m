@@ -104,7 +104,7 @@
         
         BMKGeoCodeSearch *search = [[BMKGeoCodeSearch alloc] init];
         search.delegate = self;
-        BMKGeoCodeSearchOption *geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
+        BMKGeoCodeSearchOption *geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc] init];
         // 广东省深圳市龙华区民治街道8号仓
         // 广东省深圳市龙华区民治街道民乐科技园
         // 广东省深圳市龙华区民治街道横岭工业区
@@ -830,6 +830,21 @@
             // "广东省深圳市龙华区民治街道天虹商场（民治店）"  会转换成  "广东省深圳市龙华区民治街道天虹商场(民治店)"
             if([[Tools ToDBC:m.pARTYADDRESS] caseInsensitiveCompare:result.address] == NSOrderedSame) {
                 latlng.title = m.pARTYNAME;
+                // 自带坐标的客户，不使用地址转出来的坐标
+                if(![m.lONGITUDE isEqualToString:@""] && m.lONGITUDE != nil) {
+                    latlng.lng = [m.lONGITUDE doubleValue];
+                    latlng.lat = [m.lATITUDE doubleValue];
+                }else {
+                    
+                    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                        
+                        usleep(1700000);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [Tools showAlert:self.view andTitle:@"线路可能不准确，仅供参考！" andTime:3.0];
+                        });
+                    });
+                }
                 if([m.vISITSTATES isEqualToString:@"离店"]) {
                     latlng.visitStatus = 7;
                 }else {

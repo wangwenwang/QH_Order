@@ -45,7 +45,9 @@
 //        "PARTY_TYPE":"",
 //        "FARTHER_PARTY_ID":"",
 //        "FARTHER_ADDRESS_ID":"",
-//        "GRADE":""
+//        "GRADE":"",
+//        "LONGITUDE":"",
+//        "LATITUDE":""
 //    }]
 //}
 @interface GetPartyVisitListModel : NSObject

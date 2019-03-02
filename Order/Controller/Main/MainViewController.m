@@ -164,7 +164,7 @@
 
 - (void)addCycleScrollView {
     
-    NSArray *images = [NSArray arrayWithObjects:@"ad_pic_0.jpg", @"ad_pic_1.jpg", @"ad_pic_2.jpg", @"ad_pic_3.jpg", @"ad_pic_4.jpg", nil];
+    NSArray *images = [NSArray arrayWithObjects:@"ad_pic_0.jpg", @"ad_pic_5.jpg", @"ad_pic_1.jpg", @"ad_pic_2.jpg", @"ad_pic_3.jpg", @"ad_pic_4.jpg", nil];
     // 本地加载图片的轮播器
     SDCycleScrollView *_cycleScrollView1 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth, CGRectGetHeight(_cycleScrollView.frame)) imageNamesGroup:images];
     [self.view addSubview:_cycleScrollView1];

@@ -37,7 +37,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *brandLabel;
 
 // 类型
-@property (strong, nonatomic) NSMutableArray *types;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 // 产品信息列表数据(搜索过滤后的)
@@ -82,7 +81,6 @@
         _selectGoodsService.delegate = self;
         
         _brands = [[NSMutableArray alloc] init];
-        _types = [[NSMutableArray alloc] init];
         
         _checkOkProducts = [[NSMutableArray alloc] init];
     }
@@ -285,22 +283,20 @@
     
     if(tableView.tag == 1001) {
         
-        // 获取数据
+        // 总产品获取数据
         ProductModel *p = _productsFilter[indexPath.row];
         
-        // 处理界面
         static NSString *cellId = kCellName_CheckInventory;
         GetVisitCheckInventoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
         cell.delegate = self;
         cell.tag = indexPath.row;
         
-        // 填充基本数据
         cell.productM = p;
         
         return cell;
     }else if(tableView.tag == 1002) {
         
-        // 处理界面
+        // 已检查产品获取数据
         static NSString *cellId = kCellName_CheckInventoryOk;
         GetVisitCheckInventoryOkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
         cell.delegate = self;

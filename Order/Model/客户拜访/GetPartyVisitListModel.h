@@ -47,9 +47,13 @@
 //        "FARTHER_ADDRESS_ID":"",
 //        "GRADE":"",
 //        "LONGITUDE":"",
-//        "LATITUDE":""
+//        "LATITUDE":"",
+//        "FREQUENCY":"",
+//        "VISIT_NUMBER":"",
+//        "VISITING_NUMBER":""
 //    }]
 //}
+
 @interface GetPartyVisitListModel : NSObject
 
 @property (nonatomic, strong) NSArray * getPartyVisitItemModel;

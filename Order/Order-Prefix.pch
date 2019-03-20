@@ -360,7 +360,7 @@
 #define API_GetFirstPartyList @"http://oms.kaidongyuan.com:8088/api/GetFirstPartyList"
 
 /// 获取客户拜访列表
-#define API_GetPartyVisitList @"http://oms.kaidongyuan.com:8088/api/GetPartyVisitList"
+#define API_GetPartyVisitList @"http://oms.kaidongyuan.com:8088/api/GetPartyVisitListNew"
 
 /// 获取下拉框数据
 #define API_GetPartyVisitCBX @"http://oms.kaidongyuan.com:8088/api/GetPartyVisitCBX"
@@ -427,6 +427,9 @@
 
 /// 获取目标金额目标销量
 #define API_GetTargetByUserIdx @"http://oms.kaidongyuan.com:8088/api/GetTargetByUserIdx"
+
+/// 拜访历史
+#define API_GetPartyVisitHistory @"http://oms.kaidongyuan.com:8088/api/GetPartyVisitHistory"
 
 
 

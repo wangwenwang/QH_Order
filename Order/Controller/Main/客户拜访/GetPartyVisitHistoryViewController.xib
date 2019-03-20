@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetPartyVisitHistoryViewController">
+            <connections>
+                <outlet property="resultLabel" destination="HU9-hm-UPc" id="3i1-uc-QVc"/>
+                <outlet property="tableView" destination="ibj-Hx-qPm" id="a34-5T-5lY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-TL-vNR" userLabel="时间">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拜访时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd3-Td-5TY">
+                            <rect key="frame" x="10" y="16.5" width="71.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1997-3-7到1997-3-9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU9-hm-UPc" customClass="TimeLabel">
+                            <rect key="frame" x="81.5" y="16.5" width="137" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UITableViewCellAccessoryDisclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="WZD-av-jYx">
+                            <rect key="frame" x="342" y="12" width="25" height="25"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnv-bb-DqW" userLabel="边框">
+                            <rect key="frame" x="0.0" y="49.5" width="375" height="0.5"/>
+                            <color key="backgroundColor" red="0.89019607840000003" green="0.8980392157" blue="0.91372549020000005" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.29999999999999999" id="IuX-8j-IUA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="Fnv-bb-DqW" firstAttribute="leading" secondItem="bmE-TL-vNR" secondAttribute="leading" id="4Od-Pc-BrG"/>
+                        <constraint firstItem="HU9-hm-UPc" firstAttribute="centerY" secondItem="Hd3-Td-5TY" secondAttribute="centerY" id="6jH-oB-skr"/>
+                        <constraint firstAttribute="trailing" secondItem="Fnv-bb-DqW" secondAttribute="trailing" id="Gbl-QP-1GZ"/>
+                        <constraint firstAttribute="bottom" secondItem="Fnv-bb-DqW" secondAttribute="bottom" id="I8a-Ys-c3C"/>
+                        <constraint firstItem="HU9-hm-UPc" firstAttribute="leading" secondItem="Hd3-Td-5TY" secondAttribute="trailing" id="agy-Mw-x7Y"/>
+                        <constraint firstAttribute="height" constant="50" id="dW7-Dv-haw"/>
+                        <constraint firstItem="WZD-av-jYx" firstAttribute="centerY" secondItem="bmE-TL-vNR" secondAttribute="centerY" id="eDK-7v-uYv"/>
+                        <constraint firstItem="Hd3-Td-5TY" firstAttribute="leading" secondItem="bmE-TL-vNR" secondAttribute="leading" constant="10" id="eo3-G0-K9D"/>
+                        <constraint firstItem="Hd3-Td-5TY" firstAttribute="centerY" secondItem="bmE-TL-vNR" secondAttribute="centerY" id="gBF-dP-E2R"/>
+                        <constraint firstAttribute="trailing" secondItem="WZD-av-jYx" secondAttribute="trailing" constant="8" id="hEY-tp-QpS"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="KOu-Io-Nl4" appends="YES" id="4W1-O3-qhg"/>
+                    </connections>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-Hx-qPm">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Cev-yG-ur6"/>
+                        <outlet property="delegate" destination="-1" id="x3l-fq-pal"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ibj-Hx-qPm" firstAttribute="top" secondItem="bmE-TL-vNR" secondAttribute="bottom" id="M7D-uV-l8e"/>
+                <constraint firstItem="bmE-TL-vNR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="POW-nZ-owI"/>
+                <constraint firstAttribute="trailing" secondItem="ibj-Hx-qPm" secondAttribute="trailing" id="kv5-FI-fac"/>
+                <constraint firstAttribute="trailing" secondItem="bmE-TL-vNR" secondAttribute="trailing" id="m3d-L8-w5f"/>
+                <constraint firstItem="ibj-Hx-qPm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v0z-En-3lo"/>
+                <constraint firstItem="bmE-TL-vNR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vQ0-6z-bFn"/>
+                <constraint firstAttribute="bottom" secondItem="ibj-Hx-qPm" secondAttribute="bottom" id="vak-AI-7J8"/>
+            </constraints>
+        </view>
+        <tapGestureRecognizer id="KOu-Io-Nl4">
+            <connections>
+                <action selector="timeOnclick" destination="-1" id="BfB-xa-yfn"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="UITableViewCellAccessoryDisclosureIndicator" width="25" height="25"/>
+    </resources>
+</document>

@@ -21,6 +21,7 @@ NSString *const kGetPartyVisitItemModelCONTACTSTEL = @"CONTACTS_TEL";
 NSString *const kGetPartyVisitItemModelEDITDATE = @"EDIT_DATE";
 NSString *const kGetPartyVisitItemModelFARTHERADDRESSID = @"FARTHER_ADDRESS_ID";
 NSString *const kGetPartyVisitItemModelFARTHERPARTYID = @"FARTHER_PARTY_ID";
+NSString *const kGetPartyVisitItemModelFREQUENCY = @"FREQUENCY";
 NSString *const kGetPartyVisitItemModelGRADE = @"GRADE";
 NSString *const kGetPartyVisitItemModelIDX = @"IDX";
 NSString *const kGetPartyVisitItemModelLATITUDE = @"LATITUDE";
@@ -38,8 +39,10 @@ NSString *const kGetPartyVisitItemModelRECOMMENDEDORDER = @"RECOMMENDED_ORDER";
 NSString *const kGetPartyVisitItemModelSINGLESTORESALES = @"SINGLE_STORE_SALES";
 NSString *const kGetPartyVisitItemModelUSERNAME = @"USER_NAME";
 NSString *const kGetPartyVisitItemModelUSERNO = @"USER_NO";
+NSString *const kGetPartyVisitItemModelVISITINGNUMBER = @"VISITING_NUMBER";
 NSString *const kGetPartyVisitItemModelVISITDATE = @"VISIT_DATE";
 NSString *const kGetPartyVisitItemModelVISITIDX = @"VISIT_IDX";
+NSString *const kGetPartyVisitItemModelVISITNUMBER = @"VISIT_NUMBER";
 NSString *const kGetPartyVisitItemModelVISITSTATES = @"VISIT_STATES";
 NSString *const kGetPartyVisitItemModelVIVIDDISPLAYCBX = @"VIVID_DISPLAY_CBX";
 NSString *const kGetPartyVisitItemModelVIVIDDISPLAYTEXT = @"VIVID_DISPLAY_TEXT";
@@ -51,47 +54,50 @@ NSString *const kGetPartyVisitItemModelWEEKLYVISITFREQUENCY = @"WEEKLY_VISIT_FRE
 @implementation GetPartyVisitItemModel
 
 /**
-* Instantiate the instance using the passed dictionary values to set the properties values
-*/
+ * Instantiate the instance using the passed dictionary values to set the properties values
+ */
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-self = [super init];
-if(![dictionary[kGetPartyVisitItemModelACTUALVISITINGADDRESS] isKindOfClass:[NSNull class]]){
-self.aCTUALVISITINGADDRESS = dictionary[kGetPartyVisitItemModelACTUALVISITINGADDRESS];
-}
-if(![dictionary[kGetPartyVisitItemModelADDRESSCODE] isKindOfClass:[NSNull class]]){
-self.aDDRESSCODE = dictionary[kGetPartyVisitItemModelADDRESSCODE];
-}
-if(![dictionary[kGetPartyVisitItemModelADDRESSIDX] isKindOfClass:[NSNull class]]){
-self.aDDRESSIDX = dictionary[kGetPartyVisitItemModelADDRESSIDX];
-}
-if(![dictionary[kGetPartyVisitItemModelADDDATE] isKindOfClass:[NSNull class]]){
-self.aDDDATE = dictionary[kGetPartyVisitItemModelADDDATE];
-}
-if(![dictionary[kGetPartyVisitItemModelBUSINESSIDX] isKindOfClass:[NSNull class]]){
-self.bUSINESSIDX = dictionary[kGetPartyVisitItemModelBUSINESSIDX];
-}
-if(![dictionary[kGetPartyVisitItemModelCHANNEL] isKindOfClass:[NSNull class]]){
-self.cHANNEL = dictionary[kGetPartyVisitItemModelCHANNEL];
-}
-if(![dictionary[kGetPartyVisitItemModelCHECKINVENTORY] isKindOfClass:[NSNull class]]){
-self.cHECKINVENTORY = dictionary[kGetPartyVisitItemModelCHECKINVENTORY];
-}
-if(![dictionary[kGetPartyVisitItemModelCONTACTS] isKindOfClass:[NSNull class]]){
-self.cONTACTS = dictionary[kGetPartyVisitItemModelCONTACTS];
-}
-if(![dictionary[kGetPartyVisitItemModelCONTACTSTEL] isKindOfClass:[NSNull class]]){
-self.cONTACTSTEL = dictionary[kGetPartyVisitItemModelCONTACTSTEL];
-}
-if(![dictionary[kGetPartyVisitItemModelEDITDATE] isKindOfClass:[NSNull class]]){
-self.eDITDATE = dictionary[kGetPartyVisitItemModelEDITDATE];
-}
+    self = [super init];
+    if(![dictionary[kGetPartyVisitItemModelACTUALVISITINGADDRESS] isKindOfClass:[NSNull class]]){
+        self.aCTUALVISITINGADDRESS = dictionary[kGetPartyVisitItemModelACTUALVISITINGADDRESS];
+    }
+    if(![dictionary[kGetPartyVisitItemModelADDRESSCODE] isKindOfClass:[NSNull class]]){
+        self.aDDRESSCODE = dictionary[kGetPartyVisitItemModelADDRESSCODE];
+    }
+    if(![dictionary[kGetPartyVisitItemModelADDRESSIDX] isKindOfClass:[NSNull class]]){
+        self.aDDRESSIDX = dictionary[kGetPartyVisitItemModelADDRESSIDX];
+    }
+    if(![dictionary[kGetPartyVisitItemModelADDDATE] isKindOfClass:[NSNull class]]){
+        self.aDDDATE = dictionary[kGetPartyVisitItemModelADDDATE];
+    }
+    if(![dictionary[kGetPartyVisitItemModelBUSINESSIDX] isKindOfClass:[NSNull class]]){
+        self.bUSINESSIDX = dictionary[kGetPartyVisitItemModelBUSINESSIDX];
+    }
+    if(![dictionary[kGetPartyVisitItemModelCHANNEL] isKindOfClass:[NSNull class]]){
+        self.cHANNEL = dictionary[kGetPartyVisitItemModelCHANNEL];
+    }
+    if(![dictionary[kGetPartyVisitItemModelCHECKINVENTORY] isKindOfClass:[NSNull class]]){
+        self.cHECKINVENTORY = dictionary[kGetPartyVisitItemModelCHECKINVENTORY];
+    }
+    if(![dictionary[kGetPartyVisitItemModelCONTACTS] isKindOfClass:[NSNull class]]){
+        self.cONTACTS = dictionary[kGetPartyVisitItemModelCONTACTS];
+    }
+    if(![dictionary[kGetPartyVisitItemModelCONTACTSTEL] isKindOfClass:[NSNull class]]){
+        self.cONTACTSTEL = dictionary[kGetPartyVisitItemModelCONTACTSTEL];
+    }
+    if(![dictionary[kGetPartyVisitItemModelEDITDATE] isKindOfClass:[NSNull class]]){
+        self.eDITDATE = dictionary[kGetPartyVisitItemModelEDITDATE];
+    }
     if(![dictionary[kGetPartyVisitItemModelFARTHERADDRESSID] isKindOfClass:[NSNull class]]){
         self.fARTHERADDRESSID = dictionary[kGetPartyVisitItemModelFARTHERADDRESSID];
     }
     if(![dictionary[kGetPartyVisitItemModelFARTHERPARTYID] isKindOfClass:[NSNull class]]){
         self.fARTHERPARTYID = dictionary[kGetPartyVisitItemModelFARTHERPARTYID];
+    }
+    if(![dictionary[kGetPartyVisitItemModelFREQUENCY] isKindOfClass:[NSNull class]]){
+        self.fREQUENCY = dictionary[kGetPartyVisitItemModelFREQUENCY];
     }
     if(![dictionary[kGetPartyVisitItemModelGRADE] isKindOfClass:[NSNull class]]){
         self.gRADE = dictionary[kGetPartyVisitItemModelGRADE];
@@ -106,35 +112,35 @@ self.eDITDATE = dictionary[kGetPartyVisitItemModelEDITDATE];
         self.lINE = dictionary[kGetPartyVisitItemModelLINE];
     }
     if(![dictionary[kGetPartyVisitItemModelLONGITUDE] isKindOfClass:[NSNull class]]){
-self.lONGITUDE = dictionary[kGetPartyVisitItemModelLONGITUDE];
-}
-if(![dictionary[kGetPartyVisitItemModelNECESSARYSKU] isKindOfClass:[NSNull class]]){
-self.nECESSARYSKU = dictionary[kGetPartyVisitItemModelNECESSARYSKU];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYADDRESS] isKindOfClass:[NSNull class]]){
-self.pARTYADDRESS = dictionary[kGetPartyVisitItemModelPARTYADDRESS];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYLEVEL] isKindOfClass:[NSNull class]]){
-self.pARTYLEVEL = dictionary[kGetPartyVisitItemModelPARTYLEVEL];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYNAME] isKindOfClass:[NSNull class]]){
-self.pARTYNAME = dictionary[kGetPartyVisitItemModelPARTYNAME];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYNO] isKindOfClass:[NSNull class]]){
-self.pARTYNO = dictionary[kGetPartyVisitItemModelPARTYNO];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYSTATES] isKindOfClass:[NSNull class]]){
-self.pARTYSTATES = dictionary[kGetPartyVisitItemModelPARTYSTATES];
-}
-if(![dictionary[kGetPartyVisitItemModelPARTYTYPE] isKindOfClass:[NSNull class]]){
-self.pARTYTYPE = dictionary[kGetPartyVisitItemModelPARTYTYPE];
-}
-if(![dictionary[kGetPartyVisitItemModelREACHTHESITUATION] isKindOfClass:[NSNull class]]){
-self.rEACHTHESITUATION = dictionary[kGetPartyVisitItemModelREACHTHESITUATION];
-}
-if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull class]]){
-    self.rECOMMENDEDORDER = dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER];
-}
+        self.lONGITUDE = dictionary[kGetPartyVisitItemModelLONGITUDE];
+    }
+    if(![dictionary[kGetPartyVisitItemModelNECESSARYSKU] isKindOfClass:[NSNull class]]){
+        self.nECESSARYSKU = dictionary[kGetPartyVisitItemModelNECESSARYSKU];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYADDRESS] isKindOfClass:[NSNull class]]){
+        self.pARTYADDRESS = dictionary[kGetPartyVisitItemModelPARTYADDRESS];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYLEVEL] isKindOfClass:[NSNull class]]){
+        self.pARTYLEVEL = dictionary[kGetPartyVisitItemModelPARTYLEVEL];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYNAME] isKindOfClass:[NSNull class]]){
+        self.pARTYNAME = dictionary[kGetPartyVisitItemModelPARTYNAME];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYNO] isKindOfClass:[NSNull class]]){
+        self.pARTYNO = dictionary[kGetPartyVisitItemModelPARTYNO];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYSTATES] isKindOfClass:[NSNull class]]){
+        self.pARTYSTATES = dictionary[kGetPartyVisitItemModelPARTYSTATES];
+    }
+    if(![dictionary[kGetPartyVisitItemModelPARTYTYPE] isKindOfClass:[NSNull class]]){
+        self.pARTYTYPE = dictionary[kGetPartyVisitItemModelPARTYTYPE];
+    }
+    if(![dictionary[kGetPartyVisitItemModelREACHTHESITUATION] isKindOfClass:[NSNull class]]){
+        self.rEACHTHESITUATION = dictionary[kGetPartyVisitItemModelREACHTHESITUATION];
+    }
+    if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull class]]){
+        self.rECOMMENDEDORDER = dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER];
+    }
     if(![dictionary[kGetPartyVisitItemModelSINGLESTORESALES] isKindOfClass:[NSNull class]]){
         self.sINGLESTORESALES = dictionary[kGetPartyVisitItemModelSINGLESTORESALES];
     }
@@ -144,11 +150,17 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     if(![dictionary[kGetPartyVisitItemModelUSERNO] isKindOfClass:[NSNull class]]){
         self.uSERNO = dictionary[kGetPartyVisitItemModelUSERNO];
     }
+    if(![dictionary[kGetPartyVisitItemModelVISITINGNUMBER] isKindOfClass:[NSNull class]]){
+        self.vISITINGNUMBER = dictionary[kGetPartyVisitItemModelVISITINGNUMBER];
+    }
     if(![dictionary[kGetPartyVisitItemModelVISITDATE] isKindOfClass:[NSNull class]]){
         self.vISITDATE = dictionary[kGetPartyVisitItemModelVISITDATE];
     }
     if(![dictionary[kGetPartyVisitItemModelVISITIDX] isKindOfClass:[NSNull class]]){
         self.vISITIDX = dictionary[kGetPartyVisitItemModelVISITIDX];
+    }
+    if(![dictionary[kGetPartyVisitItemModelVISITNUMBER] isKindOfClass:[NSNull class]]){
+        self.vISITNUMBER = dictionary[kGetPartyVisitItemModelVISITNUMBER];
     }
     if(![dictionary[kGetPartyVisitItemModelVISITSTATES] isKindOfClass:[NSNull class]]){
         self.vISITSTATES = dictionary[kGetPartyVisitItemModelVISITSTATES];
@@ -208,6 +220,9 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     if(self.fARTHERPARTYID != nil){
         dictionary[kGetPartyVisitItemModelFARTHERPARTYID] = self.fARTHERPARTYID;
     }
+    if(self.fREQUENCY != nil){
+        dictionary[kGetPartyVisitItemModelFREQUENCY] = self.fREQUENCY;
+    }
     if(self.gRADE != nil){
         dictionary[kGetPartyVisitItemModelGRADE] = self.gRADE;
     }
@@ -259,11 +274,17 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     if(self.uSERNO != nil){
         dictionary[kGetPartyVisitItemModelUSERNO] = self.uSERNO;
     }
+    if(self.vISITINGNUMBER != nil){
+        dictionary[kGetPartyVisitItemModelVISITINGNUMBER] = self.vISITINGNUMBER;
+    }
     if(self.vISITDATE != nil){
         dictionary[kGetPartyVisitItemModelVISITDATE] = self.vISITDATE;
     }
     if(self.vISITIDX != nil){
         dictionary[kGetPartyVisitItemModelVISITIDX] = self.vISITIDX;
+    }
+    if(self.vISITNUMBER != nil){
+        dictionary[kGetPartyVisitItemModelVISITNUMBER] = self.vISITNUMBER;
     }
     if(self.vISITSTATES != nil){
         dictionary[kGetPartyVisitItemModelVISITSTATES] = self.vISITSTATES;
@@ -325,6 +346,9 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     if(self.fARTHERPARTYID != nil){
         [aCoder encodeObject:self.fARTHERPARTYID forKey:kGetPartyVisitItemModelFARTHERPARTYID];
     }
+    if(self.fREQUENCY != nil){
+        [aCoder encodeObject:self.fREQUENCY forKey:kGetPartyVisitItemModelFREQUENCY];
+    }
     if(self.gRADE != nil){
         [aCoder encodeObject:self.gRADE forKey:kGetPartyVisitItemModelGRADE];
     }
@@ -376,11 +400,17 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     if(self.uSERNO != nil){
         [aCoder encodeObject:self.uSERNO forKey:kGetPartyVisitItemModelUSERNO];
     }
+    if(self.vISITINGNUMBER != nil){
+        [aCoder encodeObject:self.vISITINGNUMBER forKey:kGetPartyVisitItemModelVISITINGNUMBER];
+    }
     if(self.vISITDATE != nil){
         [aCoder encodeObject:self.vISITDATE forKey:kGetPartyVisitItemModelVISITDATE];
     }
     if(self.vISITIDX != nil){
         [aCoder encodeObject:self.vISITIDX forKey:kGetPartyVisitItemModelVISITIDX];
+    }
+    if(self.vISITNUMBER != nil){
+        [aCoder encodeObject:self.vISITNUMBER forKey:kGetPartyVisitItemModelVISITNUMBER];
     }
     if(self.vISITSTATES != nil){
         [aCoder encodeObject:self.vISITSTATES forKey:kGetPartyVisitItemModelVISITSTATES];
@@ -415,6 +445,7 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     self.eDITDATE = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelEDITDATE];
     self.fARTHERADDRESSID = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelFARTHERADDRESSID];
     self.fARTHERPARTYID = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelFARTHERPARTYID];
+    self.fREQUENCY = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelFREQUENCY];
     self.gRADE = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelGRADE];
     self.iDX = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelIDX];
     self.lATITUDE = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelLATITUDE];
@@ -432,8 +463,10 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     self.sINGLESTORESALES = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelSINGLESTORESALES];
     self.uSERNAME = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelUSERNAME];
     self.uSERNO = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelUSERNO];
+    self.vISITINGNUMBER = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVISITINGNUMBER];
     self.vISITDATE = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVISITDATE];
     self.vISITIDX = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVISITIDX];
+    self.vISITNUMBER = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVISITNUMBER];
     self.vISITSTATES = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVISITSTATES];
     self.vIVIDDISPLAYCBX = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVIVIDDISPLAYCBX];
     self.vIVIDDISPLAYTEXT = [aDecoder decodeObjectForKey:kGetPartyVisitItemModelVIVIDDISPLAYTEXT];
@@ -461,6 +494,7 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     copy.eDITDATE = [self.eDITDATE copy];
     copy.fARTHERADDRESSID = [self.fARTHERADDRESSID copy];
     copy.fARTHERPARTYID = [self.fARTHERPARTYID copy];
+    copy.fREQUENCY = [self.fREQUENCY copy];
     copy.gRADE = [self.gRADE copy];
     copy.iDX = [self.iDX copy];
     copy.lATITUDE = [self.lATITUDE copy];
@@ -478,8 +512,10 @@ if(![dictionary[kGetPartyVisitItemModelRECOMMENDEDORDER] isKindOfClass:[NSNull c
     copy.sINGLESTORESALES = [self.sINGLESTORESALES copy];
     copy.uSERNAME = [self.uSERNAME copy];
     copy.uSERNO = [self.uSERNO copy];
+    copy.vISITINGNUMBER = [self.vISITINGNUMBER copy];
     copy.vISITDATE = [self.vISITDATE copy];
     copy.vISITIDX = [self.vISITIDX copy];
+    copy.vISITNUMBER = [self.vISITNUMBER copy];
     copy.vISITSTATES = [self.vISITSTATES copy];
     copy.vIVIDDISPLAYCBX = [self.vIVIDDISPLAYCBX copy];
     copy.vIVIDDISPLAYTEXT = [self.vIVIDDISPLAYTEXT copy];

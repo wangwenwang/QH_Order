@@ -50,8 +50,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-UO-aa2" userLabel="底部视图">
                                 <rect key="frame" x="0.0" y="69.5" width="320" height="30"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUb-KJ-yys">
+                                        <rect key="frame" x="10" y="6.5" width="13.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-5o-cl1">
+                                        <rect key="frame" x="23.5" y="6.5" width="13.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已拜访" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKH-H6-gox">
+                                        <rect key="frame" x="37" y="6.5" width="40" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-gn-x9d">
+                                        <rect key="frame" x="77" y="6.5" width="8" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QN-bX-jz2">
+                                        <rect key="frame" x="85" y="6.5" width="13.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVN-ii-HdU" userLabel="查看步骤">
-                                        <rect key="frame" x="142" y="-0.5" width="90" height="30"/>
+                                        <rect key="frame" x="162" y="-0.5" width="90" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vis-gZ-TCX">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
@@ -63,7 +93,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lm_visit_check" translatesAutoresizingMaskIntoConstraints="NO" id="o1d-sD-p2w">
                                                 <rect key="frame" x="-1.5" y="5" width="22" height="22"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看拜访" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-8T-0ak">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史拜访" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-8T-0ak">
                                                 <rect key="frame" x="27.5" y="9" width="53.5" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.52549019610000003" green="0.53333333329999999" blue="0.54117647059999996" alpha="1" colorSpace="deviceRGB"/>
@@ -128,20 +158,30 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="2QN-bX-jz2" firstAttribute="centerY" secondItem="LUb-KJ-yys" secondAttribute="centerY" id="0rA-pL-1VG"/>
                                     <constraint firstAttribute="bottom" secondItem="hS0-Wr-quH" secondAttribute="bottom" id="1rl-bj-9YO"/>
+                                    <constraint firstItem="kKH-H6-gox" firstAttribute="centerY" secondItem="BeB-5o-cl1" secondAttribute="centerY" id="5VI-A7-Rh6"/>
                                     <constraint firstAttribute="trailing" secondItem="hZR-gh-Vr4" secondAttribute="trailing" id="Atx-dR-F34"/>
                                     <constraint firstItem="hS0-Wr-quH" firstAttribute="top" secondItem="3ow-UO-aa2" secondAttribute="top" id="BE4-jg-g2B"/>
                                     <constraint firstAttribute="height" constant="30" id="L4R-zD-pkx"/>
-                                    <constraint firstItem="hS0-Wr-quH" firstAttribute="leading" secondItem="bVN-ii-HdU" secondAttribute="trailing" constant="20" id="VD4-Yr-ZbG"/>
+                                    <constraint firstItem="BeB-5o-cl1" firstAttribute="centerY" secondItem="3ow-UO-aa2" secondAttribute="centerY" id="LcL-hU-zah"/>
+                                    <constraint firstItem="BeB-5o-cl1" firstAttribute="centerY" secondItem="LUb-KJ-yys" secondAttribute="centerY" id="O6R-Ac-DNJ"/>
+                                    <constraint firstItem="LUb-KJ-yys" firstAttribute="leading" secondItem="3ow-UO-aa2" secondAttribute="leading" constant="10" id="Pll-Ym-lKI"/>
+                                    <constraint firstItem="2QN-bX-jz2" firstAttribute="leading" secondItem="jZx-gn-x9d" secondAttribute="trailing" id="QWE-Ia-Q9I"/>
+                                    <constraint firstItem="hS0-Wr-quH" firstAttribute="leading" secondItem="bVN-ii-HdU" secondAttribute="trailing" id="VD4-Yr-ZbG"/>
+                                    <constraint firstItem="jZx-gn-x9d" firstAttribute="centerY" secondItem="LUb-KJ-yys" secondAttribute="centerY" id="VYt-bG-TB0"/>
+                                    <constraint firstItem="kKH-H6-gox" firstAttribute="leading" secondItem="BeB-5o-cl1" secondAttribute="trailing" id="VkN-6e-qDU"/>
                                     <constraint firstAttribute="bottom" secondItem="bVN-ii-HdU" secondAttribute="bottom" id="YxI-f8-ZSw"/>
                                     <constraint firstAttribute="bottom" secondItem="hZR-gh-Vr4" secondAttribute="bottom" constant="0.5" id="eam-XK-Onp"/>
+                                    <constraint firstItem="BeB-5o-cl1" firstAttribute="leading" secondItem="LUb-KJ-yys" secondAttribute="trailing" id="grg-4Z-LDD"/>
                                     <constraint firstAttribute="trailing" secondItem="hS0-Wr-quH" secondAttribute="trailing" id="hmd-Ya-fQZ"/>
                                     <constraint firstItem="bVN-ii-HdU" firstAttribute="top" secondItem="3ow-UO-aa2" secondAttribute="top" id="njE-2E-fQO"/>
+                                    <constraint firstItem="jZx-gn-x9d" firstAttribute="leading" secondItem="kKH-H6-gox" secondAttribute="trailing" id="pzJ-lY-uMT"/>
                                     <constraint firstItem="hZR-gh-Vr4" firstAttribute="leading" secondItem="3ow-UO-aa2" secondAttribute="leading" id="y7H-o5-pZN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设置" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-yw-ITm">
-                                <rect key="frame" x="270" y="37.5" width="43" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-yw-ITm">
+                                <rect key="frame" x="313" y="46" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -178,7 +218,10 @@
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <connections>
                 <outlet property="ADD_DATE" destination="Bwh-1e-LTA" id="ob2-cB-vts"/>
+                <outlet property="FREQUENCY" destination="BeB-5o-cl1" id="hKa-WI-Ctj"/>
+                <outlet property="FREQUENCYPromptLabel" destination="LUb-KJ-yys" id="dSX-Go-o0D"/>
                 <outlet property="PARTY_NAME" destination="u5a-vp-w1S" id="eds-cH-lqW"/>
+                <outlet property="VISIT_NUMBER" destination="jZx-gn-x9d" id="Wr9-Jc-POr"/>
                 <outlet property="VISIT_STATES" destination="V1y-yw-ITm" id="U1s-ei-Q6u"/>
                 <outlet property="addOrEditLabel" destination="PVJ-qY-7Nx" id="AhL-3J-iOn"/>
                 <outlet property="checkView" destination="bVN-ii-HdU" id="iE0-nV-CCF"/>

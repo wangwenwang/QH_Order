@@ -28,6 +28,16 @@
 @optional
 - (void)failureOfGetPartyVisitList:(nullable NSString *)msg;
 
+/// 获取历史拜访列表
+@optional
+- (void)successOfGetPartyVisitHistory:(nullable GetPartyVisitListModel *)getPartyVisitListM;
+
+@optional
+- (void)successOfGetPartyVisitHistory_NoData;
+
+@optional
+- (void)failureOfGetPartyVisitHistory:(nullable NSString *)msg;
+
 @end
 
 @interface GetPartyVisitListService : NSObject
@@ -55,5 +65,16 @@
  @param strFartherPartyID   经销商ID（上级ID）
  */
 - (void)GetPartyVisitList:(NSUInteger)strPage andstrPageCount:(NSUInteger)strPageCount andStrSearch:(nullable NSString *)strSearch andStrLine:(nullable NSString *)strLine andStatus:(nullable NSString *)status andStrUserID:(nullable NSString *)strUserID andStrFartherPartyID:(nullable NSString *)strFartherPartyID;
+
+
+/**
+ 获取历史拜访列表
+
+ @param strBusinessId   业务代码ID
+ @param strPartyCode    被拜访客户名称
+ @param startTime       开始时间
+ @param endTime         结束时间
+ */
+- (void)GetPartyVisitHistory:(nullable NSString *)strBusinessIdx andStrPartyCode:(nullable NSString *)strPartyCode andStartTime:(nullable NSString *)startTime andEndTime:(nullable NSString *)endTime;
 
 @end

@@ -41,6 +41,15 @@
 // 拜访
 @property (weak, nonatomic) IBOutlet UIView *visitView;
 
+// 拜访周期提示 本
+@property (weak, nonatomic) IBOutlet UILabel *FREQUENCYPromptLabel;
+
+// 拜访周期 周/月
+@property (weak, nonatomic) IBOutlet UILabel *FREQUENCY;
+
+// 已拜访次数
+@property (weak, nonatomic) IBOutlet UILabel *VISIT_NUMBER;
+
 @end
 
 @implementation GetPartyVisitListTableViewCell
@@ -89,48 +98,66 @@
     _CONTACTS_TEL.text = getPartyVisitItemM.cONTACTSTEL;
     _PARTY_NAME.text = getPartyVisitItemM.pARTYNAME;
     _PARTY_ADDRESS.text = getPartyVisitItemM.pARTYADDRESS;
-    _ADD_DATE.text = getPartyVisitItemM.vISITDATE;
-    if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"未拜访"]) {
-     
-        [_VISIT_STATES setText:@"未拜访"];
-        [_VISIT_STATES setTextColor:[UIColor redColor]];
-    }else if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"拜访中"]) {
+    if(![getPartyVisitItemM.vISITDATE isEqualToString:@""]) {
         
-        [_VISIT_STATES setText:@"拜访中"];
-        [_VISIT_STATES setTextColor:[UIColor orangeColor]];
-    }else if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"已拜访"]) {
+        _ADD_DATE.text = [NSString stringWithFormat:@"上次拜访时间: %@", getPartyVisitItemM.vISITDATE];
+    }else {
         
-        [_VISIT_STATES setText:@"已拜访"];
-        [_VISIT_STATES setTextColor:RGB(35, 120, 58)];
+        _ADD_DATE.text = @"";
     }
+    
+    if([getPartyVisitItemM.fREQUENCY isEqualToString:@""]) {
+        
+        [_FREQUENCYPromptLabel setText:@""];
+    }else {
+        
+        [_FREQUENCYPromptLabel setText:@"本"];
+    }
+    
+    [_FREQUENCY setText:getPartyVisitItemM.fREQUENCY];
+    [_VISIT_NUMBER setText:getPartyVisitItemM.vISITNUMBER];
+    
+//    if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"未拜访"]) {
+//
+//        [_VISIT_STATES setText:@"未拜访"];
+//        [_VISIT_STATES setTextColor:[UIColor redColor]];
+//    }else if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"拜访中"]) {
+//
+//        [_VISIT_STATES setText:@"拜访中"];
+//        [_VISIT_STATES setTextColor:[UIColor orangeColor]];
+//    }else if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"已拜访"]) {
+//
+//        [_VISIT_STATES setText:@"已拜访"];
+//        [_VISIT_STATES setTextColor:RGB(35, 120, 58)];
+//    }
 }
 
 
 - (void)setIsDisplayCheckBtn:(BOOL)isDisplayCheckBtn {
     
-    if(isDisplayCheckBtn) {
-        
-        [_checkView setHidden:NO];
-    }else {
-        
-        [_checkView setHidden:YES];
-    }
+//    if(isDisplayCheckBtn) {
+//
+//        [_checkView setHidden:NO];
+//    }else {
+//
+//        [_checkView setHidden:YES];
+//    }
 }
 
 
 - (void)setIsDisplayVisitBtn:(BOOL)isDisplayVisitBtn {
     
-    if(isDisplayVisitBtn) {
-        
-        _edit_width.constant = 68;
-        _edit_trailing.constant = 20;
-        [_visitView setHidden:NO];
-    }else {
-        
-        _edit_width.constant = 0;
-        _edit_trailing.constant = 0;
-        [_visitView setHidden:YES];
-    }
+//    if(isDisplayVisitBtn) {
+//
+//        _edit_width.constant = 68;
+//        _edit_trailing.constant = 20;
+//        [_visitView setHidden:NO];
+//    }else {
+//
+//        _edit_width.constant = 0;
+//        _edit_trailing.constant = 0;
+//        [_visitView setHidden:YES];
+//    }
 }
 
 

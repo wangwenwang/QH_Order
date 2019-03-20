@@ -32,6 +32,9 @@
 #import "GetVisitVividDisplayViewController.h"
 #import "KBShowStepViewController.h"
 
+// 历史拜访
+#import "GetPartyVisitHistoryViewController.h"
+
 @interface GetPartyVisitListViewController ()<GetPartyVisitListServiceDelegate, GetPartyVisitListTableViewCellDelegate, GetPartyVisitLineServiceDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
     
 //    GetPartyVisitListSearchResultsViewController *searchResultsViewController;
@@ -73,11 +76,17 @@
 // 经销商
 @property (weak, nonatomic) IBOutlet IDLabel *firstPartLabel;
 
+//// 拜访路线
+//@property (weak, nonatomic) IBOutlet UILabel *weekLabel;
+//
+//// 拜访状态
+//@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
 // 拜访路线
-@property (weak, nonatomic) IBOutlet UILabel *weekLabel;
+@property (strong, nonatomic) UILabel *weekLabel;
 
 // 拜访状态
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) UILabel *statusLabel;
 
 // 线路规划
 @property (weak, nonatomic) IBOutlet UIButton *routePlanBtn;
@@ -112,6 +121,11 @@
         _visitsFilter = [[NSMutableArray alloc] init];
         
         _searchInputText = @"";
+        
+        _weekLabel = [[UILabel alloc] init];
+        _statusLabel = [[UILabel alloc] init];
+        [_weekLabel setText:@""];
+        [_statusLabel setText:@""];
     }
     return self;
 }
@@ -144,8 +158,8 @@
     _routePlanBtn.layer.shadowOpacity = 0.5;
     _routePlanBtn.layer.shadowColor =  [UIColor redColor].CGColor;
     
-    [_weekLabel setText:[Tools getCurrentWeekDay]];
-    [_statusLabel setText:@"未拜访"];
+//    [_weekLabel setText:[Tools getCurrentWeekDay]];
+//    [_statusLabel setText:@"未拜访"];
     [self addRightBtn];
     
     [self addNotification];
@@ -158,7 +172,7 @@
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataUp)];
     _tableView.mj_footer.hidden = YES;
     
-    [_service_week GetPartyVisitLine];
+//    [_service_week GetPartyVisitLine];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -482,13 +496,28 @@
     GetPartyVisitItemModel *_pvItemM = _visitsFilter[row];
     
     if([_pvItemM.vISITSTATES isEqualToString:@""]||[_pvItemM.vISITSTATES isEqualToString:@""]) {
-
-        AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
-        vc.partyM = partyM;
-        vc.addressM = addressM;
-        vc.pvItemM = m;
-        vc.lines = _lineArr;
-        [self.navigationController pushViewController:vc animated:YES];
+    
+        if([m.vISITINGNUMBER intValue] > 0) {
+            
+            [LM_alert showLMAlertViewWithTitle:@"" message:@"此客户已有拜访中，是否新建拜访" cancleButtonTitle:@"取消" okButtonTitle:@"新建" okClickHandle:^{
+                
+                AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
+                vc.partyM = partyM;
+                vc.addressM = addressM;
+                vc.pvItemM = m;
+                vc.lines = _lineArr;
+                [self.navigationController pushViewController:vc animated:YES];
+            } cancelClickHandle:nil];
+        }else {
+            
+            AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
+            vc.partyM = partyM;
+            vc.addressM = addressM;
+            vc.pvItemM = m;
+            vc.lines = _lineArr;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
     } else if([_pvItemM.vISITSTATES isEqualToString:@"新建"] || [_pvItemM.vISITSTATES isEqualToString:@"确认客户信息"]){
         GetVisitEnterShopViewController *vc = [[GetVisitEnterShopViewController alloc] init];
         vc.pvItemM = _pvItemM;
@@ -590,6 +619,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     GetPartyVisitItemModel *m = _visitsFilter[indexPath.row];
     if([[Tools getVISIT_STATES:m.vISITSTATES] isEqualToString:@"未拜访"]) {
@@ -710,9 +741,15 @@
 
 - (void)showStepOnclick:(NSUInteger)row {
     
-    KBShowStepViewController *vc = [[KBShowStepViewController alloc] init];
+//    KBShowStepViewController *vc = [[KBShowStepViewController alloc] init];
+//    GetPartyVisitItemModel *m = _visitsFilter[row];
+//    vc.pvItemM = m;
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    GetPartyVisitHistoryViewController *vc = [[GetPartyVisitHistoryViewController alloc] init];
     GetPartyVisitItemModel *m = _visitsFilter[row];
     vc.pvItemM = m;
+    vc.FartherPartyID = _firstPartLabel.IDX;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

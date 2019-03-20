@@ -451,6 +451,8 @@
 		3B4E18F32189B4EE00297B88 /* GetPartyVisitCBXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18F22189B4EE00297B88 /* GetPartyVisitCBXModel.m */; };
 		3B4E18F92189B91C00297B88 /* GetPartyVisitCBXService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18F82189B91C00297B88 /* GetPartyVisitCBXService.m */; };
 		3B4E18FF218A02B800297B88 /* GetPartyVisitCBXItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18FE218A02B800297B88 /* GetPartyVisitCBXItemModel.m */; };
+		3B588953224077F100617878 /* GetPartyVisitHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */; };
+		3B588954224077F100617878 /* GetPartyVisitHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */; };
 		3B5ABDE92187FFFE00A1230D /* GetPartyVisitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */; };
 		3B5ABDEA2187FFFE00A1230D /* GetPartyVisitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */; };
 		3B5ABDED2188022900A1230D /* GetPartyVisitListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDEC2188022900A1230D /* GetPartyVisitListService.m */; };
@@ -479,6 +481,12 @@
 		3B765A3021B6114400684CF4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A2F21B6114400684CF4 /* CoreTelephony.framework */; };
 		3B765A3221B6115400684CF4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A3121B6115400684CF4 /* libc++.tbd */; };
 		3B765A3421B6115D00684CF4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A3321B6115D00684CF4 /* AdSupport.framework */; };
+		3B78402B22409B1000D0FD06 /* LLCustomDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402422409B1000D0FD06 /* LLCustomDateView.m */; };
+		3B78402C22409B1000D0FD06 /* LLFactoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402722409B1000D0FD06 /* LLFactoryManager.m */; };
+		3B78402D22409B1000D0FD06 /* LLDateFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402822409B1000D0FD06 /* LLDateFilterView.m */; };
+		3B78402E22409B1000D0FD06 /* UIView+LLDateFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402A22409B1000D0FD06 /* UIView+LLDateFilterView.m */; };
+		3B7840322240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7840302240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m */; };
+		3B7840332240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7840312240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.xib */; };
 		3B78D6B521E5FC160074ADD0 /* CARTotalOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78D6B421E5FC160074ADD0 /* CARTotalOrderListModel.m */; };
 		3B78D6B821E5FC3A0074ADD0 /* CARTotalOrderItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78D6B721E5FC3A0074ADD0 /* CARTotalOrderItemModel.m */; };
 		3B813A8421AEF5A30096783C /* GetVisitVividDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B813A8221AEF5A20096783C /* GetVisitVividDisplayViewController.m */; };
@@ -1317,6 +1325,9 @@
 		3B4E18F82189B91C00297B88 /* GetPartyVisitCBXService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitCBXService.m; sourceTree = "<group>"; };
 		3B4E18FD218A02B800297B88 /* GetPartyVisitCBXItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitCBXItemModel.h; sourceTree = "<group>"; };
 		3B4E18FE218A02B800297B88 /* GetPartyVisitCBXItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitCBXItemModel.m; sourceTree = "<group>"; };
+		3B588950224077F100617878 /* GetPartyVisitHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitHistoryViewController.h; sourceTree = "<group>"; };
+		3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitHistoryViewController.m; sourceTree = "<group>"; };
+		3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitHistoryViewController.xib; sourceTree = "<group>"; };
 		3B5ABDE62187FFFE00A1230D /* GetPartyVisitListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListViewController.h; sourceTree = "<group>"; };
 		3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitListViewController.m; sourceTree = "<group>"; };
 		3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitListViewController.xib; sourceTree = "<group>"; };
@@ -1358,6 +1369,17 @@
 		3B765A2F21B6114400684CF4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		3B765A3121B6115400684CF4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3B765A3321B6115D00684CF4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3B78402322409B1000D0FD06 /* LLFactoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLFactoryManager.h; sourceTree = "<group>"; };
+		3B78402422409B1000D0FD06 /* LLCustomDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCustomDateView.m; sourceTree = "<group>"; };
+		3B78402522409B1000D0FD06 /* LLDateFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDateFilterView.h; sourceTree = "<group>"; };
+		3B78402622409B1000D0FD06 /* UIView+LLDateFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LLDateFilterView.h"; sourceTree = "<group>"; };
+		3B78402722409B1000D0FD06 /* LLFactoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLFactoryManager.m; sourceTree = "<group>"; };
+		3B78402822409B1000D0FD06 /* LLDateFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDateFilterView.m; sourceTree = "<group>"; };
+		3B78402922409B1000D0FD06 /* LLCustomDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCustomDateView.h; sourceTree = "<group>"; };
+		3B78402A22409B1000D0FD06 /* UIView+LLDateFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LLDateFilterView.m"; sourceTree = "<group>"; };
+		3B78402F2240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitHistoryTableViewCell.h; sourceTree = "<group>"; };
+		3B7840302240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitHistoryTableViewCell.m; sourceTree = "<group>"; };
+		3B7840312240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		3B78D6B321E5FC160074ADD0 /* CARTotalOrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARTotalOrderListModel.h; sourceTree = "<group>"; };
 		3B78D6B421E5FC160074ADD0 /* CARTotalOrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARTotalOrderListModel.m; sourceTree = "<group>"; };
 		3B78D6B621E5FC3A0074ADD0 /* CARTotalOrderItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARTotalOrderItemModel.h; sourceTree = "<group>"; };
@@ -2666,6 +2688,7 @@
 		30CDC5B31D9907CD0035602F /* Thire */ = {
 			isa = PBXGroup;
 			children = (
+				3B78402222409B1000D0FD06 /* LLDateFilterView */,
 				3B86F39321F717740048A9AF /* yh_navgation */,
 				30CDC6681D990B420035602F /* Tools */,
 				3B084FC821B074B5006ECBF1 /* ACMediaFrame */,
@@ -3194,6 +3217,9 @@
 				3B5ABDE62187FFFE00A1230D /* GetPartyVisitListViewController.h */,
 				3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */,
 				3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */,
+				3B588950224077F100617878 /* GetPartyVisitHistoryViewController.h */,
+				3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */,
+				3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */,
 				3B6C3F7A21E7556E00C28334 /* VisitRoutePlanViewController.h */,
 				3B6C3F7B21E7556E00C28334 /* VisitRoutePlanViewController.m */,
 				3B6C3F7C21E7556E00C28334 /* VisitRoutePlanViewController.xib */,
@@ -3234,6 +3260,9 @@
 				3B5ABDF3218802AA00A1230D /* GetPartyVisitListTableViewCell.h */,
 				3B5ABDF4218802AA00A1230D /* GetPartyVisitListTableViewCell.m */,
 				3B5ABDF5218802AA00A1230D /* GetPartyVisitListTableViewCell.xib */,
+				3B78402F2240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.h */,
+				3B7840302240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m */,
+				3B7840312240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.xib */,
 				3B813AE721AF2A0D0096783C /* LMDropDownMenuTableViewCell.h */,
 				3B813AE621AF2A0D0096783C /* LMDropDownMenuTableViewCell.m */,
 				3B813AE821AF2A0E0096783C /* LMDropDownMenuTableViewCell.xib */,
@@ -3327,6 +3356,21 @@
 				3B765A2521B60FA900684CF4 /* BMKLocationKit.framework */,
 			);
 			path = libs;
+			sourceTree = "<group>";
+		};
+		3B78402222409B1000D0FD06 /* LLDateFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				3B78402322409B1000D0FD06 /* LLFactoryManager.h */,
+				3B78402422409B1000D0FD06 /* LLCustomDateView.m */,
+				3B78402522409B1000D0FD06 /* LLDateFilterView.h */,
+				3B78402622409B1000D0FD06 /* UIView+LLDateFilterView.h */,
+				3B78402722409B1000D0FD06 /* LLFactoryManager.m */,
+				3B78402822409B1000D0FD06 /* LLDateFilterView.m */,
+				3B78402922409B1000D0FD06 /* LLCustomDateView.h */,
+				3B78402A22409B1000D0FD06 /* UIView+LLDateFilterView.m */,
+			);
+			path = LLDateFilterView;
 			sourceTree = "<group>";
 		};
 		3B78D6B221E5FC070074ADD0 /* 查看报表 */ = {
@@ -3646,6 +3690,7 @@
 				30BB2DAB1F459359002E51E7 /* AddStockViewController.xib in Resources */,
 				30EF59C11DAE2520003F5729 /* MakeOrderTableViewCell.xib in Resources */,
 				304A7AC61DB867A90039B0B2 /* CheckOrderPathViewController.xib in Resources */,
+				3B7840332240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.xib in Resources */,
 				3BB4AAD32216BB0200BE16F9 /* GetAppOutPutListViewController.xib in Resources */,
 				30BB2DAF1F459359002E51E7 /* CustomerListSearchResultsViewController.xib in Resources */,
 				30CDC6421D9907CD0035602F /* PhotoItemView.xib in Resources */,
@@ -3696,6 +3741,7 @@
 				30A3C2F01D991E1000BBE0DA /* WelcomeViewController.xib in Resources */,
 				30C041752008B2FE00057AB2 /* GetWmsProductSumTableViewCell.xib in Resources */,
 				301D7DC91F5A3E0400D83410 /* GetPartyListTableViewCell.xib in Resources */,
+				3B588954224077F100617878 /* GetPartyVisitHistoryViewController.xib in Resources */,
 				30930BA61FD6AC4700D320F9 /* SelectGoodsTableViewCell.xib in Resources */,
 				3000CA031DB20E2F00D8E731 /* ProductPolicyTableViewCell.xib in Resources */,
 				30BB2DCD1F459375002E51E7 /* GetAppStockListTableViewCell.xib in Resources */,
@@ -3843,10 +3889,12 @@
 				30BB2DCE1F459375002E51E7 /* GetStockListTableViewCell.m in Sources */,
 				3035669A1F70CD2B009E6EFB /* GetToAddressListViewController.m in Sources */,
 				304A34161F0E071B0055D50C /* AreaProvinceViewController.m in Sources */,
+				3B78402C22409B1000D0FD06 /* LLFactoryManager.m in Sources */,
 				304A7AC91DB868080039B0B2 /* CheckSignatureService.m in Sources */,
 				303567001F710384009E6EFB /* GetInputInfoTableViewCell.m in Sources */,
 				30A3C2F41D991E4C00BBE0DA /* LoginService.m in Sources */,
 				3054D10C1FFCC90700E1D9B2 /* GetTmsOrderByAddressService.m in Sources */,
+				3B588953224077F100617878 /* GetPartyVisitHistoryViewController.m in Sources */,
 				3088D30A1F4BDE16006031D9 /* GetOupputInfoModel.m in Sources */,
 				302675E91F725E550098DEF1 /* Stock_SaveInputService.m in Sources */,
 				301D7DEB1F5A3F5400D83410 /* RouteAnnotation.m in Sources */,
@@ -3899,6 +3947,7 @@
 				30BB2DC61F459375002E51E7 /* AddStockCellTableViewCell.m in Sources */,
 				302675E51F724BCA0098DEF1 /* Store_GetToAddressListService.m in Sources */,
 				30CDC6511D9907CD0035602F /* UIImage+Color.m in Sources */,
+				3B78402D22409B1000D0FD06 /* LLDateFilterView.m in Sources */,
 				30A3C3251D9A71AC00BBE0DA /* MineTableViewCell.m in Sources */,
 				3056B54B2007145700B4704A /* GetWmsProductSumViewController.m in Sources */,
 				30E9C0A51DA8E15A00A09182 /* HotProductViewController.m in Sources */,
@@ -3916,6 +3965,7 @@
 				3088D30D1F4BDE96006031D9 /* GetOupputItemModel.m in Sources */,
 				302F6D431F73A57E00A84F39 /* Stock_GetOutProductTypeService.m in Sources */,
 				30E5A04D1D9B769000D94F77 /* CheckOrderService.m in Sources */,
+				3B7840322240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m in Sources */,
 				3BB4AADC2216D3B500BE16F9 /* CondTableViewCell.m in Sources */,
 				30CDC6461D9907CD0035602F /* CoreArchive.m in Sources */,
 				304A7ADD1DB8BCFE0039B0B2 /* ChartService.m in Sources */,
@@ -3984,6 +4034,7 @@
 				308783891D98CD45002EED76 /* AppDelegate.m in Sources */,
 				3BB4AAC4221684A400BE16F9 /* AddressListViewController.m in Sources */,
 				30B439D11F1D91F60092A015 /* DeleteAddressService.m in Sources */,
+				3B78402E22409B1000D0FD06 /* UIView+LLDateFilterView.m in Sources */,
 				30BB2DFD1F468281002E51E7 /* StockProductModel.m in Sources */,
 				30B1AE761F74989900130A55 /* Stock_GetInputListService.m in Sources */,
 				300AF70A1EE8FD630037C660 /* NSDate+HooDatePicker.m in Sources */,
@@ -4137,6 +4188,7 @@
 				3035669C1F70CD2B009E6EFB /* StockOutConfirmViewController.m in Sources */,
 				30240EC51FFE1BBE007BC134 /* TmsOrderInfoListModel.m in Sources */,
 				30A7506B1F18C46A00B46B93 /* LM_A_B_C_D.m in Sources */,
+				3B78402B22409B1000D0FD06 /* LLCustomDateView.m in Sources */,
 				3B813A8421AEF5A30096783C /* GetVisitVividDisplayViewController.m in Sources */,
 				30F7B8E11DBFAE80004CD128 /* SelectedGiftsTableViewCell.m in Sources */,
 				30C4762E1F4D2EFA00A5FB93 /* TPKeyboardAvoidingCollectionView.m in Sources */,

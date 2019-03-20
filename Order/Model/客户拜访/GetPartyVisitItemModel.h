@@ -10,6 +10,7 @@
 
 @interface GetPartyVisitItemModel : NSObject
 
+
 @property (nonatomic, strong) NSString * aCTUALVISITINGADDRESS;
 @property (nonatomic, strong) NSString * aDDRESSCODE;
 @property (nonatomic, strong) NSString * aDDRESSIDX;
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) NSString * eDITDATE;
 @property (nonatomic, strong) NSString * fARTHERADDRESSID;
 @property (nonatomic, strong) NSString * fARTHERPARTYID;
+@property (nonatomic, strong) NSString * fREQUENCY;
 @property (nonatomic, strong) NSString * gRADE;
 @property (nonatomic, strong) NSString * iDX;
 @property (nonatomic, strong) NSString * lATITUDE;
@@ -39,8 +41,10 @@
 @property (nonatomic, strong) NSString * sINGLESTORESALES;
 @property (nonatomic, strong) NSString * uSERNAME;
 @property (nonatomic, strong) NSString * uSERNO;
+@property (nonatomic, strong) NSString * vISITINGNUMBER;
 @property (nonatomic, strong) NSString * vISITDATE;
 @property (nonatomic, strong) NSString * vISITIDX;
+@property (nonatomic, strong) NSString * vISITNUMBER;
 @property (nonatomic, strong) NSString * vISITSTATES;
 @property (nonatomic, strong) NSString * vIVIDDISPLAYCBX;
 @property (nonatomic, strong) NSString * vIVIDDISPLAYTEXT;
@@ -51,4 +55,5 @@
 -(NSDictionary *)toDictionary;
 
 @property (assign, nonatomic) CGFloat cellHeight;
+
 @end

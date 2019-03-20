@@ -14,4 +14,8 @@
 
 @property (copy, nonatomic) NSString *time;
 
+@property (copy, nonatomic) NSString *startTime;
+
+@property (copy, nonatomic) NSString *endTime;
+
 @end

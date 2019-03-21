@@ -154,6 +154,13 @@
         
         image2Str = [Tools changeImageToString:[imageM lastObject]];
     }
+    
+    if([_ACTUAL_VISITING_ADDRESS.text isEqualToString:@""]) {
+        
+        [Tools showAlert:self.view andTitle:@"定位失败，请返回，重新进店"];
+        return;
+    }
+    
     if(![image1Str isEqualToString:@""]) {
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];

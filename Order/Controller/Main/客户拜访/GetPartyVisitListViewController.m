@@ -76,14 +76,11 @@
 // 经销商
 @property (weak, nonatomic) IBOutlet IDLabel *firstPartLabel;
 
-//// 拜访路线
-//@property (weak, nonatomic) IBOutlet UILabel *weekLabel;
+// 拜访路线
+@property (weak, nonatomic) IBOutlet UILabel *weekLabel;
 //
 //// 拜访状态
 //@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
-// 拜访路线
-@property (strong, nonatomic) UILabel *weekLabel;
 
 // 拜访状态
 @property (strong, nonatomic) UILabel *statusLabel;
@@ -158,7 +155,7 @@
     _routePlanBtn.layer.shadowOpacity = 0.5;
     _routePlanBtn.layer.shadowColor =  [UIColor redColor].CGColor;
     
-//    [_weekLabel setText:[Tools getCurrentWeekDay]];
+    [_weekLabel setText:[Tools getCurrentWeekDay]];
 //    [_statusLabel setText:@"未拜访"];
     [self addRightBtn];
     
@@ -172,7 +169,7 @@
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataUp)];
     _tableView.mj_footer.hidden = YES;
     
-//    [_service_week GetPartyVisitLine];
+    [_service_week GetPartyVisitLine];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -454,7 +454,6 @@
 		3B588953224077F100617878 /* GetPartyVisitHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */; };
 		3B588954224077F100617878 /* GetPartyVisitHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */; };
 		3B5ABDE92187FFFE00A1230D /* GetPartyVisitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */; };
-		3B5ABDEA2187FFFE00A1230D /* GetPartyVisitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */; };
 		3B5ABDED2188022900A1230D /* GetPartyVisitListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDEC2188022900A1230D /* GetPartyVisitListService.m */; };
 		3B5ABDF6218802AA00A1230D /* GetPartyVisitListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDF4218802AA00A1230D /* GetPartyVisitListTableViewCell.m */; };
 		3B5ABDF7218802AA00A1230D /* GetPartyVisitListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5ABDF5218802AA00A1230D /* GetPartyVisitListTableViewCell.xib */; };
@@ -533,6 +532,7 @@
 		3BB4AAEF221706C600BE16F9 /* KPIExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAEE221706C600BE16F9 /* KPIExamModel.m */; };
 		3BB4AAF42217173400BE16F9 /* KPIExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */; };
 		3BB4AAF52217173400BE16F9 /* KPIExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */; };
+		3BCE65B222431BE9001DCA48 /* GetPartyVisitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BCE65B122431BE9001DCA48 /* GetPartyVisitListViewController.xib */; };
 		3BDABE8E21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */; };
 		3BDABE8F21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */; };
 		3BDABE9321A4181100C0E72B /* GetVisitRecommendedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE9121A4181100C0E72B /* GetVisitRecommendedOrderViewController.m */; };
@@ -1330,7 +1330,6 @@
 		3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitHistoryViewController.xib; sourceTree = "<group>"; };
 		3B5ABDE62187FFFE00A1230D /* GetPartyVisitListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListViewController.h; sourceTree = "<group>"; };
 		3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitListViewController.m; sourceTree = "<group>"; };
-		3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitListViewController.xib; sourceTree = "<group>"; };
 		3B5ABDEB2188022900A1230D /* GetPartyVisitListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListService.h; sourceTree = "<group>"; };
 		3B5ABDEC2188022900A1230D /* GetPartyVisitListService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitListService.m; sourceTree = "<group>"; };
 		3B5ABDF3218802AA00A1230D /* GetPartyVisitListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListTableViewCell.h; sourceTree = "<group>"; };
@@ -1455,6 +1454,7 @@
 		3BB4AAF12217173400BE16F9 /* KPIExamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPIExamViewController.h; sourceTree = "<group>"; };
 		3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPIExamViewController.m; sourceTree = "<group>"; };
 		3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KPIExamViewController.xib; sourceTree = "<group>"; };
+		3BCE65B122431BE9001DCA48 /* GetPartyVisitListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetPartyVisitListViewController.xib; sourceTree = "<group>"; };
 		3BDABE8B21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryViewController.h; sourceTree = "<group>"; };
 		3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryViewController.m; sourceTree = "<group>"; };
 		3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryViewController.xib; sourceTree = "<group>"; };
@@ -3216,7 +3216,7 @@
 			children = (
 				3B5ABDE62187FFFE00A1230D /* GetPartyVisitListViewController.h */,
 				3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */,
-				3B5ABDE82187FFFE00A1230D /* GetPartyVisitListViewController.xib */,
+				3BCE65B122431BE9001DCA48 /* GetPartyVisitListViewController.xib */,
 				3B588950224077F100617878 /* GetPartyVisitHistoryViewController.h */,
 				3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */,
 				3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */,
@@ -3662,6 +3662,7 @@
 				30EF59A71DACCA7E003F5729 /* OrderTmsDetailsViewController.xib in Resources */,
 				30930B881FD67E9800D320F9 /* ConfirmMonthlyPlanViewController.xib in Resources */,
 				303566D71F70FF6A009E6EFB /* GetOupputInfoViewController.xib in Resources */,
+				3BCE65B222431BE9001DCA48 /* GetPartyVisitListViewController.xib in Resources */,
 				303566D91F70FF6A009E6EFB /* GetOupputListViewController.xib in Resources */,
 				3B813A8521AEF5A30096783C /* GetVisitVividDisplayViewController.xib in Resources */,
 				30930BAB1FD6AC8C00D320F9 /* AddMonthlyPlanTableViewCell.xib in Resources */,
@@ -3720,7 +3721,6 @@
 				302160901F15BD500049374F /* RegisterViewController.xib in Resources */,
 				301D7DB11F5A3D2E00D83410 /* GetAppBillFeeListTableViewCell.xib in Resources */,
 				3B86F38521F6C7AB0048A9AF /* CARTotalOrderDetailTableViewCell.xib in Resources */,
-				3B5ABDEA2187FFFE00A1230D /* GetPartyVisitListViewController.xib in Resources */,
 				3BB4AAC5221684A400BE16F9 /* GetPartyListViewController.xib in Resources */,
 				303566CC1F70FF57009E6EFB /* GetInputListViewController.xib in Resources */,
 				304A34171F0E071B0055D50C /* AreaProvinceViewController.xib in Resources */,

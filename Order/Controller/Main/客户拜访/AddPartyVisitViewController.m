@@ -20,7 +20,6 @@
 #import "GetPartyVisitUpdateService.h"
 #import <MBProgressHUD.h>
 #import "GetVisitEnterShopViewController.h"
-#import "GetVisitConfirmCustomerViewController.h"
 #import "GetVisitCheckInventoryViewController.h"
 #import "GetVisitRecommendedOrderViewController.h"
 #import "GetVisitEnterShopService.h"

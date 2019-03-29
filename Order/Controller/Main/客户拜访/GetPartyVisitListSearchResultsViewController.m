@@ -13,7 +13,6 @@
 
 // 步骤
 #import "GetVisitEnterShopViewController.h"
-#import "GetVisitConfirmCustomerViewController.h"
 #import "GetVisitCheckInventoryViewController.h"
 #import "GetVisitRecommendedOrderViewController.h"
 #import "KBShowStepViewController.h"
@@ -117,20 +116,20 @@
         [_nav pushViewController:vc animated:YES];
     } else if([_pvItemM.vISITSTATES isEqualToString:@"进店"]){
         
-        GetVisitConfirmCustomerViewController *vc = [[GetVisitConfirmCustomerViewController alloc] init];
-        // 转义
-        PartyModel *_partyM = [[PartyModel alloc] init];
-        _partyM.PARTY_NAME = _pvItemM.pARTYNAME;
-        AddressModel *_addressM = [[AddressModel alloc] init];
-        _addressM.ADDRESS_INFO = _pvItemM.pARTYADDRESS;
-        _addressM.CONTACT_PERSON = _pvItemM.cONTACTS;
-        _addressM.CONTACT_TEL = _pvItemM.cONTACTSTEL;
-        // 赋值
-        vc.partyM = _partyM;
-        vc.addressM = _addressM;
-        vc.pvItemM = _pvItemM;
-        // 跳转
-        [_nav pushViewController:vc animated:YES];
+//        GetVisitConfirmCustomerViewController *vc = [[GetVisitConfirmCustomerViewController alloc] init];
+//        // 转义
+//        PartyModel *_partyM = [[PartyModel alloc] init];
+//        _partyM.PARTY_NAME = _pvItemM.pARTYNAME;
+//        AddressModel *_addressM = [[AddressModel alloc] init];
+//        _addressM.ADDRESS_INFO = _pvItemM.pARTYADDRESS;
+//        _addressM.CONTACT_PERSON = _pvItemM.cONTACTS;
+//        _addressM.CONTACT_TEL = _pvItemM.cONTACTSTEL;
+//        // 赋值
+//        vc.partyM = _partyM;
+//        vc.addressM = _addressM;
+//        vc.pvItemM = _pvItemM;
+//        // 跳转
+//        [_nav pushViewController:vc animated:YES];
     } else if([_pvItemM.vISITSTATES isEqualToString:@"确认客户信息"]){
         
         GetVisitCheckInventoryViewController *vc = [[GetVisitCheckInventoryViewController alloc] init];

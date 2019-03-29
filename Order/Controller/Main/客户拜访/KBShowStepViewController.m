@@ -342,7 +342,7 @@
         s.delegate = self;
         
         //改 填充strFartherPartyID
-        [s GetPartyVisitList:1 andstrPageCount:99 andStrSearch:@"" andStrLine:@"全部" andStatus:@"全部" andStrUserID:_app.user.IDX andStrFartherPartyID:_pvItemM.fARTHERADDRESSID];
+        [s GetPartyVisitHistory:_app.business.BUSINESS_IDX andStrPartyCode:_pvItemM.pARTYNO andStartTime:@"2017-1-1" andEndTime:@"2030-1-1"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -514,7 +514,7 @@
 
 #pragma mark - GetPartyVisitListServiceDelegate
 
-- (void)successOfGetPartyVisitList:(GetPartyVisitListModel *)getPartyVisitListM andsStrSearch:(nullable NSString *)strSearch{
+- (void)successOfGetPartyVisitHistory:(GetPartyVisitListModel *)getPartyVisitListM {
     
     for (GetPartyVisitItemModel *m in getPartyVisitListM.getPartyVisitItemModel) {
         if([m.vISITIDX isEqualToString:_pvItemM.vISITIDX]) {

@@ -363,7 +363,14 @@
         [_selectGoodsService getProductTypesData];
     }else if([_pvItemM.gRADE isEqualToString:@"2"]) {
         
-        [_getOutProductTypeService GetOutProductType:_addressM.IDX];
+        if(_addressM) {
+            
+            [_getOutProductTypeService GetOutProductType:_addressM.IDX];
+        }else {
+            
+            [Tools showAlert:self.view andTitle:@"找不到上级，ADDRESSIDX不能为空"];
+            [MBProgressHUD hideHUDForView:_app.window animated:YES];
+        }
     }
 }
 

@@ -10,8 +10,27 @@
 #import <MBProgressHUD.h>
 #import "Reachability.h"
 #import "AppDelegate.h"
+#import <CoreBluetooth/CoreBluetooth.h>
+
+@interface Tools()
+
+// 蓝牙检测
+@property (nonatomic, strong)CBCentralManager *centralManager;
+
+@end
 
 @implementation Tools
+
+- (instancetype)init {
+    
+    if(self = [super init]) {
+        
+        // 蓝牙检测
+        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+        
+    }
+    return self;
+}
 
 /*!
  * @brief 把字典转换成JSON字符串
@@ -816,6 +835,32 @@ typedef void (^Animation)(void);
         return NO;
     }
     return YES;
+}
+
++ (int)textLength: (nullable NSString *)text {
+    NSUInteger asciiLength = 0;
+    for (NSUInteger i = 0; i < text.length; i++) {
+        unichar uc = [text characterAtIndex: i];
+        asciiLength += isascii(uc) ? 1 : 2;
+    }
+    int unicodeLength = asciiLength;
+    return unicodeLength;
+}
+
+#pragma mark - CLLocationManagerDelegate
+-(void)centralManagerDidUpdateState:(CBCentralManager *)central
+{
+    //第一次打开或者每次蓝牙状态改变都会调用这个函数
+    if(central.state==CBCentralManagerStatePoweredOn)
+    {
+        NSLog(@"蓝牙设备开着");
+                self.blueToothOpen = YES;
+    }
+    else
+    {
+        NSLog(@"蓝牙设备关着");
+                self.blueToothOpen = NO;
+    }
 }
 
 @end

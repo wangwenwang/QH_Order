@@ -219,8 +219,6 @@
 		309E10E01F6D1979008E1F49 /* InputInfoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 309E10DF1F6D1979008E1F49 /* InputInfoListModel.m */; };
 		309E10E31F6D19E0008E1F49 /* InputItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 309E10E21F6D19E0008E1F49 /* InputItemModel.m */; };
 		309E10E61F6D1A0D008E1F49 /* InputInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 309E10E51F6D1A0D008E1F49 /* InputInfoModel.m */; };
-		30A3C2ED1D991E1000BBE0DA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3C2E71D991E1000BBE0DA /* LoginViewController.m */; };
-		30A3C2EE1D991E1000BBE0DA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3C2E81D991E1000BBE0DA /* LoginViewController.xib */; };
 		30A3C2EF1D991E1000BBE0DA /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3C2EA1D991E1000BBE0DA /* WelcomeViewController.m */; };
 		30A3C2F01D991E1000BBE0DA /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3C2EB1D991E1000BBE0DA /* WelcomeViewController.xib */; };
 		30A3C2F41D991E4C00BBE0DA /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3C2F31D991E4C00BBE0DA /* LoginService.m */; };
@@ -444,11 +442,20 @@
 		3B3036AF21E5D6FF0041C9AE /* CARTotalOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3036AD21E5D6FF0041C9AE /* CARTotalOrderViewController.xib */; };
 		3B3036B321E5D73E0041C9AE /* CARListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3036B121E5D73E0041C9AE /* CARListViewController.m */; };
 		3B3036B421E5D73E0041C9AE /* CARListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3036B221E5D73E0041C9AE /* CARListViewController.xib */; };
+		3B30C40B225345CC00BD42FF /* SelectionDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B30C409225345CC00BD42FF /* SelectionDeviceCell.m */; };
+		3B30C40C225345CC00BD42FF /* SelectionDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B30C40A225345CC00BD42FF /* SelectionDeviceCell.xib */; };
+		3B30C4102253475600BD42FF /* SelectionDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B30C40E2253475500BD42FF /* SelectionDeviceVC.m */; };
+		3B30C4112253475600BD42FF /* SelectionDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B30C40F2253475500BD42FF /* SelectionDeviceVC.xib */; };
+		3B30C420225361FB00BD42FF /* XYSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B30C41F225361FB00BD42FF /* XYSDK.a */; };
+		3B30C4242253D15D00BD42FF /* PrintVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B30C4222253D15D00BD42FF /* PrintVC.m */; };
+		3B30C4252253D15D00BD42FF /* PrintVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B30C4232253D15D00BD42FF /* PrintVC.xib */; };
 		3B4E18F32189B4EE00297B88 /* GetPartyVisitCBXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18F22189B4EE00297B88 /* GetPartyVisitCBXModel.m */; };
 		3B4E18F92189B91C00297B88 /* GetPartyVisitCBXService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18F82189B91C00297B88 /* GetPartyVisitCBXService.m */; };
 		3B4E18FF218A02B800297B88 /* GetPartyVisitCBXItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E18FE218A02B800297B88 /* GetPartyVisitCBXItemModel.m */; };
 		3B588953224077F100617878 /* GetPartyVisitHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */; };
 		3B588954224077F100617878 /* GetPartyVisitHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */; };
+		3B597015224DC52500673AE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B597013224DC52500673AE5 /* LoginViewController.m */; };
+		3B597016224DC52500673AE5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B597014224DC52500673AE5 /* LoginViewController.xib */; };
 		3B5ABDE92187FFFE00A1230D /* GetPartyVisitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */; };
 		3B5ABDED2188022900A1230D /* GetPartyVisitListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDEC2188022900A1230D /* GetPartyVisitListService.m */; };
 		3B5ABDF6218802AA00A1230D /* GetPartyVisitListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ABDF4218802AA00A1230D /* GetPartyVisitListTableViewCell.m */; };
@@ -474,7 +481,6 @@
 		3B765A2C21B6113300684CF4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A2B21B6113200684CF4 /* Security.framework */; };
 		3B765A2E21B6113A00684CF4 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A2D21B6113A00684CF4 /* libsqlite3.0.tbd */; };
 		3B765A3021B6114400684CF4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A2F21B6114400684CF4 /* CoreTelephony.framework */; };
-		3B765A3221B6115400684CF4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A3121B6115400684CF4 /* libc++.tbd */; };
 		3B765A3421B6115D00684CF4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B765A3321B6115D00684CF4 /* AdSupport.framework */; };
 		3B78402B22409B1000D0FD06 /* LLCustomDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402422409B1000D0FD06 /* LLCustomDateView.m */; };
 		3B78402C22409B1000D0FD06 /* LLFactoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B78402722409B1000D0FD06 /* LLFactoryManager.m */; };
@@ -528,8 +534,6 @@
 		3BB4AAEF221706C600BE16F9 /* KPIExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAEE221706C600BE16F9 /* KPIExamModel.m */; };
 		3BB4AAF42217173400BE16F9 /* KPIExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */; };
 		3BB4AAF52217173400BE16F9 /* KPIExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */; };
-		3BCE2961224DB9A00048C443 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCE295E224DB9A00048C443 /* JSDropDownMenu.m */; };
-		3BCE2962224DB9A00048C443 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BCE295F224DB9A00048C443 /* ico_make.png */; };
 		3BCE65B222431BE9001DCA48 /* GetPartyVisitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BCE65B122431BE9001DCA48 /* GetPartyVisitListViewController.xib */; };
 		3BDABE8E21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */; };
 		3BDABE8F21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDABE8D21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib */; };
@@ -918,8 +922,6 @@
 		309E10E41F6D1A0D008E1F49 /* InputInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputInfoModel.h; sourceTree = "<group>"; };
 		309E10E51F6D1A0D008E1F49 /* InputInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputInfoModel.m; sourceTree = "<group>"; };
 		30A3C2E61D991E1000BBE0DA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		30A3C2E71D991E1000BBE0DA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		30A3C2E81D991E1000BBE0DA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		30A3C2E91D991E1000BBE0DA /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		30A3C2EA1D991E1000BBE0DA /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		30A3C2EB1D991E1000BBE0DA /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -1311,6 +1313,16 @@
 		3B3036B021E5D73E0041C9AE /* CARListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARListViewController.h; sourceTree = "<group>"; };
 		3B3036B121E5D73E0041C9AE /* CARListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARListViewController.m; sourceTree = "<group>"; };
 		3B3036B221E5D73E0041C9AE /* CARListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CARListViewController.xib; sourceTree = "<group>"; };
+		3B30C408225345CC00BD42FF /* SelectionDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionDeviceCell.h; sourceTree = "<group>"; };
+		3B30C409225345CC00BD42FF /* SelectionDeviceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionDeviceCell.m; sourceTree = "<group>"; };
+		3B30C40A225345CC00BD42FF /* SelectionDeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionDeviceCell.xib; sourceTree = "<group>"; };
+		3B30C40D2253475500BD42FF /* SelectionDeviceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionDeviceVC.h; sourceTree = "<group>"; };
+		3B30C40E2253475500BD42FF /* SelectionDeviceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionDeviceVC.m; sourceTree = "<group>"; };
+		3B30C40F2253475500BD42FF /* SelectionDeviceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionDeviceVC.xib; sourceTree = "<group>"; };
+		3B30C41F225361FB00BD42FF /* XYSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = XYSDK.a; sourceTree = "<group>"; };
+		3B30C4212253D15D00BD42FF /* PrintVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrintVC.h; sourceTree = "<group>"; };
+		3B30C4222253D15D00BD42FF /* PrintVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrintVC.m; sourceTree = "<group>"; };
+		3B30C4232253D15D00BD42FF /* PrintVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintVC.xib; sourceTree = "<group>"; };
 		3B4E18F12189B4EE00297B88 /* GetPartyVisitCBXModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitCBXModel.h; sourceTree = "<group>"; };
 		3B4E18F22189B4EE00297B88 /* GetPartyVisitCBXModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitCBXModel.m; sourceTree = "<group>"; };
 		3B4E18F72189B91C00297B88 /* GetPartyVisitCBXService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitCBXService.h; sourceTree = "<group>"; };
@@ -1320,6 +1332,8 @@
 		3B588950224077F100617878 /* GetPartyVisitHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitHistoryViewController.h; sourceTree = "<group>"; };
 		3B588951224077F100617878 /* GetPartyVisitHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitHistoryViewController.m; sourceTree = "<group>"; };
 		3B588952224077F100617878 /* GetPartyVisitHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetPartyVisitHistoryViewController.xib; sourceTree = "<group>"; };
+		3B597013224DC52500673AE5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3B597014224DC52500673AE5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3B5ABDE62187FFFE00A1230D /* GetPartyVisitListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListViewController.h; sourceTree = "<group>"; };
 		3B5ABDE72187FFFE00A1230D /* GetPartyVisitListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPartyVisitListViewController.m; sourceTree = "<group>"; };
 		3B5ABDEB2188022900A1230D /* GetPartyVisitListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPartyVisitListService.h; sourceTree = "<group>"; };
@@ -1446,9 +1460,16 @@
 		3BB4AAF12217173400BE16F9 /* KPIExamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPIExamViewController.h; sourceTree = "<group>"; };
 		3BB4AAF22217173400BE16F9 /* KPIExamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPIExamViewController.m; sourceTree = "<group>"; };
 		3BB4AAF32217173400BE16F9 /* KPIExamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KPIExamViewController.xib; sourceTree = "<group>"; };
-		3BCE295E224DB9A00048C443 /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
-		3BCE295F224DB9A00048C443 /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
-		3BCE2960224DB9A00048C443 /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
+		3BC808F9225486BE00AC3EC5 /* XYBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBLEManager.h; sourceTree = "<group>"; };
+		3BC808FA225486BE00AC3EC5 /* PosCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosCommand.h; sourceTree = "<group>"; };
+		3BC808FB225486BE00AC3EC5 /* ImageTranster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTranster.h; sourceTree = "<group>"; };
+		3BC808FC225486BE00AC3EC5 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		3BC808FD225486BE00AC3EC5 /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
+		3BC808FE225486BE00AC3EC5 /* libXYPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libXYPrinter.h; sourceTree = "<group>"; };
+		3BC808FF225486BE00AC3EC5 /* TscCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TscCommand.h; sourceTree = "<group>"; };
+		3BC80900225486BE00AC3EC5 /* XYSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSDK.h; sourceTree = "<group>"; };
+		3BC80901225486BE00AC3EC5 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		3BC80902225486BE00AC3EC5 /* XYWIFIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWIFIManager.h; sourceTree = "<group>"; };
 		3BCE65B122431BE9001DCA48 /* GetPartyVisitListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetPartyVisitListViewController.xib; sourceTree = "<group>"; };
 		3BDABE8B21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryViewController.h; sourceTree = "<group>"; };
 		3BDABE8C21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryViewController.m; sourceTree = "<group>"; };
@@ -1485,7 +1506,6 @@
 			files = (
 				3BE8F92521B65A950072090C /* BaiduPanoSDK.framework in Frameworks */,
 				3B765A3421B6115D00684CF4 /* AdSupport.framework in Frameworks */,
-				3B765A3221B6115400684CF4 /* libc++.tbd in Frameworks */,
 				3B765A3021B6114400684CF4 /* CoreTelephony.framework in Frameworks */,
 				3B765A2E21B6113A00684CF4 /* libsqlite3.0.tbd in Frameworks */,
 				3B765A2C21B6113300684CF4 /* Security.framework in Frameworks */,
@@ -1493,6 +1513,7 @@
 				3B765A2821B6111900684CF4 /* CoreLocation.framework in Frameworks */,
 				3B765A2621B60FDE00684CF4 /* BMKLocationKit.framework in Frameworks */,
 				0775A27A2559A018F431136C /* libPods-Order.a in Frameworks */,
+				3B30C420225361FB00BD42FF /* XYSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2161,12 +2182,12 @@
 		30A3C2E51D991E1000BBE0DA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				30A3C2E61D991E1000BBE0DA /* LoginViewController.h */,
+				3B597013224DC52500673AE5 /* LoginViewController.m */,
+				3B597014224DC52500673AE5 /* LoginViewController.xib */,
 				3021608C1F15BD500049374F /* RegisterViewController.h */,
 				3021608D1F15BD500049374F /* RegisterViewController.m */,
 				3021608E1F15BD500049374F /* RegisterViewController.xib */,
-				30A3C2E61D991E1000BBE0DA /* LoginViewController.h */,
-				30A3C2E71D991E1000BBE0DA /* LoginViewController.m */,
-				30A3C2E81D991E1000BBE0DA /* LoginViewController.xib */,
 				30A3C2E91D991E1000BBE0DA /* WelcomeViewController.h */,
 				30A3C2EA1D991E1000BBE0DA /* WelcomeViewController.m */,
 				30A3C2EB1D991E1000BBE0DA /* WelcomeViewController.xib */,
@@ -2673,7 +2694,8 @@
 		30CDC5B31D9907CD0035602F /* Thire */ = {
 			isa = PBXGroup;
 			children = (
-				3BCE295D224DB9A00048C443 /* JSDropDownMenu */,
+				3B30C412225361FB00BD42FF /* XYSDK */,
+				3B980A70225309D1008800D2 /* XprinterIOS_View */,
 				3B78402222409B1000D0FD06 /* LLDateFilterView */,
 				3B86F39321F717740048A9AF /* yh_navgation */,
 				30CDC6681D990B420035602F /* Tools */,
@@ -3196,6 +3218,15 @@
 			path = "查看报表";
 			sourceTree = "<group>";
 		};
+		3B30C412225361FB00BD42FF /* XYSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3B30C41F225361FB00BD42FF /* XYSDK.a */,
+				3BC808F7225486BE00AC3EC5 /* include */,
+			);
+			path = XYSDK;
+			sourceTree = "<group>";
+		};
 		3B3F41192182A4F20068B3BB /* 客户拜访 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3381,6 +3412,22 @@
 			path = yh_navgation;
 			sourceTree = "<group>";
 		};
+		3B980A70225309D1008800D2 /* XprinterIOS_View */ = {
+			isa = PBXGroup;
+			children = (
+				3B30C40D2253475500BD42FF /* SelectionDeviceVC.h */,
+				3B30C40E2253475500BD42FF /* SelectionDeviceVC.m */,
+				3B30C40F2253475500BD42FF /* SelectionDeviceVC.xib */,
+				3B30C408225345CC00BD42FF /* SelectionDeviceCell.h */,
+				3B30C409225345CC00BD42FF /* SelectionDeviceCell.m */,
+				3B30C40A225345CC00BD42FF /* SelectionDeviceCell.xib */,
+				3B30C4212253D15D00BD42FF /* PrintVC.h */,
+				3B30C4222253D15D00BD42FF /* PrintVC.m */,
+				3B30C4232253D15D00BD42FF /* PrintVC.xib */,
+			);
+			path = XprinterIOS_View;
+			sourceTree = "<group>";
+		};
 		3BB4AAAA221682D700BE16F9 /* 订单查询 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3480,14 +3527,29 @@
 			path = "业绩追踪";
 			sourceTree = "<group>";
 		};
-		3BCE295D224DB9A00048C443 /* JSDropDownMenu */ = {
+		3BC808F7225486BE00AC3EC5 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				3BCE295E224DB9A00048C443 /* JSDropDownMenu.m */,
-				3BCE295F224DB9A00048C443 /* ico_make.png */,
-				3BCE2960224DB9A00048C443 /* JSDropDownMenu.h */,
+				3BC808F8225486BE00AC3EC5 /* XYSDK */,
 			);
-			path = JSDropDownMenu;
+			path = include;
+			sourceTree = "<group>";
+		};
+		3BC808F8225486BE00AC3EC5 /* XYSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3BC808F9225486BE00AC3EC5 /* XYBLEManager.h */,
+				3BC808FA225486BE00AC3EC5 /* PosCommand.h */,
+				3BC808FB225486BE00AC3EC5 /* ImageTranster.h */,
+				3BC808FC225486BE00AC3EC5 /* AsyncSocket.h */,
+				3BC808FD225486BE00AC3EC5 /* BLEManager.h */,
+				3BC808FE225486BE00AC3EC5 /* libXYPrinter.h */,
+				3BC808FF225486BE00AC3EC5 /* TscCommand.h */,
+				3BC80900225486BE00AC3EC5 /* XYSDK.h */,
+				3BC80901225486BE00AC3EC5 /* AsyncUdpSocket.h */,
+				3BC80902225486BE00AC3EC5 /* XYWIFIManager.h */,
+			);
+			path = XYSDK;
 			sourceTree = "<group>";
 		};
 		3BE8F90521B658C60072090C /* WeChatSendLocation */ = {
@@ -3646,6 +3708,7 @@
 				30201F1C1F1083860055BA6A /* GetFeeListCollectionViewCell.xib in Resources */,
 				304A7AAF1DB5F72C0039B0B2 /* ProductTypeTableViewCell.xib in Resources */,
 				30F235BD1FD7CC230056846C /* MonthlyPlanInfoViewController.xib in Resources */,
+				3B30C4112253475600BD42FF /* SelectionDeviceVC.xib in Resources */,
 				30CDC6441D9907CD0035602F /* PhotoBroswerVC.xib in Resources */,
 				30A3C3131D9A102800BBE0DA /* MineViewController.xib in Resources */,
 				30E5A06B1D9D0ADD00D94F77 /* ChangePasswordViewController.xib in Resources */,
@@ -3687,11 +3750,13 @@
 				30BB2DAF1F459359002E51E7 /* CustomerListSearchResultsViewController.xib in Resources */,
 				30CDC6421D9907CD0035602F /* PhotoItemView.xib in Resources */,
 				3BB4AAC2221684A400BE16F9 /* NormalAdressListViewController.xib in Resources */,
+				3B30C40C225345CC00BD42FF /* SelectionDeviceCell.xib in Resources */,
 				30F7B8DD1DBFAD36004CD128 /* SelectedGiftsViewController.xib in Resources */,
 				30BB2DB31F459359002E51E7 /* GetAppStockListViewController.xib in Resources */,
 				3B0DC1421F72CCCE00D1E6AA /* OutputReturnConfirmViewController.xib in Resources */,
 				30D996201DAB718800974553 /* TransportInformationViewController.xib in Resources */,
 				30BB2DB11F459359002E51E7 /* CustomerListViewController.xib in Resources */,
+				3B30C4252253D15D00BD42FF /* PrintVC.xib in Resources */,
 				304A7AF41DBA62710039B0B2 /* ConfirmOrderTableViewCell.xib in Resources */,
 				30EF59BC1DAE0F01003F5729 /* OrderProgressNodeTableViewCell.xib in Resources */,
 				301D7DBE1F5A3D8D00D83410 /* GetAppBusinessFeeListViewController.xib in Resources */,
@@ -3706,7 +3771,6 @@
 				3035669D1F70CD2B009E6EFB /* StockOutConfirmViewController.xib in Resources */,
 				303567031F710384009E6EFB /* GetInputListTableViewCell.xib in Resources */,
 				3B6E898621E5DFD80007E833 /* CARListTableViewCell.xib in Resources */,
-				3BCE2962224DB9A00048C443 /* ico_make.png in Resources */,
 				3054D1081FFCC76100E1D9B2 /* GetTmsOrderByAddressViewController.xib in Resources */,
 				30E5A07B1D9E075800D94F77 /* OrderDetailViewController.xib in Resources */,
 				30EF59CF1DAF5C6D003F5729 /* CustomerAddressTableViewCell.xib in Resources */,
@@ -3773,12 +3837,12 @@
 				303566BE1F70F898009E6EFB /* GetToAddressListTableViewCell.xib in Resources */,
 				30A3C31D1D9A501300BBE0DA /* MainCollectionViewCell.xib in Resources */,
 				3BDABE8F21A40C3F00C0E72B /* GetVisitCheckInventoryViewController.xib in Resources */,
+				3B597016224DC52500673AE5 /* LoginViewController.xib in Resources */,
 				30F7B8E91DC36CA7004CD128 /* Default-568@2x.png in Resources */,
 				30930B831FD66BED00D320F9 /* AddMonthlyPlanViewController.xib in Resources */,
 				3BDABE9421A4181100C0E72B /* GetVisitRecommendedOrderViewController.xib in Resources */,
 				3BB4AADD2216D3B500BE16F9 /* CondTableViewCell.xib in Resources */,
 				3035670D1F7103B0009E6EFB /* GetOupputListTableViewCell.xib in Resources */,
-				30A3C2EE1D991E1000BBE0DA /* LoginViewController.xib in Resources */,
 				30942A7D1F5006A4000095F3 /* ConfirmOrderViewController.xib in Resources */,
 				3056B54C2007145700B4704A /* GetWmsProductSumViewController.xib in Resources */,
 				30E9C0A11DA8E10300A09182 /* NewsViewController.xib in Resources */,
@@ -3927,7 +3991,6 @@
 				3B6C3F8121E7C15A00C28334 /* LatLng.m in Sources */,
 				3B0DD00021A399A400F8DE8F /* GetVisitEnterShopService.m in Sources */,
 				3035670C1F7103B0009E6EFB /* GetOupputListTableViewCell.m in Sources */,
-				30A3C2ED1D991E1000BBE0DA /* LoginViewController.m in Sources */,
 				3B113E8B21FADCB900883869 /* CheckOrderListModel.m in Sources */,
 				30CDC6471D9907CD0035602F /* CALayer+Anim.m in Sources */,
 				3B222FB221A467DB00FDB0CF /* KBShowStepViewController.m in Sources */,
@@ -3958,6 +4021,7 @@
 				3B7840322240E8A800D0FD06 /* GetPartyVisitHistoryTableViewCell.m in Sources */,
 				3BB4AADC2216D3B500BE16F9 /* CondTableViewCell.m in Sources */,
 				30CDC6461D9907CD0035602F /* CoreArchive.m in Sources */,
+				3B30C4102253475600BD42FF /* SelectionDeviceVC.m in Sources */,
 				304A7ADD1DB8BCFE0039B0B2 /* ChartService.m in Sources */,
 				3B2087842191FAD2000C36A9 /* GetPartyVisitUpdateService.m in Sources */,
 				302160931F15BEE40049374F /* RegisterService.m in Sources */,
@@ -3985,7 +4049,6 @@
 				30E9C0AA1DA8E22500A09182 /* HotProductTableViewCell.m in Sources */,
 				30CDC6561D9907CD0035602F /* UITableViewCell+Extend.m in Sources */,
 				30E5A06E1D9D138900D94F77 /* ChangePasswordService.m in Sources */,
-				3BCE2961224DB9A00048C443 /* JSDropDownMenu.m in Sources */,
 				30F235B51FD7BD040056846C /* MonthlyPlanListModel.m in Sources */,
 				30078D211DBA73EA00429813 /* AddGiftsViewController.m in Sources */,
 				3B3036AE21E5D6FF0041C9AE /* CARTotalOrderViewController.m in Sources */,
@@ -4002,6 +4065,7 @@
 				301CFDD11FBAF9FF00C8CB39 /* StockNoWaterItemModel.m in Sources */,
 				301D7DE21F5A3E5800D83410 /* UITextView+Trim.m in Sources */,
 				3B0DC1431F72CCCE00D1E6AA /* OutputReturnViewController.m in Sources */,
+				3B597015224DC52500673AE5 /* LoginViewController.m in Sources */,
 				3056B55E200887DF00B4704A /* GetWmsProductZongViewController.m in Sources */,
 				3BB4AA9E22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m in Sources */,
 				304A7AF31DBA62710039B0B2 /* ConfirmOrderTableViewCell.m in Sources */,
@@ -4072,6 +4136,7 @@
 				30CDC6631D9907CD0035602F /* Reachability.m in Sources */,
 				30E9C0A01DA8E10300A09182 /* NewsViewController.m in Sources */,
 				30201F161F1083760055BA6A /* GetFeeListViewController.m in Sources */,
+				3B30C4242253D15D00BD42FF /* PrintVC.m in Sources */,
 				3B4E18FF218A02B800297B88 /* GetPartyVisitCBXItemModel.m in Sources */,
 				30930BA71FD6AC4700D320F9 /* SelectGoodsTableViewCell.m in Sources */,
 				304FBAB91EF2635700FC3EFC /* OrderCancelService.m in Sources */,
@@ -4102,6 +4167,7 @@
 				3072AE891DA8948D00359147 /* OrderDetailService.m in Sources */,
 				3035669E1F70CD2B009E6EFB /* StockOutViewController.m in Sources */,
 				30BE65031EE6BE5B00BD6978 /* ProductManListTableViewCell.m in Sources */,
+				3B30C40B225345CC00BD42FF /* SelectionDeviceCell.m in Sources */,
 				303566D61F70FF6A009E6EFB /* GetOupputInfoViewController.m in Sources */,
 				30E5A0561D9B9E6C00D94F77 /* StateTackModel.m in Sources */,
 				3BB4AABF221684A400BE16F9 /* Add_AddressViewController.m in Sources */,
@@ -4339,7 +4405,11 @@
 				INFOPLIST_FILE = Order/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Order/Thire/XprinterIOS_SDK",
+					"$(PROJECT_DIR)/Order/Thire/XYSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaidongyuan.QHOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -4364,7 +4434,11 @@
 				INFOPLIST_FILE = Order/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Order/Thire/XprinterIOS_SDK",
+					"$(PROJECT_DIR)/Order/Thire/XYSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaidongyuan.QHOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

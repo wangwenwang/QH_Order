@@ -38,6 +38,9 @@
 #import "NSString+Trim.h"
 #import "UITextField+Extension.h"
 
+/*--------- AppDelegate ---------*/
+#define SharedAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
 
 /*--------- 百度地图key ---------*/
 #define BDKEY @"mss4aj8o58OezUjDRybUm9F4YMZTsPVK"

@@ -333,4 +333,20 @@
  @return 是否纯数字
  */
 + (BOOL)isNum:(nullable NSString *)checkedNumString;
+
+
+/**
+ 判断一段字符串长度(汉字2字节)
+
+ @param text 字符串
+ @return 长度(汉字2字节)
+ */
++ (int)textLength: (nullable NSString *)text;
+
+
+/**
+ 蓝牙是否打开
+ */
+@property (nonatomic, assign) BOOL blueToothOpen;
+
 @end

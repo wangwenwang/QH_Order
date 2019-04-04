@@ -15,6 +15,7 @@
 #import "OrderCancelService.h"
 #import "AppDelegate.h"
 #import "LM_alert.h"
+#import "PrintVC.h"
 
 @interface OrderDetailViewController ()<UITableViewDelegate, UITableViewDataSource, TransportInformationServiceDelegate, OrderCancelServiceDelegate>
 
@@ -155,6 +156,8 @@
     [self registerCell];
     
     [self addAnimationForLabel];
+    
+    [self addRightBtn];
 }
 
 
@@ -330,6 +333,22 @@
     // 起始地点换行
     mulLine = [Tools getHeightOfString:_beginAddressLabel.text fontSize:_beginAddressLabel.font.pointSize andWidth:ScreenWidth - 12 - 60.5 - 3];
     _customerViewHeight.constant += (mulLine - oneLine);
+}
+
+
+- (void)addRightBtn {
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(rightBtnOnclick)];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+}
+
+- (void)rightBtnOnclick {
+    
+    PrintVC *vc = [[PrintVC alloc] init];
+    vc.order = _order;
+    vc.arrGoods = _arrGoods;
+    vc.arrGitfs = _arrGitfs;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

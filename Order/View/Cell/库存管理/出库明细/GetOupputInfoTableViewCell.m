@@ -62,7 +62,7 @@
     _ORG_PRICE.text = [Tools TwoDecimal:getOupputItemM.oRGPRICE];
     
     // 付款价
-    CGFloat payPriceFlo = [getOupputItemM.oRGPRICE floatValue] - [getOupputItemM.mJPRICE floatValue] - [getOupputItemM.aCTPRICE floatValue];
+    CGFloat payPriceFlo = [getOupputItemM.oRGPRICE floatValue] - [getOupputItemM.mJPRICE floatValue] ;
     NSString *payStr = [NSString stringWithFormat:@"%.2f", payPriceFlo];
     
     // 总价

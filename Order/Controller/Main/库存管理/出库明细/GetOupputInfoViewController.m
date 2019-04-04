@@ -13,6 +13,8 @@
 #import "Tools.h"
 #import "AppDelegate.h"
 #import "GetOupputListViewController.h"
+#import "YCXMenu.h"
+#import "PrintVC.h"
 
 @interface GetOupputInfoViewController ()<Store_GetOupputInfoServiceDelegate>
 
@@ -136,6 +138,8 @@
             [_cancelBtn setTitle:@"取消退库" forState:UIControlStateNormal];
         }
     }
+    
+    [self addRightBtn];
 }
 
 
@@ -163,6 +167,47 @@
 }
 
 
+- (void)rightBtnOnclick {
+    
+    PrintVC *vc = [[PrintVC alloc] init];
+    vc.getOupputDetailM = _getOupputDetailM;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+//    NSArray *items = @[
+//                       [YCXMenuItem menuItem:@"连接"
+//                                       image:nil
+//                                         tag:100
+//                                    userInfo:nil],
+//                       [YCXMenuItem menuItem:@"断开"
+//                                       image:nil
+//                                         tag:101
+//                                    userInfo:nil],
+//                       [YCXMenuItem menuItem:@"打印"
+//                                       image:nil
+//                                         tag:102
+//                                    userInfo:nil]
+//                       ];
+//    [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width - 50, 0, 50, 0) menuItems:items selected:^(NSInteger index, YCXMenuItem *item) {
+//
+//        if(item.tag == 100) {
+//
+//            _CurrTimeType = kCond_START_TIME;
+//            [_LM showDatePicker];
+//        }else if(item.tag == 101) {
+//
+//            _CurrTimeType = kCond_END_TIME;
+//            [_LM showDatePicker];
+//        }else if(item.tag == 101) {
+//
+//            _CurrTimeType = kCond_END_TIME;
+//            [_LM showDatePicker];
+//        }
+//    }];
+    
+    
+}
+
+
 #pragma mark - 功能函数
 
 - (void)initUI {
@@ -176,6 +221,12 @@
     _OUTPUT_QTY.text = @"";
     _OUTPUT_WEIGHT.text = @"";
     _OUTPUT_VOLUME.text = @"";
+}
+
+- (void)addRightBtn {
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(rightBtnOnclick)];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
 }
 
 

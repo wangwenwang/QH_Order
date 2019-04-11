@@ -89,6 +89,9 @@
 
 @property (strong, nonatomic) UIView *searchBarView;
 
+// 是否有拜访中
+@property (assign, nonatomic) BOOL hasVisitng;
+
 @end
 
 #define kPageCount 20
@@ -118,10 +121,11 @@
         
         _searchInputText = @"";
         
-        _weekLabel = [[UILabel alloc] init];
         _statusLabel = [[UILabel alloc] init];
         [_weekLabel setText:@""];
         [_statusLabel setText:@""];
+        
+        _hasVisitng = NO;
     }
     return self;
 }
@@ -489,62 +493,19 @@
     addressM.CONTACT_TEL = m.cONTACTSTEL;
     addressM.ADDRESS_INFO = m.pARTYADDRESS;
     
-    GetPartyVisitItemModel *_pvItemM = _visitsFilter[row];
-    
-    if([_pvItemM.vISITSTATES isEqualToString:@""]||[_pvItemM.vISITSTATES isEqualToString:@""]) {
-    
-        if([m.vISITINGNUMBER intValue] > 0) {
-            
-            [LM_alert showLMAlertViewWithTitle:@"" message:@"此客户已有拜访中，是否新建拜访" cancleButtonTitle:@"取消" okButtonTitle:@"新建" okClickHandle:^{
-                
-                AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
-                vc.partyM = partyM;
-                vc.addressM = addressM;
-                vc.pvItemM = m;
-                vc.lines = _lineArr;
-                [self.navigationController pushViewController:vc animated:YES];
-            } cancelClickHandle:nil];
-        }else {
-            
-            AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
-            vc.partyM = partyM;
-            vc.addressM = addressM;
-            vc.pvItemM = m;
-            vc.lines = _lineArr;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+    if(_hasVisitng) {
         
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"新建"] || [_pvItemM.vISITSTATES isEqualToString:@"确认客户信息"]){
-        GetVisitEnterShopViewController *vc = [[GetVisitEnterShopViewController alloc] init];
-        vc.pvItemM = _pvItemM;
+        [LM_alert showLMAlertViewWithTitle:@"此客户已有拜访中，不能新建拜访" message:NULL cancleButtonTitle:NULL okButtonTitle:@"确定" okClickHandle:^{
+        } cancelClickHandle:nil];
+    }else {
+        
+        AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
+        vc.partyM = partyM;
+        vc.addressM = addressM;
+        vc.pvItemM = m;
+        vc.lines = _lineArr;
         [self.navigationController pushViewController:vc animated:YES];
-
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"进店"]){
-
-        GetVisitCheckInventoryViewController *vc = [[GetVisitCheckInventoryViewController alloc] init];
-        vc.pvItemM = _pvItemM;
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"检查库存"]){
-
-        GetVisitRecommendedOrderViewController *vc = [[GetVisitRecommendedOrderViewController alloc] init];
-        vc.pvItemM = _pvItemM;
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"建议订单"]){
-
-        GetVisitVividDisplayViewController *vc = [[GetVisitVividDisplayViewController alloc] init];
-        vc.pvItemM = _pvItemM;
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"生动化陈列"]){
-
-        KBShowStepViewController *vc = [[KBShowStepViewController alloc] init];
-        vc.pvItemM = _pvItemM;
-        vc.isShowConfirmBtn = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if([_pvItemM.vISITSTATES isEqualToString:@"离店"]){
-
     }
-
-    NSLog(@"%lu", (unsigned long)row);
 }
 
 
@@ -559,6 +520,13 @@
         mulLine = [Tools getHeightOfString:m.pARTYADDRESS fontSize:13 andWidth:(ScreenWidth - 10 - 8)];
         mulLine = mulLine ? mulLine : oneLine;
         m.cellHeight = kCellHeight + (mulLine - oneLine);
+        
+        
+        // 遍历所有CELL数据，看看是否有拜访中
+        if([m.vISITINGNUMBER intValue] > 0 && !_hasVisitng) {
+            
+            _hasVisitng = YES;
+        }
     }
 }
 
@@ -753,6 +721,9 @@
 #pragma mark - GetPartyVisitListServiceDelegate
 
 - (void)successOfGetPartyVisitList:(GetPartyVisitListModel *)getPartyVisitListM andsStrSearch:(nullable NSString *)strSearch {
+    
+    // 默认没有拜访中
+    _hasVisitng = NO;
     
     // 不搜索时，把结果存起来
     if([strSearch isEqualToString:@""]) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -51,37 +51,37 @@
                                 <rect key="frame" x="0.0" y="69.5" width="320" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUb-KJ-yys">
-                                        <rect key="frame" x="10" y="6.5" width="13.5" height="16"/>
+                                        <rect key="frame" x="10" y="7" width="13.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-5o-cl1">
-                                        <rect key="frame" x="23.5" y="6.5" width="13.5" height="16"/>
+                                        <rect key="frame" x="23.5" y="7" width="13.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已拜访" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKH-H6-gox">
-                                        <rect key="frame" x="37" y="6.5" width="40" height="16"/>
+                                        <rect key="frame" x="37" y="7" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-gn-x9d">
-                                        <rect key="frame" x="77" y="6.5" width="8" height="16"/>
+                                        <rect key="frame" x="77" y="7" width="8" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QN-bX-jz2">
-                                        <rect key="frame" x="85" y="6.5" width="13.5" height="16"/>
+                                        <rect key="frame" x="85" y="7" width="13.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVN-ii-HdU" userLabel="查看步骤">
-                                        <rect key="frame" x="162" y="-0.5" width="90" height="30"/>
+                                        <rect key="frame" x="162" y="0.0" width="90" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vis-gZ-TCX">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
@@ -91,7 +91,7 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lm_visit_check" translatesAutoresizingMaskIntoConstraints="NO" id="o1d-sD-p2w">
-                                                <rect key="frame" x="-1.5" y="5" width="22" height="22"/>
+                                                <rect key="frame" x="-1" y="5" width="22" height="22"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史拜访" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-8T-0ak">
                                                 <rect key="frame" x="27.5" y="9" width="53.5" height="16"/>
@@ -100,7 +100,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Vis-gZ-TCX" firstAttribute="leading" secondItem="bVN-ii-HdU" secondAttribute="leading" id="2M6-qO-uBU"/>
@@ -134,7 +134,7 @@
                                                 <rect key="frame" x="0.5" y="10" width="14" height="14"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="03h-VT-WUe" firstAttribute="top" secondItem="hS0-Wr-quH" secondAttribute="top" id="8mA-DK-UMg"/>
@@ -149,14 +149,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZR-gh-Vr4" userLabel="我是底边框">
-                                        <rect key="frame" x="0.0" y="29.5" width="320" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="29" width="320" height="0.5"/>
                                         <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.29999999999999999" id="yAU-Ux-n7d"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2QN-bX-jz2" firstAttribute="centerY" secondItem="LUb-KJ-yys" secondAttribute="centerY" id="0rA-pL-1VG"/>
                                     <constraint firstAttribute="bottom" secondItem="hS0-Wr-quH" secondAttribute="bottom" id="1rl-bj-9YO"/>
@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-yw-ITm">
-                                <rect key="frame" x="313" y="46" width="0.0" height="0.0"/>
+                                <rect key="frame" x="313" y="46.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.40781760220000002" green="0.40782788399999997" blue="0.40782237049999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -217,13 +217,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <connections>
-                <outlet property="ADD_DATE" destination="Bwh-1e-LTA" id="ob2-cB-vts"/>
                 <outlet property="FREQUENCY" destination="BeB-5o-cl1" id="hKa-WI-Ctj"/>
                 <outlet property="FREQUENCYPromptLabel" destination="LUb-KJ-yys" id="dSX-Go-o0D"/>
                 <outlet property="PARTY_NAME" destination="u5a-vp-w1S" id="eds-cH-lqW"/>
+                <outlet property="VISIT_DATE" destination="Bwh-1e-LTA" id="4rs-eT-JnI"/>
                 <outlet property="VISIT_NUMBER" destination="jZx-gn-x9d" id="Wr9-Jc-POr"/>
                 <outlet property="VISIT_STATES" destination="V1y-yw-ITm" id="U1s-ei-Q6u"/>
                 <outlet property="addOrEditLabel" destination="PVJ-qY-7Nx" id="AhL-3J-iOn"/>
+                <outlet property="cellView" destination="K64-VE-eKS" id="3fi-dZ-248"/>
                 <outlet property="checkView" destination="bVN-ii-HdU" id="iE0-nV-CCF"/>
                 <outlet property="edit_trailing" destination="VD4-Yr-ZbG" id="XkC-sU-4fA"/>
                 <outlet property="edit_width" destination="Y5W-BT-poN" id="lrt-Lk-Lli"/>
@@ -234,6 +235,6 @@
     </objects>
     <resources>
         <image name="lm_address_edit" width="14" height="14"/>
-        <image name="lm_visit_check" width="22" height="22"/>
+        <image name="lm_visit_check" width="22.5" height="22.5"/>
     </resources>
 </document>

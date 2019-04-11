@@ -4392,6 +4392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AP5995A5FC;
 				ENABLE_BITCODE = NO;
@@ -4410,6 +4411,7 @@
 					"$(PROJECT_DIR)/Order/Thire/XprinterIOS_SDK",
 					"$(PROJECT_DIR)/Order/Thire/XYSDK",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaidongyuan.QHOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -4421,6 +4423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AP5995A5FC;
 				ENABLE_BITCODE = NO;
@@ -4439,6 +4442,7 @@
 					"$(PROJECT_DIR)/Order/Thire/XprinterIOS_SDK",
 					"$(PROJECT_DIR)/Order/Thire/XYSDK",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaidongyuan.QHOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

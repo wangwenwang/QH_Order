@@ -349,4 +349,13 @@
  */
 @property (nonatomic, assign) BOOL blueToothOpen;
 
+
+/**
+ 判断某个时间是否处于当天内
+ 
+ @param date 某个时间
+ @return 是否处于当天内
+ */
++ (BOOL)isToday:(nullable NSDate *)date;
+
 @end

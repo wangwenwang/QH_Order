@@ -863,4 +863,20 @@ typedef void (^Animation)(void);
     }
 }
 
+
++ (BOOL)isToday:(nullable NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *now = [NSDate date];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:now];
+    // 当天起始时间
+    NSDate *startDate = [calendar dateFromComponents:components];
+    // 当天结束时间
+    NSDate *expireDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:1 toDate:startDate options:0];
+    if ([date compare:startDate] == NSOrderedDescending && [date compare:expireDate] == NSOrderedAscending) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @end

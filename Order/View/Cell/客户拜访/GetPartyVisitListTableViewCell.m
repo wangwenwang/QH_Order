@@ -17,8 +17,8 @@
 // 联系电话
 @property (weak, nonatomic) IBOutlet UILabel *CONTACTS_TEL;
 
-// 新建时间
-@property (weak, nonatomic) IBOutlet UILabel *ADD_DATE;
+// 拜访时间
+@property (weak, nonatomic) IBOutlet UILabel *VISIT_DATE;
 
 // 客户名称
 @property (weak, nonatomic) IBOutlet UILabel *PARTY_NAME;
@@ -49,6 +49,9 @@
 
 // 已拜访次数
 @property (weak, nonatomic) IBOutlet UILabel *VISIT_NUMBER;
+
+
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @end
 
@@ -100,10 +103,10 @@
     _PARTY_ADDRESS.text = getPartyVisitItemM.pARTYADDRESS;
     if(![getPartyVisitItemM.vISITDATE isEqualToString:@""]) {
         
-        _ADD_DATE.text = [NSString stringWithFormat:@"上次拜访时间: %@", getPartyVisitItemM.vISITDATE];
+        _VISIT_DATE.text = [NSString stringWithFormat:@"上次拜访时间: %@", getPartyVisitItemM.vISITDATE];
     }else {
         
-        _ADD_DATE.text = @"";
+        _VISIT_DATE.text = @"";
     }
     
     if([getPartyVisitItemM.fREQUENCY isEqualToString:@""]) {
@@ -116,6 +119,26 @@
     
     [_FREQUENCY setText:getPartyVisitItemM.fREQUENCY];
     [_VISIT_NUMBER setText:getPartyVisitItemM.vISITNUMBER];
+    
+    
+    NSString *birthdayStr = getPartyVisitItemM.vISITDATE;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    NSDate *birthdayDate = [dateFormatter dateFromString:birthdayStr];
+    // 拜访日期为今天且已拜访，显示绿色表示完成
+    // 拜访日期为今天且拜访中，显示黄色表示正在进行中
+    // 其它的显示红色表示未完成
+    BOOL isToday= [Tools isToday:birthdayDate];
+    if(isToday && [getPartyVisitItemM.vISITINGNUMBER intValue] <= 0) {
+        
+        [_cellView setBackgroundColor:RGBA(2, 167, 6, 0.3)];
+    }else if(isToday && [getPartyVisitItemM.vISITINGNUMBER intValue] > 0) {
+        
+        [_cellView setBackgroundColor:RGBA(255, 227, 48, 0.3)];
+    }else {
+        
+        [_cellView setBackgroundColor:RGBA(255, 75, 70, 0.3)];
+    }
     
 //    if([[Tools getVISIT_STATES:getPartyVisitItemM.vISITSTATES] isEqualToString:@"未拜访"]) {
 //

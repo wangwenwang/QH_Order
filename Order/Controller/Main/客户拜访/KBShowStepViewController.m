@@ -24,6 +24,7 @@
 #import "GetPartyVisitListViewController.h"
 #import "GetPartyVisitListService.h"
 #import "ShowCheckInventoryTableViewCell.h"
+#import "LM_alert.h"
 
 // 查看经销商入库单
 #import "CheckAgentOrderTableViewCell.h"
@@ -431,17 +432,18 @@
 - (void)successOfGetVisitLeaveShop:(NSString *)msg {
     
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [Tools showAlert:self.view andTitle:msg];
     
-    NSArray *array = self.navigationController.viewControllers;
-    
-    for (UIViewController *vc in array) {
+    [LM_alert showLMAlertViewWithTitle:@"拜访完成" message:@"" cancleButtonTitle:@"确定" okButtonTitle:nil okClickHandle:nil cancelClickHandle:^{
+        NSArray *array = self.navigationController.viewControllers;
         
-        if([vc isKindOfClass:[GetPartyVisitListViewController class]]) {
+        for (UIViewController *vc in array) {
             
-            [self.navigationController popToViewController:vc animated:YES];
+            if([vc isKindOfClass:[GetPartyVisitListViewController class]]) {
+                
+                [self.navigationController popToViewController:vc animated:YES];
+            }
         }
-    }
+    }];
 }
 
 - (void)failureOfGetVisitLeaveShop:(NSString *)msg {

@@ -13,8 +13,9 @@
 #import "SelectionDeviceVC.h"
 #import "PosCommand.h"
 #import "AppDelegate.h"
+#import "LM_alert.h"
 
-@interface PrintVC ()<UIAlertViewDelegate>
+@interface PrintVC ()<UIAlertViewDelegate, XYBLEManagerDelegate>
 
 /** BLE */
 @property (strong, nonatomic) XYBLEManager *manager;
@@ -39,7 +40,7 @@
     
     [super viewDidLoad];
     
-    self.title = @"蓝牙打印";
+    self.title =  @"蓝牙打印";
     
     _outPutTotalPrice = 0.0;
     _inPutTotalPrice = 0.0;
@@ -51,6 +52,20 @@
                    forKeyPath:@"writePeripheral.state"
                       options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                       context:nil];
+    [self.manager XYstartScan];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        usleep(1000000);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            BOOL b = [_t blueToothOpen];
+            
+            if(!b) {
+                [LM_alert showLMAlertViewWithTitle:@"请打开蓝牙" message:@"" cancleButtonTitle:@"确定" okButtonTitle:nil otherButtonTitleArray:nil];
+            }
+        });
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,7 +79,11 @@
 - (void)dealloc {
     
     [self.manager XYdisconnectRootPeripheral];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ConnectBleSuccessNote object:nil];
     [self.manager removeObserver:self forKeyPath:@"writePeripheral.state" context:nil];
+    //    [_t stopBleScan];
+    [self.manager XYstopScan];
+    self.manager.delegate = nil;
 }
 
 #pragma mark - 通知
@@ -97,7 +116,7 @@
             }
             case CBPeripheralStateConnected:
             {
-                [self.statusBtn setTitle:@"已连接" forState:UIControlStateNormal];
+                [self.statusBtn setTitle:@"断开连接" forState:UIControlStateNormal];
                 [self.statusBtn setBackgroundColor:[UIColor redColor]];
                 SharedAppDelegate.isConnectedBLE = YES;
                 break;
@@ -145,8 +164,40 @@
         return;
     }
     
+    [self printText:@"客户联"];
+    [self printText:@"虚线"];
+    [self printText:@"回单联"];
+}
+
+- (void)printText:(NSString *)CUSTOM_OR_RECEIPT {
+    
     NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
     NSMutableData* dataM=[NSMutableData dataWithData:[XYCommand initializePrinter]];
+    
+    if ([CUSTOM_OR_RECEIPT isEqualToString:@"虚线"]) {
+        
+        [dataM appendData:[XYCommand printAndFeedLine]];
+        [dataM appendData: [@"- - - - - - - - - - - - - - - - - - - - - - - -" dataUsingEncoding: gbkEncoding]];
+        [dataM appendData:[XYCommand printAndFeedLine]];
+        [dataM appendData:[XYCommand printAndFeedLine]];
+        if (SharedAppDelegate.isConnectedBLE) {
+            
+            [self.manager XYWriteCommandWithData:dataM];
+        }else{
+            
+            [Tools showAlert:self.view andTitle:@"请连接蓝牙"];
+        }
+        return;
+    }
+    
+    // 客户联|回单联
+    [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:200 andNH:01]];
+    if ([CUSTOM_OR_RECEIPT isEqualToString:@"客户联"]) {
+        [dataM appendData: [@"【客户联】" dataUsingEncoding: gbkEncoding]];
+    }else if ([CUSTOM_OR_RECEIPT isEqualToString:@"回单联"]) {
+        [dataM appendData: [@"【回单联】" dataUsingEncoding: gbkEncoding]];
+    }
+    [dataM appendData:[XYCommand printAndFeedLine]];
     
     // 头部
     // 抬头 居中
@@ -157,18 +208,29 @@
     [dataM appendData: [@"---------------------------------------------" dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
     
+    // 客户代码
+    NSString *partyCode = @"";
     // 客户名称
-    NSString *patyName = @"";
+    NSString *partyName = @"";
+    // 客户电话
+    NSString *partyTel = @"";
     if(_getOupputDetailM) {
         
-        patyName = _getOupputDetailM.getOupputInfoModel.pARTYNAME;
+        partyCode = _getOupputDetailM.getOupputInfoModel.pARTYCODE;
+        partyName = _getOupputDetailM.getOupputInfoModel.pARTYNAME;
+        partyTel = _getOupputDetailM.getOupputInfoModel.cONTACTTEL;
     }else if(_order){
         
-        patyName = _order.ORD_TO_NAME;
+        partyName = _order.ORD_TO_NAME;
     }
     
+    // 客户代码/电话/ 居左
+    partyCode = [NSString stringWithFormat:@"客户代码：%@   [%@]", partyCode, partyTel];
+    [dataM appendData: [partyCode dataUsingEncoding: gbkEncoding]];
+    [dataM appendData:[XYCommand printAndFeedLine]];
+    
     // 客户名称 居左
-    NSString *partyName = [NSString stringWithFormat:@"客户名称：%@", patyName];
+    partyName = [NSString stringWithFormat:@"客户名称：%@", partyName];
     [dataM appendData: [partyName dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
     [dataM appendData: [@"---------------------------------------------" dataUsingEncoding: gbkEncoding]];
@@ -303,6 +365,13 @@
     [dataM appendData: [ordNo dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
     
+    if ([CUSTOM_OR_RECEIPT isEqualToString:@"回单联"]) {
+        
+        [dataM appendData:[XYCommand printAndFeedLine]];
+        [dataM appendData: [@"客户签名：" dataUsingEncoding: gbkEncoding]];
+        [dataM appendData:[XYCommand printAndFeedLine]];
+    }
+    
     if (SharedAppDelegate.isConnectedBLE) {
         
         [self.manager XYWriteCommandWithData:dataM];
@@ -322,6 +391,28 @@
         _manager.delegate = self;
     }
     return _manager;
+}
+
+#pragma mark - XYSDKDelegate
+- (void)XYdidUpdatePeripheralList:(NSArray *)peripherals RSSIList:(NSArray *)rssiList {
+    
+    NSMutableArray *dataArr = [NSMutableArray arrayWithArray:peripherals];
+    int i = 0;
+    for (CBPeripheral *peripheral in dataArr) {
+        NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"w_peripheral.name"];
+        if([name isEqualToString:peripheral.name]) {
+            
+            [self.manager XYconnectDevice:peripheral];
+            self.manager.writePeripheral = peripheral;
+            [Tools showAlert:self.view andTitle:@"连接成功"];
+            i ++;
+            break;
+        }
+    }
+    if(i == 0) {
+        
+        [Tools showAlert:self.view andTitle:@"未找到打印机"];
+    }
 }
 
 @end

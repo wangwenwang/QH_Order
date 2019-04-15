@@ -39,7 +39,9 @@
 //        "ADUT_USER": "",
 //        "ADUT_DATE": "",
 //        "EDIT_DATE": "2017-08-18 17:24:39",
-//        "OPER_USER": "系统管理员"
+//        "OPER_USER": "系统管理员",
+//        "CONTACT_PERSON": "联系人",
+//        "CONTACT_TEL": "联系电话"
 //    },
 //    "GetOupputItemModel": [
 //                           {

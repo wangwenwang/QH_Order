@@ -15,6 +15,11 @@
 
 @interface Tools : NSObject
 
+/**
+要求Central管理器停止当前找的动作
+ */
+- (void)stopBleScan;
+
 /*!
  * @brief 把格式化的JSON格式的字符串转换成字典
  * @param jsonString JSON格式的字符串

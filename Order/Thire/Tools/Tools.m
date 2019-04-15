@@ -32,6 +32,12 @@
     return self;
 }
 
+- (void)stopBleScan {
+    
+    [self.centralManager stopScan];
+    self.centralManager.delegate = nil;
+}
+
 /*!
  * @brief 把字典转换成JSON字符串
  * @param dict 字典

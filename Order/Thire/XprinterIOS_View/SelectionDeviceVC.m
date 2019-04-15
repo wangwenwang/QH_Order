@@ -85,6 +85,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CBPeripheral *peripheral = self.dataArr[indexPath.row];
+    
+    // 存储蓝牙连接，下次自动连接
+    [[NSUserDefaults standardUserDefaults] setObject:peripheral.name forKey:@"w_peripheral.name"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     NSString *message =  [NSString stringWithFormat:@"正在连接%@",peripheral.name];
     //    [ProgressHUD show:message];
     [Tools showAlert:self.view andTitle:message];
@@ -166,6 +171,11 @@
     [self.tableView reloadData];
     [self.manager XYdisconnectRootPeripheral];
     [self.manager XYstartScan];
+}
+
+- (void)dealloc {
+    
+    [self.manager XYstopScan];
 }
 
 @end

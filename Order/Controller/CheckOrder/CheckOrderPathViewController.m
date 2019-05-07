@@ -50,7 +50,6 @@
 @implementation CheckOrderPathViewController
 
 #pragma mark - 生命周期
-
 - (instancetype)init {
     if(self = [super init]) {
         _orderIDX = @"";
@@ -78,21 +77,11 @@
     _routeSearch.delegate = self;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    NSLog(@"%s", __func__);
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [_mapViwe viewWillDisappear];
     _mapViwe.delegate = nil;
     _routeSearch.delegate = nil;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    NSLog(@"%s", __func__);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,7 +93,6 @@
 }
 
 #pragma mark - BMKMapViewDelegate
-
 // 百度地图初始化完成
 - (void)mapViewDidFinishLoading:(BMKMapView *)mapView {
     //判断连接状态

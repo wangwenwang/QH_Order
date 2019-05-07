@@ -79,21 +79,27 @@
         NSString *msg = responseObject[@"msg"];
         
         NSMutableArray *arrM = [[NSMutableArray alloc] init];
-        for (NSDictionary *dict in result) {
+        if([result isKindOfClass:[NSString class]]) {
             
-            [arrM addObject:dict[@"ITEM_NAME"]];
-        }
-        if(type == 1) {
-            
-            if([_delegate respondsToSelector:@selector(successOfGetPartyVisitChannel:)]) {
-                
-                [_delegate successOfGetPartyVisitChannel:[arrM copy]];
-            }
+            [_delegate successOfGetPartyVisitChannel:[[NSMutableArray alloc] init]];
         } else {
-            
-            if([_delegate respondsToSelector:@selector(failureOfGetPartyVisitChannel:)]) {
+    
+            for (NSDictionary *dict in result) {
                 
-                [_delegate failureOfGetPartyVisitChannel:msg];
+                [arrM addObject:dict[@"ITEM_NAME"]];
+            }
+            if(type == 1) {
+                
+                if([_delegate respondsToSelector:@selector(successOfGetPartyVisitChannel:)]) {
+                    
+                    [_delegate successOfGetPartyVisitChannel:[arrM copy]];
+                }
+            } else {
+                
+                if([_delegate respondsToSelector:@selector(failureOfGetPartyVisitChannel:)]) {
+                    
+                    [_delegate failureOfGetPartyVisitChannel:msg];
+                }
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

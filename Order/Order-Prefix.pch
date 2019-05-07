@@ -164,7 +164,7 @@
 #define API_LOGIN @"https://tms.kaidongyuan.com/api/Login"
 
 /// 获取订单列表
-#define API_GET_ORDER_LIST @"https://tms.kaidongyuan.com/api/GetOrderList"
+#define API_GET_ORDER_LIST @"http://oms.kaidongyuan.com:8088/api/GetOrderList"
 
 /// 获取用户业务类型
 #define API_GET_BUISNESS_LIST @"http://oms.kaidongyuan.com:8088/api/GetBuisnessList"

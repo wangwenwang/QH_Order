@@ -541,7 +541,8 @@
                 // 轨迹点总数累计
                 planPointCounts = transitStep.pointsCount + planPointCounts;
             }
-            // 门店标注
+            
+            // 上传的轨迹点
             [self addShopAnnotation];
             
             // 轨迹点

@@ -158,8 +158,9 @@
     _routePlanBtn.layer.shadowOpacity = 0.5;
     _routePlanBtn.layer.shadowColor =  [UIColor redColor].CGColor;
     
-    [_weekLabel setText:[Tools getCurrentWeekDay]];
-//    [_statusLabel setText:@"未拜访"];
+    //    [_weekLabel setText:[Tools getCurrentWeekDay]];
+    [_weekLabel setText:@"全部"];
+    //    [_statusLabel setText:@"未拜访"];
     [self addRightBtn];
     
     [self addNotification];
@@ -495,8 +496,14 @@
     
     if(_hasVisitng) {
         
-        [LM_alert showLMAlertViewWithTitle:@"此客户已有拜访中，不能新建拜访" message:NULL cancleButtonTitle:NULL okButtonTitle:@"确定" okClickHandle:^{
-        } cancelClickHandle:nil];
+//        [LM_alert showLMAlertViewWithTitle:@"此客户已有拜访中，不能新建拜访" message:NULL cancleButtonTitle:NULL okButtonTitle:@"确定" okClickHandle:^{
+//        } cancelClickHandle:nil];
+        AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];
+        vc.partyM = partyM;
+        vc.addressM = addressM;
+        vc.pvItemM = m;
+        vc.lines = _lineArr;
+        [self.navigationController pushViewController:vc animated:YES];
     }else {
         
         AddPartyVisitViewController *vc = [[AddPartyVisitViewController alloc] init];

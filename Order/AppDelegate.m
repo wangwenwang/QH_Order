@@ -80,7 +80,7 @@
     
     // 创建选项
     UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:@"com.LM.makeOrder" localizedTitle:@"采购订单" localizedSubtitle:@"" icon:icon userInfo:nil];
-    UIApplicationShortcutItem *customItem = [[UIApplicationShortcutItem alloc] initWithType:@"com.LM.checkOrder" localizedTitle:@"查单" localizedSubtitle:@"" icon:customIcon userInfo:nil];
+    UIApplicationShortcutItem *customItem = [[UIApplicationShortcutItem alloc] initWithType:@"com.LM.checkOrder" localizedTitle:@"查采购单" localizedSubtitle:@"" icon:customIcon userInfo:nil];
     
     // 添加到选项数组，UIApplicationShortcutItem类iOS9.0才有
     if(item && customItem) [UIApplication sharedApplication].shortcutItems = @[customItem, item];

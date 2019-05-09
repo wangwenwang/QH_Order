@@ -62,7 +62,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     if (self = [super init]) {
         
         
-        self.title = @"查单";
+        self.title = @"查采购单";
         self.tabBarItem.image = [UIImage imageNamed:@"menu_order_payed_unselected"];
         
         NSParameterAssert(classes.count == titles.count);
@@ -724,7 +724,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.navigationController.navigationBar.topItem.title = @"查单";
+    self.navigationController.navigationBar.topItem.title = @"查采购单";
     
     if (!self.childControllersCount) { return; }
     

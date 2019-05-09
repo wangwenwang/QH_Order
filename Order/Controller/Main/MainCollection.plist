@@ -10,6 +10,12 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>拜访订单</string>
+		<key>imageName</key>
+		<string>LM_order_track</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>库存管理</string>
 		<key>imageName</key>
 		<string>LM_stock_management</string>
@@ -25,12 +31,6 @@
 		<string>业绩追踪</string>
 		<key>imageName</key>
 		<string>ic_wmsOrder</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>订单查询</string>
-		<key>imageName</key>
-		<string>LM_order_track</string>
 	</dict>
 	<dict>
 		<key>title</key>

@@ -123,7 +123,7 @@
     
     [super viewDidLoad];
     
-    self.title = @"订单查询";
+    self.title = @"拜访订单";
     
     // 注册Cell
     [self registerCell];

@@ -600,26 +600,72 @@ typedef enum : NSInteger {
 
 
 // 获取产品名称，传入参数：ProductModel模型，PRODUCT_NAME变量
+// 支持中英文的逗号，取第一个逗号前的文字作为产品名称
 - (NSString *)getProductName:(NSString *)str {
-    NSArray *array = [str componentsSeparatedByString:@","];
     
-    if(array.count > 0) {
-        return array[0];
-    } else {
-        return @"";
+    NSArray *arrayEnglish = [str componentsSeparatedByString:@","];
+    NSArray *arrayChina = [str componentsSeparatedByString:@"，"];
+    
+    if(arrayEnglish.count > 0 && arrayChina.count > 0) {
+        
+        NSString *nameEnglish = [arrayEnglish firstObject];
+        NSString *nameChina = [arrayChina firstObject];
+        if(nameEnglish.length <= nameChina.length) {
+            
+            return nameEnglish;
+        }else {
+            
+            return nameChina;
+        }
+    } else if(arrayEnglish.count > 0) {
+        
+        return [arrayEnglish firstObject];
+    } else if(arrayChina.count > 0) {
+        
+        return [arrayChina firstObject];
+    }else{
+        return str;
     }
 }
 
 
 // 获取产品规格，传入参数：ProductModel模型，PRODUCT_NAME变量
+// 支持中英文的逗号，取第一个逗号后的文字作为产品名称
 - (NSString *)getProductFormat:(NSString *)str {
-    NSArray *array = [str componentsSeparatedByString:@","];
     
-    if(array.count > 1) {
+    NSArray *arrayEnglish = [str componentsSeparatedByString:@","];
+    NSArray *arrayChina = [str componentsSeparatedByString:@"，"];
+    
+    NSString *nameEnglish = @"";
+    NSString *nameChina = @"";
+    
+    if(arrayEnglish.count > 1) {
+        nameEnglish = [arrayEnglish firstObject];
+    }
+    if(arrayChina.count > 1) {
+        nameChina = [arrayChina firstObject];
+    }
+    
+    if(arrayEnglish.count > 1 && arrayChina.count > 1) {
         
-        return array[1];
-    } else {
+        if(nameEnglish.length <= nameChina.length) {
+            
+            NSString *replaceText = [NSString stringWithFormat:@"%@,", nameEnglish];
+            return [str stringByReplacingOccurrencesOfString:replaceText withString:@""];
+        }else {
+            
+            NSString *replaceText = [NSString stringWithFormat:@"%@，", nameChina];
+            return [str stringByReplacingOccurrencesOfString:replaceText withString:@""];
+        }
+    } else if(arrayEnglish.count > 1) {
         
+        NSString *replaceText = [NSString stringWithFormat:@"%@,", nameEnglish];
+        return [str stringByReplacingOccurrencesOfString:replaceText withString:@""];
+    } else if(arrayChina.count > 1) {
+        
+        NSString *replaceText = [NSString stringWithFormat:@"%@，", nameChina];
+        return [str stringByReplacingOccurrencesOfString:replaceText withString:@""];
+    }else {
         return @"";
     }
 }
@@ -860,8 +906,7 @@ typedef enum : NSInteger {
         // 填充基本数据
         [cell.productImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_information_picture"] options:SDWebImageRefreshCached];
         cell.productNameLabel.text = [self getProductName:m.PRODUCT_NAME];
-//        cell.productFormatLabel.text = [self getProductFormat:m.PRODUCT_NAME];
-        cell.productFormatLabel.text = m.PRODUCT_DESC;
+        cell.productFormatLabel.text = [self getProductFormat:m.PRODUCT_NAME];
         
         NSString *productText = @"";
         // 小单位（瓶），价格保留两位小数

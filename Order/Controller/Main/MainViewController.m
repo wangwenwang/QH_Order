@@ -87,7 +87,7 @@
         } else if([[[NSUserDefaults standardUserDefaults] objectForKey:k3DTouchType] isEqualToString:k3DTouchTypeCheckOrder]) {
             
             self.tabBarController.selectedIndex = 2;
-            self.navigationController.navigationBar.topItem.title = @"查单";
+            self.navigationController.navigationBar.topItem.title = @"查采购单";
         }
         [[NSUserDefaults standardUserDefaults] setValue:@"YES" forKey:kMainViewController_init];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -155,7 +155,7 @@
     } else if([type isEqualToString:k3DTouchTypeCheckOrder]) {
         
         self.tabBarController.selectedIndex = 2;
-        self.navigationController.navigationBar.topItem.title = @"查单";
+        self.navigationController.navigationBar.topItem.title = @"查采购单";
     }
 }
 
@@ -289,7 +289,7 @@
         GetPartyVisitListViewController *vc = [[GetPartyVisitListViewController alloc] init];
         vc.title = title;
         [self.navigationController pushViewController:vc animated:YES];
-    } else if([title isEqualToString:@"订单查询"]) {
+    } else if([title isEqualToString:@"拜访订单"]) {
         
         GetAppOutPutListViewController *vc = [[GetAppOutPutListViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

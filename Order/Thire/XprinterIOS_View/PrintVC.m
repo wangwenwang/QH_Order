@@ -202,7 +202,7 @@
     // 头部
     // 抬头 居中
     [dataM appendData:[XYCommand selectAlignment:1]];
-    [dataM appendData: [@"深圳市凯东源贸易有限公司" dataUsingEncoding: gbkEncoding]];
+    [dataM appendData: [@"前海凯东源茂利达" dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
     [dataM appendData:[XYCommand selectAlignment:0]];
     [dataM appendData: [@"---------------------------------------------" dataUsingEncoding: gbkEncoding]];

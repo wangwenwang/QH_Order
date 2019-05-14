@@ -38,5 +38,11 @@
 		<key>imageName</key>
 		<string>LM_customer_man</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>库存登记</string>
+		<key>imageName</key>
+		<string>LM_stock_enrolment</string>
+	</dict>
 </array>
 </plist>

@@ -52,19 +52,8 @@
         _timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(skipAd) userInfo:nil repeats:YES];
         
         NSString *welcomeImageName = [[NSUserDefaults standardUserDefaults] objectForKey:kWelcomeImageName];
-        if([welcomeImageName isEqualToString:@"YIB"] || [welcomeImageName isEqualToString:@"QH"]) {
-            
-            _welcomeImageView.image = [UIImage imageNamed:@"welcome1"];
-        } else if([welcomeImageName isEqualToString:@"DK"]) {
-            
-            _welcomeImageView.image = [UIImage imageNamed:@"welcome2"];
-        } else if([welcomeImageName isEqualToString:@"MY"]) {
-            
-            _welcomeImageView.image = [UIImage imageNamed:@"welcome_default"];
-        } else {
-            
-            [self skipAd];
-        }
+        
+        _welcomeImageView.image = [UIImage imageNamed:@"welcome_default"];
     } else {
         
         [self addLogoAnimation];

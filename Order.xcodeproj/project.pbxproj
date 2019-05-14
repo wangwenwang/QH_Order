@@ -194,7 +194,6 @@
 		3072AE891DA8948D00359147 /* OrderDetailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072AE881DA8948D00359147 /* OrderDetailService.m */; };
 		308783861D98CD45002EED76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 308783851D98CD45002EED76 /* main.m */; };
 		308783891D98CD45002EED76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 308783881D98CD45002EED76 /* AppDelegate.m */; };
-		308783911D98CD45002EED76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308783901D98CD45002EED76 /* Assets.xcassets */; };
 		308783941D98CD45002EED76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308783921D98CD45002EED76 /* LaunchScreen.storyboard */; };
 		3088D3051F4BDC49006031D9 /* GetOupputDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3088D3001F4BDC49006031D9 /* GetOupputDetailModel.m */; };
 		3088D3061F4BDC49006031D9 /* GetOupputListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3088D3021F4BDC49006031D9 /* GetOupputListModel.m */; };
@@ -497,6 +496,7 @@
 		3B813AED21AF2C490096783C /* LMDropDownMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B813AE821AF2A0E0096783C /* LMDropDownMenuTableViewCell.xib */; };
 		3B813AF121AFB0440096783C /* GetVisitLeaveShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B813AEF21AFB0430096783C /* GetVisitLeaveShopViewController.m */; };
 		3B813AF221AFB0440096783C /* GetVisitLeaveShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B813AF021AFB0430096783C /* GetVisitLeaveShopViewController.xib */; };
+		3B81BF61228ADDB300D18309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B81BF60228ADDB300D18309 /* Assets.xcassets */; };
 		3B86F37F21F6C65D0048A9AF /* CARTotalOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F37D21F6C65D0048A9AF /* CARTotalOrderDetailViewController.m */; };
 		3B86F38021F6C65D0048A9AF /* CARTotalOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B86F37E21F6C65D0048A9AF /* CARTotalOrderDetailViewController.xib */; };
 		3B86F38421F6C7AB0048A9AF /* CARTotalOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F38221F6C7AB0048A9AF /* CARTotalOrderDetailTableViewCell.m */; };
@@ -879,7 +879,6 @@
 		308783851D98CD45002EED76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		308783871D98CD45002EED76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		308783881D98CD45002EED76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		308783901D98CD45002EED76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		308783931D98CD45002EED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		308783951D98CD45002EED76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3088D2FF1F4BDC49006031D9 /* GetOupputDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOupputDetailModel.h; sourceTree = "<group>"; };
@@ -1400,6 +1399,7 @@
 		3B813AEE21AFB0430096783C /* GetVisitLeaveShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitLeaveShopViewController.h; sourceTree = "<group>"; };
 		3B813AEF21AFB0430096783C /* GetVisitLeaveShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitLeaveShopViewController.m; sourceTree = "<group>"; };
 		3B813AF021AFB0430096783C /* GetVisitLeaveShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitLeaveShopViewController.xib; sourceTree = "<group>"; };
+		3B81BF60228ADDB300D18309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B86F37C21F6C65D0048A9AF /* CARTotalOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARTotalOrderDetailViewController.h; sourceTree = "<group>"; };
 		3B86F37D21F6C65D0048A9AF /* CARTotalOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARTotalOrderDetailViewController.m; sourceTree = "<group>"; };
 		3B86F37E21F6C65D0048A9AF /* CARTotalOrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CARTotalOrderDetailViewController.xib; sourceTree = "<group>"; };
@@ -2114,7 +2114,7 @@
 				3B765A2421B60FA900684CF4 /* libs */,
 				308783871D98CD45002EED76 /* AppDelegate.h */,
 				308783881D98CD45002EED76 /* AppDelegate.m */,
-				308783901D98CD45002EED76 /* Assets.xcassets */,
+				3B81BF60228ADDB300D18309 /* Assets.xcassets */,
 				308783921D98CD45002EED76 /* LaunchScreen.storyboard */,
 				308783951D98CD45002EED76 /* Info.plist */,
 				308783841D98CD45002EED76 /* Supporting Files */,
@@ -3677,6 +3677,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -3717,6 +3718,7 @@
 				30930B881FD67E9800D320F9 /* ConfirmMonthlyPlanViewController.xib in Resources */,
 				303566D71F70FF6A009E6EFB /* GetOupputInfoViewController.xib in Resources */,
 				3BCE65B222431BE9001DCA48 /* GetPartyVisitListViewController.xib in Resources */,
+				3B81BF61228ADDB300D18309 /* Assets.xcassets in Resources */,
 				303566D91F70FF6A009E6EFB /* GetOupputListViewController.xib in Resources */,
 				3B813A8521AEF5A30096783C /* GetVisitVividDisplayViewController.xib in Resources */,
 				30930BAB1FD6AC8C00D320F9 /* AddMonthlyPlanTableViewCell.xib in Resources */,
@@ -3805,7 +3807,6 @@
 				3054D1021FFC74E900E1D9B2 /* MainCollection.plist in Resources */,
 				3054D11C1FFCD29200E1D9B2 /* GetTmsOrderByAddressTableViewCell.xib in Resources */,
 				302675DE1F72494D0098DEF1 /* InputReturnConfirmViewController.xib in Resources */,
-				308783911D98CD45002EED76 /* Assets.xcassets in Resources */,
 				30930B8E1FD6858700D320F9 /* MonthlyPlanTableViewCell.xib in Resources */,
 				3B0DC1441F72CCCE00D1E6AA /* OutputReturnViewController.xib in Resources */,
 				3B222FB321A467DB00FDB0CF /* KBShowStepViewController.xib in Resources */,

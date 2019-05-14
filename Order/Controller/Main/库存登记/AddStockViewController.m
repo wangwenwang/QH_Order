@@ -91,7 +91,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *SUBMIT_DATE_leading;
 
 // 客户类型
-@property (weak, nonatomic) IBOutlet UILabel *PARTY_TYPE;
+//@property (weak, nonatomic) IBOutlet UILabel *PARTY_TYPE;
 
 // 客户代码
 @property (weak, nonatomic) IBOutlet UILabel *PARTY_CODE;
@@ -244,7 +244,7 @@ typedef enum _DateType {
 
 - (void)initUI {
     
-    _PARTY_TYPE.text = _partyM.PARTY_TYPE;
+//    _PARTY_TYPE.text = _partyM.PARTY_TYPE;
     _PARTY_CODE.text = _partyM.PARTY_CODE;
     _PARTY_CITY.text = _partyM.PARTY_CITY;
     _PARTY_NAME.text = _partyM.PARTY_NAME;

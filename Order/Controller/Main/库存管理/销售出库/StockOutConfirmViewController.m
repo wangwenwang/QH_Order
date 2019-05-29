@@ -284,6 +284,8 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     [self initUI];
     
     [self addNotification];
+    
+    [self updateViewConstraints];
 }
 
 
@@ -298,7 +300,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     [super updateViewConstraints];
     
     // 赠品模块高度
-    _giftsTableSuperViewHeight.constant = 30 + GiftTableViewCellHeight * _selectedGifts.count + 60;
+    _giftsTableSuperViewHeight.constant = 30 + GiftTableViewCellHeight * _selectedGifts.count + 35;
     
     // 总高度
     _scrollContentViewHeight.constant = _sendViewHeight.constant + _receiveViewHeight.constant + _orderTableSuperViewHeight.constant + _giftsTableSuperViewHeight.constant + _sumInfoSuperViewHeight.constant + _time_remark_commit_Height.constant;
@@ -404,10 +406,6 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     _CONTACT_TEL_receive.text = _getToAddressM.cONTACTTEL;
     _ADDRESS_INFO_receive.text = _getToAddressM.aDDRESSINFO;
     
-    
-    // 没有赠品
-    _noGiftPromptLabel.hidden = _selectedGifts.count;
-    
     _giftTableView.hidden = !_selectedGifts.count;
     
     _customizePriceView.hidden = YES;
@@ -415,13 +413,15 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     
     // 设置添加赠品按钮是否可见
     NSString *bussinessCode = _app.business.BUSINESS_CODE;
-    if([bussinessCode rangeOfString:@"QH"].length > 0 && [_promotionOrder.HAVE_GIFT isEqualToString:@"Y"]) {
+    if([_promotionOrder.HAVE_GIFT isEqualToString:@"Y"]) {
         //  if([bussinessName isEqualToString:@"凯东源前海项目"] && [_promotionOrder.HAVE_GIFT isEqualToString:@"Y"]) {
         
         _addGiftButton.hidden = NO;
+        _noGiftPromptLabel.hidden = YES;
     } else {
         
         _addGiftButton.hidden = YES;
+        _noGiftPromptLabel.hidden = NO;
     }
     
     [self refreshCollectDada];
@@ -596,11 +596,10 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     
     NSDictionary *dict = [self promotionOrderModelTransfromNSString:_promotionOrder];
     
-    NSString *dictStr = [Tools JsonStringWithDictonary:dict];
-    
     if(dict == nil) {
         [Tools showAlert:self.view andTitle:@"订单处理异常"];
     } else {
+        NSString *dictStr = [Tools JsonStringWithDictonary:dict];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [_service confirm:dictStr];
     }
@@ -625,8 +624,9 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
         OUTPUT_VOLUME += detailPro.PO_VOLUME * detailPro.PO_QTY;
     }
     
-    
-    
+    if(OrderDetails == nil) {
+        return nil;
+    }
     NSDictionary *Result = @{@"Result" : OrderDetails};
     
     // 总原价
@@ -730,9 +730,6 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
         
         for(int i = 0; i < ps.count; i++) {
             PromotionDetailModel *p = ps[i];
-            ProductModel *pro = _productsOfLocal[i];
-            
-            
             
             // 入库重量
             CGFloat OUTPUT_WEIGHT = p.PO_WEIGHT * p.PO_QTY;
@@ -740,7 +737,6 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
             CGFloat OUTPUT_VOLUME = p.PO_VOLUME * p.PO_QTY;
             // 金额
             CGFloat SUM = p.ACT_PRICE * p.PO_QTY;
-            
             
             NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                                   p.PRODUCT_TYPE, @"PRODUCT_TYPE",
@@ -752,7 +748,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
                                   @(p.PO_WEIGHT), @"PRODUCT_WEIGHT",
                                   @(p.PO_VOLUME), @"PRODUCT_VOLUME",
                                   @(p.PO_QTY), @"OUTPUT_QTY",
-                                  pro.PRODUCT_UOM, @"OUTPUT_UOM",
+                                  p.PO_UOM, @"OUTPUT_UOM",
                                   @(OUTPUT_WEIGHT), @"OUTPUT_WEIGHT",
                                   @(OUTPUT_VOLUME), @"OUTPUT_VOLUME",
                                   @(p.ORG_PRICE), @"ORG_PRICE",

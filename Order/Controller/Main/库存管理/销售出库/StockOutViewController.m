@@ -1573,6 +1573,8 @@ typedef enum : NSInteger {
         p.ACT_PRICE = ACT_PRICE;
         p.PO_VOLUME = product.PRODUCT_VOLUME * PO_QTY;
         p.PO_WEIGHT = product.PRODUCT_WEIGHT * PO_QTY;
+        p.PRODUCT_UOM = product.PRODUCT_UOM;
+        p.PO_UOM = product.PRODUCT_UOM;
         return p;
     } else {
         

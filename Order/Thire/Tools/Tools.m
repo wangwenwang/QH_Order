@@ -503,6 +503,8 @@ typedef void (^Animation)(void);
                           @(m.LOTTABLE13), @"LOTTABLE13",
                           @(m.OPERATOR_IDX), @"OPERATOR_IDX",
                           m.PRODUCT_URL, @"PRODUCT_URL",
+                          m.PRODUCT_UOM, @"PRODUCT_UOM",
+                          m.PO_UOM, @"PO_UOM",
                           nil];
     
     return dict;
@@ -561,6 +563,9 @@ typedef void (^Animation)(void);
             
             p.ACT_PRICE = m.PRODUCT_PRICE;
         }
+        p.PO_UOM = m.PRODUCT_UOM;
+        p.PRODUCT_UOM = m.PRODUCT_UOM;
+        p.PACK_UOM = m.PACK_UOM;
         
         [arrReturn addObject:p];
     }

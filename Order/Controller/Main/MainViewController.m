@@ -26,6 +26,7 @@
 #import "GetPartyListViewController.h"
 #import "GetAppOutPutListViewController.h"
 #import "KPIExamViewController.h"
+#import "XHVersion.h"
 
 @interface MainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ChartServiceDelegate>
 
@@ -105,6 +106,9 @@
     
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.topItem.title = @"首页";
+    
+    // 检查更新
+    [XHVersion checkNewVersion];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -236,7 +240,7 @@
         
         HotProductViewController *hotVC = [[HotProductViewController alloc] init];
         [self.navigationController pushViewController:hotVC animated:YES];
-    } else if([title isEqualToString:@"查看报表"]) {
+    } else if([title isEqualToString:@"报表中心"]) {
         
         CARListViewController *vc = [[CARListViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
@@ -289,7 +293,7 @@
         GetPartyVisitListViewController *vc = [[GetPartyVisitListViewController alloc] init];
         vc.title = title;
         [self.navigationController pushViewController:vc animated:YES];
-    } else if([title isEqualToString:@"拜访订单"]) {
+    } else if([title isEqualToString:@"查销售单"]) {
         
         GetAppOutPutListViewController *vc = [[GetAppOutPutListViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

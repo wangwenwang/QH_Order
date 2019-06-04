@@ -77,7 +77,7 @@
 
 #define kCellName_Cond @"CondTableViewCell"
 
-#define kCellHeight_OupputList 103
+#define kCellHeight_OupputList 146
 
 #define kCellName_OupputList @"GetOupputListTableViewCell"
 
@@ -123,7 +123,7 @@
     
     [super viewDidLoad];
     
-    self.title = @"拜访订单";
+    self.title = @"查销售单";
     
     // 注册Cell
     [self registerCell];

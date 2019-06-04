@@ -505,6 +505,9 @@
 		3B86F38B21F6E4C50048A9AF /* CARTotalOrderDetailItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F38A21F6E4C50048A9AF /* CARTotalOrderDetailItemModel.m */; };
 		3B86F39821F717740048A9AF /* UINavigationBar+YHIndicatorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F39421F717740048A9AF /* UINavigationBar+YHIndicatorImage.m */; };
 		3B86F39921F717740048A9AF /* UINavigationController+YHBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86F39721F717740048A9AF /* UINavigationController+YHBackTitle.m */; };
+		3B8E6D2D22A662D1003FCA27 /* XHVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E6D2822A662D1003FCA27 /* XHVersion.m */; };
+		3B8E6D2E22A662D1003FCA27 /* XHAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E6D2922A662D1003FCA27 /* XHAppInfo.m */; };
+		3B8E6D2F22A662D1003FCA27 /* XHVersionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E6D2A22A662D1003FCA27 /* XHVersionRequest.m */; };
 		3BB4AA9E22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AA9C22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m */; };
 		3BB4AA9F22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4AA9D22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib */; };
 		3BB4AAA3221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4AAA1221589C500BE16F9 /* GetVisitCheckInventoryOkTableViewCell.m */; };
@@ -1414,6 +1417,12 @@
 		3B86F39521F717740048A9AF /* UINavigationController+YHBackTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YHBackTitle.h"; sourceTree = "<group>"; };
 		3B86F39621F717740048A9AF /* UINavigationBar+YHIndicatorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YHIndicatorImage.h"; sourceTree = "<group>"; };
 		3B86F39721F717740048A9AF /* UINavigationController+YHBackTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YHBackTitle.m"; sourceTree = "<group>"; };
+		3B8E6D2722A662D1003FCA27 /* XHVersionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHVersionRequest.h; sourceTree = "<group>"; };
+		3B8E6D2822A662D1003FCA27 /* XHVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHVersion.m; sourceTree = "<group>"; };
+		3B8E6D2922A662D1003FCA27 /* XHAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAppInfo.m; sourceTree = "<group>"; };
+		3B8E6D2A22A662D1003FCA27 /* XHVersionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHVersionRequest.m; sourceTree = "<group>"; };
+		3B8E6D2B22A662D1003FCA27 /* XHVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHVersion.h; sourceTree = "<group>"; };
+		3B8E6D2C22A662D1003FCA27 /* XHAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAppInfo.h; sourceTree = "<group>"; };
 		3BB4AA9B22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetVisitCheckInventoryTableViewCell.h; sourceTree = "<group>"; };
 		3BB4AA9C22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetVisitCheckInventoryTableViewCell.m; sourceTree = "<group>"; };
 		3BB4AA9D22155AAA00BE16F9 /* GetVisitCheckInventoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetVisitCheckInventoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -2694,6 +2703,7 @@
 		30CDC5B31D9907CD0035602F /* Thire */ = {
 			isa = PBXGroup;
 			children = (
+				3B8E6D2622A662D1003FCA27 /* XHVersion */,
 				3B30C412225361FB00BD42FF /* XYSDK */,
 				3B980A70225309D1008800D2 /* XprinterIOS_View */,
 				3B78402222409B1000D0FD06 /* LLDateFilterView */,
@@ -3412,6 +3422,19 @@
 			path = yh_navgation;
 			sourceTree = "<group>";
 		};
+		3B8E6D2622A662D1003FCA27 /* XHVersion */ = {
+			isa = PBXGroup;
+			children = (
+				3B8E6D2722A662D1003FCA27 /* XHVersionRequest.h */,
+				3B8E6D2822A662D1003FCA27 /* XHVersion.m */,
+				3B8E6D2922A662D1003FCA27 /* XHAppInfo.m */,
+				3B8E6D2A22A662D1003FCA27 /* XHVersionRequest.m */,
+				3B8E6D2B22A662D1003FCA27 /* XHVersion.h */,
+				3B8E6D2C22A662D1003FCA27 /* XHAppInfo.h */,
+			);
+			path = XHVersion;
+			sourceTree = "<group>";
+		};
 		3B980A70225309D1008800D2 /* XprinterIOS_View */ = {
 			isa = PBXGroup;
 			children = (
@@ -3963,6 +3986,7 @@
 				302675DF1F72494D0098DEF1 /* InputReturnConfirmViewController.m in Sources */,
 				301CFDDA1FBB02A100C8CB39 /* StockNoInfoModel.m in Sources */,
 				30A3C31C1D9A501300BBE0DA /* MainCollectionViewCell.m in Sources */,
+				3B8E6D2D22A662D1003FCA27 /* XHVersion.m in Sources */,
 				30CDC63D1D9907CD0035602F /* PBPGView.m in Sources */,
 				30F235C91FD7D3640056846C /* MonthlyPlanInfoModel.m in Sources */,
 				3BB4AAEF221706C600BE16F9 /* KPIExamModel.m in Sources */,
@@ -4058,6 +4082,7 @@
 				3054D1071FFCC76100E1D9B2 /* GetTmsOrderByAddressViewController.m in Sources */,
 				30BB2DFA1F46821B002E51E7 /* StockProductListModel.m in Sources */,
 				30BB2DCC1F459375002E51E7 /* GetAppStockListTableViewCell.m in Sources */,
+				3B8E6D2F22A662D1003FCA27 /* XHVersionRequest.m in Sources */,
 				30930B821FD66BED00D320F9 /* AddMonthlyPlanViewController.m in Sources */,
 				3B5ABE03218837F100A1230D /* GetPartyVisitListModel.m in Sources */,
 				30CDC6611D9907CD0035602F /* SVProgressHUD.m in Sources */,
@@ -4199,6 +4224,7 @@
 				3B5ABE062188391D00A1230D /* GetPartyVisitItemModel.m in Sources */,
 				30CDC67B1D990B430035602F /* Tools.m in Sources */,
 				303566D81F70FF6A009E6EFB /* GetOupputListViewController.m in Sources */,
+				3B8E6D2E22A662D1003FCA27 /* XHAppInfo.m in Sources */,
 				3054D11B1FFCD29200E1D9B2 /* GetTmsOrderByAddressTableViewCell.m in Sources */,
 				301CFDCF1FBAF9FF00C8CB39 /* StockNoWaterInfoModel.m in Sources */,
 				303566B81F70F2AD009E6EFB /* InputReturnViewController.m in Sources */,

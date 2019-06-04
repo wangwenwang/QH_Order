@@ -39,8 +39,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager POST:API_GET_SUBMIT_ORDER parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-        nil;
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        nil;     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求策略成功---%@", responseObject);
         int type = [responseObject[@"type"] intValue];
         

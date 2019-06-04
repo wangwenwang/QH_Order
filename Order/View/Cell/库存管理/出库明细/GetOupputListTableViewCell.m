@@ -17,6 +17,15 @@
 // 出库客户名称
 @property (weak, nonatomic) IBOutlet UILabel *PARTY_NAME;
 
+// 出库客户电话
+@property (weak, nonatomic) IBOutlet UILabel *CONTACT_TEl;
+
+// 出库客户地址
+@property (weak, nonatomic) IBOutlet UILabel *PARTY_INFO;
+
+// 下单人
+@property (weak, nonatomic) IBOutlet UILabel *OPER_USER;
+
 // 制单时间
 @property (weak, nonatomic) IBOutlet UILabel *ADD_DATE;
 
@@ -53,6 +62,9 @@
     _ADD_DATE.text = getOupputM.aDDDATE;
     _OUTPUT_QTY.text = [Tools OneDecimal:getOupputM.oUTPUTQTY];
     _OUTPUT_TYPE.text = getOupputM.oUTPUTTYPE;
+    _CONTACT_TEl.text = getOupputM.cONTACTTEl;
+    _PARTY_INFO.text = getOupputM.pARTYINFO;
+    _OPER_USER.text = getOupputM.oPERUSER;
     
     if([getOupputM.oUTPUTTYPE isEqualToString:@"销售出库"] || [getOupputM.oUTPUTTYPE isEqualToString:@"其它出库"]) {
         

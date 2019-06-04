@@ -110,7 +110,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"查看报表";
+    self.title = @"报表中心";
     
     [self addColor];
     

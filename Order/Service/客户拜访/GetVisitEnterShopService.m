@@ -17,7 +17,7 @@
 #define kAPI_NAME_GetVisitVividDisplay @"生动化陈列"
 #define kAPI_NAME_GetVisitLeaveShop @"离店"
 #define kAPI_NAME_VividDisplayCBX @"获取生动化陈列"
-#define kAPI_NAME_GetVisitAppOrder @"获取客户拜访订单"
+#define kAPI_NAME_GetVisitAppOrder @"获取客户销售单"
 #define kAPI_NAME_GetFatherAddress @"根据客户地址id，获取上级地址id"
 
 

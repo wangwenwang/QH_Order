@@ -19,6 +19,7 @@ NSString *const kGetOupputModelADUTDATE = @"ADUT_DATE";
 NSString *const kGetOupputModelADUTMARK = @"ADUT_MARK";
 NSString *const kGetOupputModelADUTUSER = @"ADUT_USER";
 NSString *const kGetOupputModelBUSINESSIDX = @"BUSINESS_IDX";
+NSString *const kGetOupputModelCONTACTTEl = @"CONTACT_TEl";
 NSString *const kGetOupputModelEDITDATE = @"EDIT_DATE";
 NSString *const kGetOupputModelENTIDX = @"ENT_IDX";
 NSString *const kGetOupputModelIDX = @"IDX";
@@ -74,6 +75,9 @@ NSString *const kGetOupputModelPRICE = @"PRICE";
     }
     if(![dictionary[kGetOupputModelBUSINESSIDX] isKindOfClass:[NSNull class]]){
         self.bUSINESSIDX = dictionary[kGetOupputModelBUSINESSIDX];
+    }
+    if(![dictionary[kGetOupputModelCONTACTTEl] isKindOfClass:[NSNull class]]){
+        self.cONTACTTEl = dictionary[kGetOupputModelCONTACTTEl];
     }
     if(![dictionary[kGetOupputModelEDITDATE] isKindOfClass:[NSNull class]]){
         self.eDITDATE = dictionary[kGetOupputModelEDITDATE];
@@ -171,6 +175,9 @@ NSString *const kGetOupputModelPRICE = @"PRICE";
     }
     if(self.bUSINESSIDX != nil){
         dictionary[kGetOupputModelBUSINESSIDX] = self.bUSINESSIDX;
+    }
+    if(self.cONTACTTEl != nil){
+        dictionary[kGetOupputModelCONTACTTEl] = self.cONTACTTEl;
     }
     if(self.eDITDATE != nil){
         dictionary[kGetOupputModelEDITDATE] = self.eDITDATE;
@@ -271,6 +278,9 @@ NSString *const kGetOupputModelPRICE = @"PRICE";
     if(self.bUSINESSIDX != nil){
         [aCoder encodeObject:self.bUSINESSIDX forKey:kGetOupputModelBUSINESSIDX];
     }
+    if(self.cONTACTTEl != nil){
+        [aCoder encodeObject:self.cONTACTTEl forKey:kGetOupputModelCONTACTTEl];
+    }
     if(self.eDITDATE != nil){
         [aCoder encodeObject:self.eDITDATE forKey:kGetOupputModelEDITDATE];
     }
@@ -347,6 +357,7 @@ NSString *const kGetOupputModelPRICE = @"PRICE";
     self.aDUTMARK = [aDecoder decodeObjectForKey:kGetOupputModelADUTMARK];
     self.aDUTUSER = [aDecoder decodeObjectForKey:kGetOupputModelADUTUSER];
     self.bUSINESSIDX = [aDecoder decodeObjectForKey:kGetOupputModelBUSINESSIDX];
+    self.cONTACTTEl = [aDecoder decodeObjectForKey:kGetOupputModelCONTACTTEl];
     self.eDITDATE = [aDecoder decodeObjectForKey:kGetOupputModelEDITDATE];
     self.eNTIDX = [aDecoder decodeObjectForKey:kGetOupputModelENTIDX];
     self.iDX = [aDecoder decodeObjectForKey:kGetOupputModelIDX];
@@ -387,6 +398,7 @@ NSString *const kGetOupputModelPRICE = @"PRICE";
     copy.aDUTMARK = [self.aDUTMARK copy];
     copy.aDUTUSER = [self.aDUTUSER copy];
     copy.bUSINESSIDX = [self.bUSINESSIDX copy];
+    copy.cONTACTTEl = [self.cONTACTTEl copy];
     copy.eDITDATE = [self.eDITDATE copy];
     copy.eNTIDX = [self.eNTIDX copy];
     copy.iDX = [self.iDX copy];

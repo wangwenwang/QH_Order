@@ -161,7 +161,8 @@
 #define API_ServerAddress @"http://oms.kaidongyuan.com:8088"
 
 /// 登陆接口
-#define API_LOGIN @"https://tms.kaidongyuan.com/api/Login"
+//#define API_LOGIN @"https://tms.kaidongyuan.com/api/Login"
+#define API_LOGIN @"http://oms.kaidongyuan.com:8088/api/Login"
 
 /// 获取订单列表
 #define API_GET_ORDER_LIST @"http://oms.kaidongyuan.com:8088/api/GetOrderList"
@@ -407,7 +408,7 @@
 /// 客户拜访：获取生动化陈列
 #define API_VividDisplayCBX @"http://oms.kaidongyuan.com:8088/api/VividDisplayCBX"
 
-/// 获取客户拜访订单
+/// 获取客户销售单
 #define API_GetVisitAppOrder @"http://oms.kaidongyuan.com:8088/api/GetVisitAppOrder"
 
 /// 根据客户地址id，获取上级地址id

@@ -41,38 +41,8 @@
 //                           "ADUT_USER": "",
 //                           "ADUT_DATE": "",
 //                           "EDIT_DATE": "2017/8/17 10:46:02",
-//                           "OPER_USER": "系统管理员"
-//                       },
-//                       {
-//                           "IDX": "6",
-//                           "ENT_IDX": "9008",
-//                           "BUSINESS_IDX": "4",
-//                           "OUTPUT_TYPE": "销售出库",
-//                           "ADDRESS_IDX": "10007",
-//                           "ADDRESS_CODE": "ADG024",
-//                           "ADDRESS_NAME": "永盛泰有限公司",
-//                           "ADDRESS_INFO": "广东省深圳市龙岗区平湖街道广东省深圳市龙岗区平湖街道鹅公岭良安田",
-//                           "OUTPUT_NO": "0000000008",
-//                           "INPUT_NO": "",
-//                           "PARTY_CODE": "ADG03HDX001",
-//                           "PARTY_NAME": "韩迪熊",
-//                           "PARTY_INFO": "广东省茂名市电白县水东镇广东省茂名市电白区水东站东阳南街2号",
-//                           "OUTPUT_QTY": "3.0000",
-//                           "OUTPUT_SUM": "0.0000",
-//                           "PRICE": "",
-//                           "OUTPUT_DATE": "9008",
-//                           "OUTPUT_WEIGHT": "",
-//                           "OUTPUT_VOLUME": "3.0000",
-//                           "PARTY_MARK": "",
-//                           "ADUT_MARK": "",
-//                           "OUTPUT_STATE": "OPEN",
-//                           "OUTPUT_WORKFLOW": "已出库",
-//                           "ADD_USER": "系统管理员",
-//                           "ADD_DATE": "2017/8/16 16:53:59",
-//                           "ADUT_USER": "系统管理员",
-//                           "ADUT_DATE": "2017/8/17 14:16:00",
-//                           "EDIT_DATE": "2017/8/16 16:53:59",
-//                           "OPER_USER": "系统管理员"
+//                           "OPER_USER": "系统管理员",
+//                           "CONTACT_TEl": "13726027405"
 //                       }
 //                       ]
 //}

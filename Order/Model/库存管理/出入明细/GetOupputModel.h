@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString * aDUTMARK;
 @property (nonatomic, strong) NSString * aDUTUSER;
 @property (nonatomic, strong) NSString * bUSINESSIDX;
+@property (nonatomic, strong) NSString * cONTACTTEl;
 @property (nonatomic, strong) NSString * eDITDATE;
 @property (nonatomic, strong) NSString * eNTIDX;
 @property (nonatomic, strong) NSString * iDX;

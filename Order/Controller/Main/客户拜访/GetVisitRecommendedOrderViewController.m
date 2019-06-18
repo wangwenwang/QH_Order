@@ -93,7 +93,7 @@
 
 @end
 
-#define kCellHeight 103
+#define kCellHeight 146
 
 #define kCellNameGetOupputList @"GetOupputListTableViewCell"
 

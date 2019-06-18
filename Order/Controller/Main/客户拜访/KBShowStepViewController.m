@@ -97,7 +97,7 @@
 
 @end
 
-#define kCellHeight_ShowOrder 103
+#define kCellHeight_ShowOrder 146
 
 #define kCellHeight_ShowCheckInventory 33
 

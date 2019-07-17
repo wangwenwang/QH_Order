@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) GetOupputModel *getOupputM;
 
+@property (assign, nonatomic) BOOL isEnableMul;
+
 @end

@@ -38,6 +38,9 @@
 // 取消提示
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
 
+// 多选
+@property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
+
 @end
 
 @implementation GetOupputListTableViewCell
@@ -55,6 +58,12 @@
 }
 
 
+- (void)setIsEnableMul:(BOOL)isEnableMul {
+    
+    [_selectedImageView setHidden:!isEnableMul];
+}
+
+
 - (void)setGetOupputM:(GetOupputModel *)getOupputM {
     
     _OUTPUT_NO.text = getOupputM.oUTPUTNO;
@@ -65,6 +74,7 @@
     _CONTACT_TEl.text = getOupputM.cONTACTTEl;
     _PARTY_INFO.text = getOupputM.pARTYINFO;
     _OPER_USER.text = getOupputM.oPERUSER;
+    [_selectedImageView setImage:[UIImage imageNamed:getOupputM.cellSelected ? @"selected" : @"unselect"]];
     
     if([getOupputM.oUTPUTTYPE isEqualToString:@"销售出库"] || [getOupputM.oUTPUTTYPE isEqualToString:@"其它出库"]) {
         

@@ -47,4 +47,6 @@
 
 @property (assign, nonatomic) CGFloat cellHeight;
 
+@property (assign, nonatomic) BOOL cellSelected;
+
 @end

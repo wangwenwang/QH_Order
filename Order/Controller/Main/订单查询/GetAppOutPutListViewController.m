@@ -232,7 +232,7 @@
     
     [view addSubview:searchBar];
     _tableView.tableHeaderView = view;
-    [searchBar setPlaceholder:@"订单号/客户名称"];
+    [searchBar setPlaceholder:@"出库单号/门店名称"];
     searchBar.delegate = self;
 }
 

@@ -134,11 +134,19 @@
                                 <color key="textColor" red="0.47292302520000001" green="0.47380878069999999" blue="0.48732529009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="meU-5j-9xI">
+                                <rect key="frame" x="287" y="27.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="PUa-vS-I6V"/>
+                                    <constraint firstAttribute="width" secondItem="meU-5j-9xI" secondAttribute="height" multiplier="1:1" id="TcN-xK-MsF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lDW-Ea-47l" secondAttribute="trailing" constant="3" id="26D-WW-UG9"/>
                             <constraint firstItem="CYJ-y1-KdG" firstAttribute="top" secondItem="LZX-cA-4ha" secondAttribute="bottom" constant="4" id="3A9-YO-RF0"/>
+                            <constraint firstItem="meU-5j-9xI" firstAttribute="centerY" secondItem="LZX-cA-4ha" secondAttribute="centerY" id="4La-qU-dJH"/>
                             <constraint firstItem="oVW-9X-j91" firstAttribute="centerY" secondItem="XRY-16-zk0" secondAttribute="centerY" id="4bb-jq-bIP"/>
                             <constraint firstItem="LZX-cA-4ha" firstAttribute="leading" secondItem="vC2-5H-cWB" secondAttribute="leading" id="6Gb-UR-H0Y"/>
                             <constraint firstItem="3da-lc-xOT" firstAttribute="top" secondItem="si7-gz-bYB" secondAttribute="bottom" constant="4" id="7cN-So-IKz"/>
@@ -165,6 +173,7 @@
                             <constraint firstItem="XjS-Yg-hp0" firstAttribute="top" secondItem="si7-gz-bYB" secondAttribute="top" id="gPd-LG-Fey"/>
                             <constraint firstItem="tks-Kw-xIv" firstAttribute="leading" secondItem="giT-yQ-I5t" secondAttribute="leading" id="geo-Ie-VLr"/>
                             <constraint firstItem="M7b-fL-Jfh" firstAttribute="leading" secondItem="CYJ-y1-KdG" secondAttribute="trailing" id="lCR-n3-qxe"/>
+                            <constraint firstAttribute="trailing" secondItem="meU-5j-9xI" secondAttribute="trailing" constant="8" id="mdC-lu-re1"/>
                             <constraint firstAttribute="bottom" secondItem="GCg-Wh-0re" secondAttribute="bottom" constant="0.5" id="oQW-ea-v0g"/>
                             <constraint firstItem="lDW-Ea-47l" firstAttribute="top" secondItem="LZX-cA-4ha" secondAttribute="top" id="okQ-hj-a45"/>
                             <constraint firstItem="3da-lc-xOT" firstAttribute="leading" secondItem="vC2-5H-cWB" secondAttribute="leading" id="qlM-Pg-646"/>
@@ -195,8 +204,12 @@
                 <outlet property="PARTY_INFO" destination="M7b-fL-Jfh" id="SMg-JG-yLC"/>
                 <outlet property="PARTY_NAME" destination="lDW-Ea-47l" id="DXi-xe-A6Z"/>
                 <outlet property="promptLabel" destination="oVW-9X-j91" id="rwZ-Ye-0Ej"/>
+                <outlet property="selectedImageView" destination="meU-5j-9xI" id="Dkq-kB-cg3"/>
             </connections>
             <point key="canvasLocation" x="33.333333333333336" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="selected" width="20" height="20"/>
+    </resources>
 </document>

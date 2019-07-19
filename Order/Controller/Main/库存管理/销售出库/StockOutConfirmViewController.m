@@ -639,6 +639,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
     NSString *OUTPUT_TYPE =  @"";  // 出库类型
     NSString *PARTY_CODE = @"";    // 门店代码
     NSString *PARTY_NAME = @"";    // 门店名称
+    NSString *PARTY_TEL = @"";     // 门店电话
     NSString *PARTY_INFO = @"";    // 门店地址
     
     // 销售出库
@@ -647,6 +648,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
         OUTPUT_TYPE = @"销售出库";
         PARTY_CODE = _getToAddressM.iTEMCODE;
         PARTY_NAME = _getToAddressM.pARTYNAME;
+        PARTY_TEL = _getToAddressM.cONTACTTEL;
         PARTY_INFO = _getToAddressM.aDDRESSINFO;
     }
     // 其它出库
@@ -674,6 +676,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
                     @"", @"INPUT_NO",       // 原采购单号未知
                     PARTY_CODE, @"PARTY_CODE",
                     PARTY_NAME, @"PARTY_NAME",
+                    PARTY_TEL, @"PARTY_TEL",
                     PARTY_INFO, @"PARTY_INFO",
                     @(p.TOTAL_QTY), @"OUTPUT_QTY",
                     actPrice, @"OUTPUT_SUM",
@@ -701,6 +704,7 @@ static CGFloat g_sumInfoSuperViewHeight_c = 0;
                     @"", @"INPUT_NO",       // 原采购单号未知
                     PARTY_CODE, @"PARTY_CODE",
                     PARTY_NAME, @"PARTY_NAME",
+                    PARTY_TEL, @"PARTY_TEL",
                     PARTY_INFO, @"PARTY_INFO",
                     @(p.TOTAL_QTY), @"OUTPUT_QTY",
                     actPrice, @"OUTPUT_SUM",

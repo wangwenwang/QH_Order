@@ -39,6 +39,7 @@
 @property (nonatomic, strong) NSString * pARTYINFO;
 @property (nonatomic, strong) NSString * pARTYMARK;
 @property (nonatomic, strong) NSString * pARTYNAME;
+@property (nonatomic, strong) NSString * pARTYTEL;
 @property (nonatomic, strong) NSString * pRICE;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;

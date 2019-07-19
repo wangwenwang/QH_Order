@@ -202,7 +202,11 @@
     // 头部
     // 抬头 居中
     [dataM appendData:[XYCommand selectAlignment:1]];
-    [dataM appendData: [@"前海凯东源茂利达" dataUsingEncoding: gbkEncoding]];
+    if(_getOupputDetailM) {
+        [dataM appendData: [_getOupputDetailM.getOupputInfoModel.aDDRESSNAME dataUsingEncoding: gbkEncoding]];
+    }else if(_order){
+        [dataM appendData: [[NSString stringWithFormat:@"%@", _order.ORD_FROM_NAME] dataUsingEncoding: gbkEncoding]];
+    }
     [dataM appendData:[XYCommand printAndFeedLine]];
     [dataM appendData:[XYCommand selectAlignment:0]];
     [dataM appendData: [@"---------------------------------------------" dataUsingEncoding: gbkEncoding]];
@@ -212,25 +216,34 @@
     NSString *partyCode = @"";
     // 客户名称
     NSString *partyName = @"";
+    // 客户地址
+    NSString *partyAddress = @"";
     // 客户电话
     NSString *partyTel = @"";
     if(_getOupputDetailM) {
         
         partyCode = _getOupputDetailM.getOupputInfoModel.pARTYCODE;
         partyName = _getOupputDetailM.getOupputInfoModel.pARTYNAME;
-        partyTel = _getOupputDetailM.getOupputInfoModel.cONTACTTEL;
+        partyAddress = _getOupputDetailM.getOupputInfoModel.pARTYINFO;
+        partyTel = _getOupputDetailM.getOupputInfoModel.pARTYTEL;
     }else if(_order){
         
         partyName = _order.ORD_TO_NAME;
+        partyAddress = _order.ORD_TO_ADDRESS;
+        partyTel = _order.ORD_TO_CTEL;
+        partyCode = _order.ORD_TO_CODE;
     }
     
     // 客户代码/电话/ 居左
     partyCode = [NSString stringWithFormat:@"客户代码：%@   [%@]", partyCode, partyTel];
     [dataM appendData: [partyCode dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
-    
     // 客户名称 居左
     partyName = [NSString stringWithFormat:@"客户名称：%@", partyName];
+    [dataM appendData: [partyName dataUsingEncoding: gbkEncoding]];
+    [dataM appendData:[XYCommand printAndFeedLine]];
+    // 客户地址 居左
+    partyName = [NSString stringWithFormat:@"客户地址：%@", partyAddress];
     [dataM appendData: [partyName dataUsingEncoding: gbkEncoding]];
     [dataM appendData:[XYCommand printAndFeedLine]];
     [dataM appendData: [@"---------------------------------------------" dataUsingEncoding: gbkEncoding]];
@@ -253,23 +266,41 @@
                 GetOupputItemModel *getOupputItemM = _getOupputDetailM.getOupputItemModel[i];
                 
                 NSString *name = [NSString stringWithFormat:@"%d.%@", i + 1, getOupputItemM.pRODUCTNAME];
+                // 产品名称太长，分两行
+                NSString *namePadPreix = name;
+                NSString *nameSuffix = @"";
                 
                 // 数量占位t符
                 NSString *qtyLoc = @"abcdefgheijklnmopqrstuv";
-                int nameLenght = [Tools textLength:name];
+                int nameLenght = [Tools textLength:namePadPreix];
                 int pad = [Tools textLength:qtyLoc] - nameLenght;
                 if(pad > 0){
                     for (int i = 0; i < pad; i++) {
-                        name = [name stringByAppendingFormat:@" "];
+                        namePadPreix = [namePadPreix stringByAppendingFormat:@" "];
+                    }
+                }
+                
+                // 产品名称超过设置长度，自动换行
+                if(pad < 0) {
+                    int padPreix = 1;
+                    for (int i = 0; i <= name.length; i++) {
+                        if(padPreix > 0) {
+                            namePadPreix = [name substringToIndex:i];
+                            int namePadPreixLenght = [Tools textLength:namePadPreix];
+                            padPreix = [Tools textLength:qtyLoc] - namePadPreixLenght;
+                        }else {
+                            nameSuffix = [name substringFromIndex:i - 1];
+                            break;
+                        }
                     }
                 }
                 
                 // 名称
                 [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:00 andNH:00]];
-                [dataM appendData: [name dataUsingEncoding: gbkEncoding]];
+                [dataM appendData: [namePadPreix dataUsingEncoding: gbkEncoding]];
                 
                 // 数量
-                NSString *qty = [NSString stringWithFormat:@"   x%@[%@]", [Tools  OneDecimal:getOupputItemM.oUTPUTQTY], getOupputItemM.oUTPUTUOM];
+                NSString *qty = [NSString stringWithFormat:@"   %@[%@]", [Tools  OneDecimal:getOupputItemM.oUTPUTQTY], getOupputItemM.oUTPUTUOM];
                 [dataM appendData: [qty dataUsingEncoding: gbkEncoding]];
                 
                 // 金额
@@ -278,6 +309,13 @@
                 [dataM appendData: [price dataUsingEncoding: gbkEncoding]];
                 [dataM appendData:[XYCommand printAndFeedLine]];
                 
+                if(pad < 0) {
+                    // 名称(第二行)
+                    [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:25 andNH:00]];
+                    [dataM appendData: [nameSuffix dataUsingEncoding: gbkEncoding]];
+                    [dataM appendData:[XYCommand printAndFeedLine]];
+                }
+                
                 // 总金额
                 _outPutTotalPrice += ([getOupputItemM.oRGPRICE floatValue] - [getOupputItemM.mJPRICE floatValue]) * [getOupputItemM.oUTPUTQTY floatValue];
             }
@@ -285,30 +323,47 @@
     }else if(_order){
         
         // 订单
-        if(_arrGoods.count > 0) {
+        if(_order.OrderDetails.count > 0) {
             
-            for (int i = 0; i < _arrGoods.count; i++) {
+            for (int i = 0; i < _order.OrderDetails.count; i++) {
                 
-                OrderDetailModel *m = _arrGoods[i];
-                
+                OrderDetailModel *m = _order.OrderDetails[i];
                 NSString *name = [NSString stringWithFormat:@"%d.%@", i + 1, m.PRODUCT_NAME];
+                // 产品名称太长，分两行
+                NSString *namePadPreix = name;
+                NSString *nameSuffix = @"";
                 
                 // 数量占位t符
                 NSString *qtyLoc = @"abcdefgheijklnmopqrstuv";
-                int nameLenght = [Tools textLength:name];
+                int nameLenght = [Tools textLength:namePadPreix];
                 int pad = [Tools textLength:qtyLoc] - nameLenght;
                 if(pad > 0){
                     for (int i = 0; i < pad; i++) {
-                        name = [name stringByAppendingFormat:@" "];
+                        namePadPreix = [namePadPreix stringByAppendingFormat:@" "];
+                    }
+                }
+                
+                // 产品名称超过设置长度，自动换行
+                if(pad < 0) {
+                    int padPreix = 1;
+                    for (int i = 0; i <= name.length; i++) {
+                        if(padPreix > 0) {
+                            namePadPreix = [name substringToIndex:i];
+                            int namePadPreixLenght = [Tools textLength:namePadPreix];
+                            padPreix = [Tools textLength:qtyLoc] - namePadPreixLenght;
+                        }else {
+                            nameSuffix = [name substringFromIndex:i - 1];
+                            break;
+                        }
                     }
                 }
                 
                 // 名称
                 [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:00 andNH:00]];
-                [dataM appendData: [name dataUsingEncoding: gbkEncoding]];
+                [dataM appendData: [namePadPreix dataUsingEncoding: gbkEncoding]];
                 
                 // 数量
-                NSString *qty = [NSString stringWithFormat:@"   x%.1f", m.ISSUE_QTY];
+                NSString *qty = [NSString stringWithFormat:@"   %.1f[%@]", m.ISSUE_QTY, m.ORDER_UOM];
                 [dataM appendData: [qty dataUsingEncoding: gbkEncoding]];
                 
                 // 金额
@@ -316,6 +371,13 @@
                 [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:200 andNH:01]];
                 [dataM appendData: [price dataUsingEncoding: gbkEncoding]];
                 [dataM appendData:[XYCommand printAndFeedLine]];
+                
+                if(pad < 0) {
+                    // 名称(第二行)
+                    [dataM appendData:[XYCommand setAbsolutePrintXYitionWithNL:25 andNH:00]];
+                    [dataM appendData: [nameSuffix dataUsingEncoding: gbkEncoding]];
+                    [dataM appendData:[XYCommand printAndFeedLine]];
+                }
                 
                 // 总金额
                 _inPutTotalPrice += m.ACT_PRICE * m.ORDER_QTY;

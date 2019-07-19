@@ -38,6 +38,7 @@ NSString *const kGetOupputInfoModelPARTYCODE = @"PARTY_CODE";
 NSString *const kGetOupputInfoModelPARTYINFO = @"PARTY_INFO";
 NSString *const kGetOupputInfoModelPARTYMARK = @"PARTY_MARK";
 NSString *const kGetOupputInfoModelPARTYNAME = @"PARTY_NAME";
+NSString *const kGetOupputInfoModelPARTYTEL = @"PARTY_TEL";
 NSString *const kGetOupputInfoModelPRICE = @"PRICE";
 
 
@@ -136,6 +137,9 @@ NSString *const kGetOupputInfoModelPRICE = @"PRICE";
     }
     if(![dictionary[kGetOupputInfoModelPARTYNAME] isKindOfClass:[NSNull class]]){
         self.pARTYNAME = dictionary[kGetOupputInfoModelPARTYNAME];
+    }
+    if(![dictionary[kGetOupputInfoModelPARTYTEL] isKindOfClass:[NSNull class]]){
+        self.pARTYTEL = dictionary[kGetOupputInfoModelPARTYTEL];
     }
     if(![dictionary[kGetOupputInfoModelPRICE] isKindOfClass:[NSNull class]]){
         self.pRICE = dictionary[kGetOupputInfoModelPRICE];
@@ -236,6 +240,9 @@ NSString *const kGetOupputInfoModelPRICE = @"PRICE";
     }
     if(self.pARTYNAME != nil){
         dictionary[kGetOupputInfoModelPARTYNAME] = self.pARTYNAME;
+    }
+    if(self.pARTYTEL != nil){
+        dictionary[kGetOupputInfoModelPARTYTEL] = self.pARTYTEL;
     }
     if(self.pRICE != nil){
         dictionary[kGetOupputInfoModelPRICE] = self.pRICE;
@@ -339,6 +346,9 @@ NSString *const kGetOupputInfoModelPRICE = @"PRICE";
     if(self.pARTYNAME != nil){
         [aCoder encodeObject:self.pARTYNAME forKey:kGetOupputInfoModelPARTYNAME];
     }
+    if(self.pARTYTEL != nil){
+        [aCoder encodeObject:self.pARTYTEL forKey:kGetOupputInfoModelPARTYTEL];
+    }
     if(self.pRICE != nil){
         [aCoder encodeObject:self.pRICE forKey:kGetOupputInfoModelPRICE];
     }
@@ -380,6 +390,7 @@ NSString *const kGetOupputInfoModelPRICE = @"PRICE";
     self.pARTYINFO = [aDecoder decodeObjectForKey:kGetOupputInfoModelPARTYINFO];
     self.pARTYMARK = [aDecoder decodeObjectForKey:kGetOupputInfoModelPARTYMARK];
     self.pARTYNAME = [aDecoder decodeObjectForKey:kGetOupputInfoModelPARTYNAME];
+    self.pARTYTEL = [aDecoder decodeObjectForKey:kGetOupputInfoModelPARTYTEL];
     self.pRICE = [aDecoder decodeObjectForKey:kGetOupputInfoModelPRICE];
     return self;
     
@@ -421,6 +432,7 @@ NSString *const kGetOupputInfoModelPRICE = @"PRICE";
     copy.pARTYINFO = [self.pARTYINFO copy];
     copy.pARTYMARK = [self.pARTYMARK copy];
     copy.pARTYNAME = [self.pARTYNAME copy];
+    copy.pARTYTEL = [self.pARTYTEL copy];
     copy.pRICE = [self.pRICE copy];
     
     return copy;

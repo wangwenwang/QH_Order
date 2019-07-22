@@ -228,7 +228,7 @@
         partyTel = _getOupputDetailM.getOupputInfoModel.pARTYTEL;
     }else if(_order){
         
-        partyName = _order.ORD_FROM_NAME;
+        partyName = _order.ORD_TO_NAME;
         partyAddress = _order.ORD_TO_ADDRESS;
         partyTel = _order.ORD_TO_CTEL;
         partyCode = _order.ORD_TO_CODE;

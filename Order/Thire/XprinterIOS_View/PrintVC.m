@@ -20,12 +20,6 @@
 /** BLE */
 @property (strong, nonatomic) XYBLEManager *manager;
 
-// 销售单总金额
-@property (assign, nonatomic) float outPutTotalPrice;
-
-// 采购单总金额
-@property (assign, nonatomic) float inPutTotalPrice;
-
 // 是否打开蓝牙
 @property (strong, nonatomic) Tools *t;
 
@@ -41,9 +35,6 @@
     [super viewDidLoad];
     
     self.title =  @"蓝牙打印";
-    
-    _outPutTotalPrice = 0.0;
-    _inPutTotalPrice = 0.0;
     
     _t = [[Tools alloc] init];
     
@@ -315,9 +306,6 @@
                     [dataM appendData: [nameSuffix dataUsingEncoding: gbkEncoding]];
                     [dataM appendData:[XYCommand printAndFeedLine]];
                 }
-                
-                // 总金额
-                _outPutTotalPrice += ([getOupputItemM.oRGPRICE floatValue] - [getOupputItemM.mJPRICE floatValue]) * [getOupputItemM.oUTPUTQTY floatValue];
             }
         }
     }else if(_order){
@@ -378,9 +366,6 @@
                     [dataM appendData: [nameSuffix dataUsingEncoding: gbkEncoding]];
                     [dataM appendData:[XYCommand printAndFeedLine]];
                 }
-                
-                // 总金额
-                _inPutTotalPrice += m.ACT_PRICE * m.ORDER_QTY;
             }
         }
     }else {
@@ -398,7 +383,7 @@
     if(_getOupputDetailM) {
         
         totalQTY = [_getOupputDetailM.getOupputInfoModel.oUTPUTQTY floatValue];
-        totalPrice = _outPutTotalPrice;
+        totalPrice = [_getOupputDetailM.getOupputInfoModel.pRICE floatValue];
         orderNO = _getOupputDetailM.getOupputInfoModel.oUTPUTNO;
     }else if(_order){
         

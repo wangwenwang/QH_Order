@@ -40,6 +40,9 @@
 // 出库客户地址
 @property (weak, nonatomic) IBOutlet UILabel *PARTY_INFO;
 
+// 备注
+@property (weak, nonatomic) IBOutlet UILabel *PARTY_MARK;
+
 // 出库数量
 @property (weak, nonatomic) IBOutlet UILabel *OUTPUT_QTY;
 
@@ -218,6 +221,7 @@
     _ADDRESS_INFO.text = @" ";
     _PARTY_NAME.text = @"";
     _PARTY_INFO.text = @" ";
+    _PARTY_MARK.text = @" ";
     _OUTPUT_QTY.text = @"";
     _OUTPUT_WEIGHT.text = @"";
     _OUTPUT_VOLUME.text = @"";
@@ -321,6 +325,7 @@
     _ADDRESS_INFO.text = _getOupputDetailM.getOupputInfoModel.aDDRESSINFO;
     _PARTY_NAME.text = _getOupputDetailM.getOupputInfoModel.pARTYNAME;
     _PARTY_INFO.text = [_getOupputDetailM.getOupputInfoModel.pARTYINFO isEqualToString:@""] ? @" " : _getOupputDetailM.getOupputInfoModel.pARTYINFO;
+    _PARTY_MARK.text = _getOupputDetailM.getOupputInfoModel.pARTYMARK;
     _OUTPUT_QTY.text =  [Tools OneDecimal:_getOupputDetailM.getOupputInfoModel.oUTPUTQTY];
     _OUTPUT_WEIGHT.text = [Tools TwoDecimal:_getOupputDetailM.getOupputInfoModel.oUTPUTWEIGHT];
     _OUTPUT_VOLUME.text = [Tools TwoDecimal:_getOupputDetailM.getOupputInfoModel.oUTPUTVOLUME];
